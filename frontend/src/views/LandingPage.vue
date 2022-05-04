@@ -19,7 +19,7 @@ export default {
     return {
       landingCarouselItemsInfo: [
         {
-          imageUrl: '@/assets/img/home1.jpg'
+          imageUrl: '@/assets/img/last dance carousel.jpg'
         },
         {
           imageUrl: '@/assets/img/home2.jpg'

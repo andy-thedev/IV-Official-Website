@@ -79,33 +79,38 @@ export default {
 <style lang="scss" scoped>
 .carousel {
     display: relative;
-    overflow: hidden;
     background-color: black;
 
     .carousel-inner {
+        // inherit props width/height
+        width: 100%;
+        height: 100%;
+
         .carousel-item {
             display: none;
+            overflow: hidden;
+
+            // inherit props width/height
+            width: 100%;
+            height: 100%;
+
+            background-size: cover!important;
+            -webkit-background-size: cover!important;
+            -moz-background-size: cover!important;
+            -o-background-size: cover!important;
+            background-position: center!important;
 
             &.active {
                 display: block;
             }
 
             img {
+                // inherit props width/height
                 width: 100%;
                 height: 100%;
+                object-fit: cover;
             }
         }
     }
-}
-
-.carousel-item {
-    width: 100vw;
-    height: 100vh;
-
-    background-size: cover!important;
-    -webkit-background-size: cover!important;
-    -moz-background-size: cover!important;
-    -o-background-size: cover!important;
-    background-position: center!important;
 }
 </style>
