@@ -2,6 +2,12 @@
 @import "https://fonts.googleapis.com/css?family=Josefin+Sans:700,600,400";
 @import "https://fonts.googleapis.com/css?family=Lora:400,700|Roboto+Slab:400,700&display=swap";
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 html {
     /* Fit to Screen */
     max-width: 100vw;

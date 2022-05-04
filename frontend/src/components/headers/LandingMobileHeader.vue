@@ -4,19 +4,19 @@
         :class="{ 'opaque-header': !isTransparent }"
     >
         <div class="left-items-container">
-            <span class="left-option-numeral">I</span>
-            <span class="left-option-numeral">II</span>
-            <span class="left-option-numeral">III</span>
-            <span class="left-option-numeral">IV</span>
+            <font-awesome-icon
+                :icon="['fas', 'headphones-alt']"
+                class="left-icon"
+            />
         </div>
         <div class= "center-brand">
             <span class="center-text">INDIVISUAL</span>
         </div>
         <div class="right-items-container">
-            <span class="right-option-text">SONGS</span>
-            <span class="right-option-text">NEWS</span>
-            <span class="right-option-text">ABOUT US</span>
-            <span class="right-option-text">CONTACT</span>
+            <font-awesome-icon
+                :icon="['fas', 'bars']"
+                class="right-icon"
+            />
         </div>
     </div>
 </template>
@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/common-variables';
+/* Assume the following css is for viewport width 1280px or below (See LandingWrapper.vue) */
+
 .opaque-header {
     background-color: black!important;
 }
@@ -49,29 +52,24 @@ export default {
 
     width: 100%;
     height: 75px;
+    z-index: 1000;
 
-    background-color: rgb(2 1 0 / 0.3);
-    transition: background-color 0.4s ease-in-out;
+    background-color: $background-color-landing-header;
+    transition: $transition-landing-header-darken;
 
     color: white;
     font-family:josefin sans,sans-serif;
     text-transform: uppercase;
 
-    z-index: 1000;
-
     .left-items-container {
         flex: 1;
         text-align: left;
 
-        .left-option-numeral {
+        .left-icon {
             font-size: 20px;
-            margin: 0 0 0 36px;
+            margin: 0 0 0 30px;
 
             cursor: pointer;
-
-            &:hover {
-                color: #FF7700;
-            }
         }
     }
 
@@ -86,16 +84,28 @@ export default {
         flex: 1;
         text-align: right;
 
-        .right-option-text {
-            font-size: 13px;
-            margin: 0 36px 0 0;
+        .right-icon {
+            font-size: 20px;
+            margin: 0 30px 0 0;
 
             cursor: pointer;
-
-            &:hover {
-                color: #FF7700;
-            }
         }
+    }
+}
+
+@media(max-width:912px){
+    /* Surface Pro 7 (912) and iPad Air (820) dimensions */
+}
+
+@media(max-width: 540px) {
+    /* Surface Duo Dimensions */
+}
+
+@media(max-width:480px){
+    /* Phone dimensions */
+
+    .header-container .center-brand .center-text {
+        font-size: 22px;
     }
 }
 </style>

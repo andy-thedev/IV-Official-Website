@@ -5,7 +5,7 @@
 
 <script setup>
 const props = defineProps({
-  // foo: String
+    // foo: String
 })
 </script>
 

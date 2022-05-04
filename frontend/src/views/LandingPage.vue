@@ -1,31 +1,30 @@
 <template>
   <div class="landing-page">
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
-      <span>test</span>
+    <IVCarousel
+      :carouselItemsInfo="landingCarouselItemsInfo"
+    />
   </div>
 </template>
 
 <script>
+import IVCarousel from '@/components/gadgets/Carousel.vue';
+
 export default {
   components: {
+    IVCarousel
   },
   props: {
   },
   data() {
     return {
-      // something = 1,
+      landingCarouselItemsInfo: [
+        {
+          imageUrl: '@/assets/img/home1.jpg'
+        },
+        {
+          imageUrl: '@/assets/img/home2.jpg'
+        }
+      ],
     }
   },
   computed: {
@@ -33,19 +32,19 @@ export default {
   created() {
   },
   methods: {
-    //   test() {
-    //   },
   },
-
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .landing-page {
-    background-color: #ff7777;
-    height: 7000px;
     display: flex;
     flex-direction: column;
-    font-size: 100px;
+
+    width: 100vw;
+}
+
+.landing-carousel-section {
+  width: 100vw;
 }
 </style>

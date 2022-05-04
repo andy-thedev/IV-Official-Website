@@ -13,8 +13,8 @@
 </template>
 
 <script>
-import IVLandingHeader from '@/components/header/LandingHeader.vue'
-import IVLandingMobileHeader from '@/components/header/LandingMobileHeader.vue'
+import IVLandingHeader from '@/components/headers/LandingHeader.vue'
+import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue'
 
 const RESIZE_WIDTH = 1280;
 const LANDING_HEADER_OPAQUE_HEIGHT = 500
