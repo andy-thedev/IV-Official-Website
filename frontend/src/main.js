@@ -7,7 +7,7 @@ import '@/assets/css/global-styles.scss';
 
 // Font awesome
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHeadphonesAlt, faBars, faChevronRight, faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faHeadphonesAlt, faBars, faChevronRight, faChevronLeft, faMinus } from "@fortawesome/free-solid-svg-icons";
 // import {  } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -18,6 +18,7 @@ library.add(faHeadphonesAlt);
 library.add(faBars);
 library.add(faChevronLeft);
 library.add(faChevronRight);
+library.add(faMinus);
 
 // App setup
 const app = createApp(App);

@@ -1,50 +1,65 @@
 <template>
     <div
-        class="carousel"
+        class="iv-carousel"
         :style="{
             'width': width,
             'height': height, 
         }"
     >
+        <!-- Carousel content -->
         <transition-group
             tag="div"
             :name="activeTransition"
-            class="carousel-inner"
+            class="carousel-items-container"
+            @after-enter="controlDisabled=false"
+            @leave="controlDisabled=true"
         >
             <div
                 v-for="(carouselItem, i) in carouselItems"
-                v-show="i == activeItemIndex"
+                v-show="i === activeItemIndex"
                 :key="i"
-                class="carousel-item"
+                class="carousel-item-wrapper"
             >
                 <img
+                    v-if="carouselItem.type === 'img'"
                     :src="carouselItem.imageSrc"
+                    draggable="false"
                 />
             </div>
         </transition-group>
-        <div
-            class="carousel-control left"
+        <!-- Left/right controls -->
+        <button
+            class="carousel-control-wrapper left unselectable"
+            :disabled="controlDisabled"
             @click="prevItem"
         >
             <font-awesome-icon
                 :icon="['fas', 'chevron-left']"
-                class="arrow left"
+                class="carousel-control-icon left"
             />
-        </div>
-        <div
-            class="carousel-control right"
+        </button>
+        <button
+            class="carousel-control-wrapper right unselectable"
+            :disabled="controlDisabled"
             @click="nextItem"
         >
             <font-awesome-icon
                 :icon="['fas', 'chevron-right']"
-                class="arrow right"
+                class="carousel-control-icon right"
+            />
+        </button>
+        <!-- Carousel item indicators -->
+        <div class="carousel-indicators-container">
+            <!-- Dummy variable to start v-for index from 0 -->
+            <font-awesome-icon
+                v-for="(dummy, i) in carouselItems.length"
+                :key="i"
+                :icon="['fas', 'minus']"
+                class="carousel-indicator"
+                :class="{ 'active': i === activeItemIndex }"
+                @click="goToItem(i)"
             />
         </div>
-        <!-- <ol class="carousel-indicators">
-            <li class="active" />
-            <li />
-            <li />
-        </ol> -->
     </div>
 </template>
 
@@ -72,25 +87,54 @@ export default {
 
             activeItemIndex: 0,
             activeTransition: '',
+
+            controlDisabled: false,
+
+            nextCarouselTimer: null,
         }
     },
     computed: {
     },
     created() {
+        // Convert basic carousel items info into usable format
         this.carouselItems = this.carouselItemsInfo.map(carouselItemInfo => {
-            return {
-                imageSrc: this.imgUrlToSrc(carouselItemInfo.imageUrl),
+            if (carouselItemInfo.type === 'img') {
+                return {
+                    type: 'img',
+                    imageSrc: this.imgUrlToSrc(carouselItemInfo.imageUrl),
+                }
+            } else {
+                // should not occur
             }
-        })
+        });
+    },
+    mounted() {
+        this.startNextCarouselTimer();
+    },
+    beforeDestroy() {
+        this.clearNextCarouselTimer();
     },
     methods: {
+        startNextCarouselTimer() {
+            this.nextCarouselTimer = setInterval(() => {
+                this.nextItem();
+            }, 4000);
+        },
+        clearNextCarouselTimer() {
+            clearInterval(this.nextCarouselTimer);
+        },
+        resetNextCarouselTimer() {
+            this.clearNextCarouselTimer();
+            this.startNextCarouselTimer();
+        },
         imgUrlToSrc(imageUrl) {
             // NOTE: [05/03/22] Vue3 can't resolve alias when using :src
             // We must translate url manually
             const aliasTranslatedImageUrl = imageUrl.replace('@/', '../../');
-            return new URL(aliasTranslatedImageUrl, import.meta.url).href
+            return new URL(aliasTranslatedImageUrl, import.meta.url).href;
         },
         changeActiveItemIndex(n) {
+            // Force index to be within bounds of [0, carouselItems.length)
             if (n > this.carouselItems.length - 1) {
                 this.activeItemIndex = 0;
             } else if (n < 0) {
@@ -100,30 +144,46 @@ export default {
             }
         },
         prevItem() {
+            this.activeTransition = 'to-left';
             this.changeActiveItemIndex(this.activeItemIndex - 1);
-            this.activeTransition = 'to-left'
+            this.resetNextCarouselTimer();
         },
         nextItem() {
+            this.activeTransition = 'to-right';
             this.changeActiveItemIndex(this.activeItemIndex + 1);
-            this.activeTransition = 'to-right'
+            this.resetNextCarouselTimer();
+        },
+        goToItem(index) {
+            if (index > this.activeItemIndex) {
+                this.activeTransition = 'to-right';
+                this.changeActiveItemIndex(index);
+            } else if (index < this.activeItemIndex) {
+                this.activeTransition = 'to-left';
+                this.changeActiveItemIndex(index);
+            } else {
+                // do nothing
+            }
         },
     },
 }
 </script>
 
 <style lang="scss" scoped>
-.carousel {
+$color-inactive-transparent: rgb(255 255 255 / 0.4);
+$color-active-opaque: rgb(255 255 255 / 1);
+
+.iv-carousel {
     // Limit absolute positions in relative container
     position: relative;
     background-color: black;
 
-    .carousel-inner {
+    // Carousel content
+    .carousel-items-container {
         // inherit props width/height
         width: 100%;
         height: 100%;
 
-        .carousel-item {
-            /* display: none; */
+        .carousel-item-wrapper {
             overflow: hidden;
 
             /* Needed to trigger animation */
@@ -143,10 +203,6 @@ export default {
             -o-background-size: cover!important;
             background-position: center!important;
 
-            &.active {
-                display: block;
-            }
-
             img {
                 // inherit props width/height
                 width: 100%;
@@ -156,7 +212,8 @@ export default {
         }
     }
 
-    .carousel-control {
+    // Left/right controls
+    .carousel-control-wrapper {
         // Same effect as height 100%
         // Stretch clickable area across entire section height
         position: absolute;
@@ -167,6 +224,14 @@ export default {
 
         cursor: pointer;
 
+        outline: none;
+        background: transparent;
+        border: none;
+
+        &:hover .carousel-control-icon {
+            color: $color-active-opaque;
+        }
+
         &.left {
             left: 0;
         }
@@ -175,26 +240,20 @@ export default {
             right: 0;
         }
 
-        .arrow {
+        .carousel-control-icon {
             // Center vertically
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
 
             font-size: 32px;
-            color: rgb(255 255 255 / 0.4);
-
-            cursor: pointer;
+            color: $color-inactive-transparent;
 
             -webkit-transition: color 0.2s;
             -moz-transition:    color 0.2s;
             -ms-transition:     color 0.2s;
             -o-transition:      color 0.2s;
             transition:         color 0.2s;
-
-            &:hover {
-                color: rgb(255 255 255 / 1);
-            }
 
             &.left {
                 left: 40%;
@@ -207,22 +266,48 @@ export default {
             }
         }
     }
+
+    // Carousel item indicators
+    .carousel-indicators-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        position: absolute;
+
+        bottom: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        .carousel-indicator {
+            font-size: 20px;
+            color: $color-inactive-transparent;
+            margin: 0 2px 0 2px;
+
+            cursor: pointer;
+
+            &.active {
+                color: $color-active-opaque;
+            }
+        }
+    }
 }
 
 .to-left-enter-active {
-    animation: slide-in-left 0.63s ease-in-out;
+    animation: slide-in-left 0.61s ease-in-out;
 }
 
 .to-left-leave-active {
-    animation: slide-out-left 0.63s ease-in-out;
+    animation: slide-out-left 0.61s ease-in-out;
 }
 
 .to-right-enter-active {
-    animation: slide-in-right 0.63s ease-in-out;
+    animation: slide-in-right 0.61s ease-in-out;
 }
 
 .to-right-leave-active {
-    animation: slide-out-right 0.63s ease-in-out;
+    animation: slide-out-right 0.61s ease-in-out;
 }
 
 @keyframes slide-in-left {

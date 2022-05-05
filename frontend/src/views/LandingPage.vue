@@ -1,47 +1,60 @@
 <template>
-  <div class="landing-page">
-    <div
-        :style="{
-            width: '100%',
-            height: '20vh',
-            backgroundColor: 'orange',
-            fontSize: '180px',
-            color: 'black',
-        }"
-    >TEST AREA TEST ARE</div>
+<div class="landing-page">
     <IVCarousel
-      :carouselItemsInfo="landingCarouselItemsInfo"
+        :carouselItemsInfo="landingCarouselItemsInfo"
     />
-  </div>
+</div>
 </template>
 
 <script>
 import IVCarousel from '@/components/widgets/Carousel.vue';
 
 export default {
-  components: {
+components: {
     IVCarousel
-  },
-  props: {
-  },
-  data() {
+},
+props: {
+},
+data() {
     return {
-      landingCarouselItemsInfo: [
-        {
-          imageUrl: '@/assets/img/last dance carousel.jpg'
-        },
-        {
-          imageUrl: '@/assets/img/home2.jpg'
-        }
-      ],
+        landingCarouselItemsInfo: [
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/last-dance.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/left-over.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/collection.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/passenger-seat.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/pdg-project-2019.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/fly.jpg'
+            },
+            {
+                type: 'img',
+                imageUrl: '@/assets/img/lately.jpg'
+            },
+        ],
     }
-  },
-  computed: {
-  },
-  created() {
-  },
-  methods: {
-  },
+},
+computed: {
+},
+created() {
+},
+methods: {
+},
 }
 </script>
 
@@ -54,6 +67,6 @@ export default {
 }
 
 .landing-carousel-section {
-  width: 100vw;
+width: 100vw;
 }
 </style>
