@@ -1,5 +1,14 @@
 <template>
   <div class="landing-page">
+    <div
+        :style="{
+            width: '100%',
+            height: '20vh',
+            backgroundColor: 'orange',
+            fontSize: '180px',
+            color: 'black',
+        }"
+    >TEST AREA TEST ARE</div>
     <IVCarousel
       :carouselItemsInfo="landingCarouselItemsInfo"
     />
@@ -7,7 +16,7 @@
 </template>
 
 <script>
-import IVCarousel from '@/components/gadgets/Carousel.vue';
+import IVCarousel from '@/components/widgets/Carousel.vue';
 
 export default {
   components: {
