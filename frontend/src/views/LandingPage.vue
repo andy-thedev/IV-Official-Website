@@ -1,66 +1,53 @@
 <template>
-<div class="landing-page">
-    <div class="section">
-        <IVCarousel
-            :carouselItemsInfo="landingCarouselItemsInfo"
-        />
-    </div>
-    <div class="section recent-releases">
-        <div class="primary-container">
-            <div class="recent-releases-title">
-                RECENT RELEASES
-            </div>
-            <IVTable
-                :height="'600px'"
+    <div class="landing-page">
+        <div class="section">
+            <IVCarousel
+                :carouselItemsInfo="landingMusicArtworksInfo"
+                :enableNextItemTimer="enableCarouselNextItemTimer"
+                @item-selected="showItemDetailsOverlay"
             />
         </div>
+        <transition name="fade">
+            <IVOverlay
+                v-if="selectedMusicInfo"
+                @close="closeItemDetailsOverlay"
+            >
+                <IVPlatformList
+                    width="25%"
+                    :title="selectedMusicInfo.title"
+                    :options="selectedMusicInfo.platforms"
+                />
+            </IVOverlay>
+        </transition>
     </div>
-</div>
 </template>
 
 <script>
+// Components
 import IVCarousel from '@/components/widgets/Carousel.vue';
-import IVTable from '@/components/widgets/Table.vue';
+import IVOverlay from '@/components/widgets/Overlay.vue';
+import IVPlatformList from '@/components/widgets/PlatformList.vue';
+
+// JSON file
+import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
 
 export default {
     components: {
         IVCarousel,
-        IVTable,
+        IVOverlay,
+        IVPlatformList,
     },
     props: {
     },
     data() {
         return {
-            landingCarouselItemsInfo: [
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/last-dance.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/left-over.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/collection.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/passenger-seat.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/pdg-project-2019.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/fly.jpg'
-                },
-                {
-                    type: 'img',
-                    imageUrl: '@/assets/img/lately.jpg'
-                },
-            ],
+            // Carousel content details
+            landingMusicArtworksInfo: landingCarouselItemsData.items,
+            // Enables/disables auto-sliding of carousel items
+            enableCarouselNextItemTimer: true,
+
+            // Platform list overlay
+            selectedMusicInfo: null,
         }
     },
     computed: {
@@ -68,6 +55,18 @@ export default {
     created() {
     },
     methods: {
+        showItemDetailsOverlay(itemIndex) {
+            // Stop carousel items from auto-sliding
+            this.enableCarouselNextItemTimer = false;
+            // Show overlay with selected carousel item info
+            this.selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
+        },
+        closeItemDetailsOverlay() {
+            // Hide overlay
+            this.selectedMusicInfo = null;
+            // Enable carousel auto-slide
+            this.enableCarouselNextItemTimer = true;
+        },
     },
 }
 </script>
@@ -78,22 +77,18 @@ export default {
     flex-direction: column;
 
     width: 100vw;
+}
 
-    .section {
-        width: 100vw;
-        height: 100vh;
+.fade-enter-active {
+    transition: all 0.5s ease-in-out;
+}
 
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.fade-leave-active {
+    transition: all 0.5s ease-in-out;
+}
 
-        &.recent-releases {
-            background-color: white;
-
-            .recent-releases-title {
-                font-size: 20px;
-            }
-        }
-    }
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>

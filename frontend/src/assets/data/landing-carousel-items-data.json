@@ -1,0 +1,63 @@
+{
+    "items": [
+        {
+            "title": "Last Dance",
+            "type": "img",
+            "imageUrl": "@/assets/img/last-dance.jpg",
+            "platforms": {
+                "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8FeU6FRCxkSfYYm9hZuOm1_d",
+                "soundcloud": "https://soundcloud.com/indivisualiv/sets/last-dance"
+            }
+        },
+        {
+            "title": "leftover",
+            "type": "img",
+            "imageUrl": "@/assets/img/left-over.jpg",
+            "platforms": {
+                "soundcloud": "https://soundcloud.com/rocadianco/sets/leftover"
+            }
+        },
+        {
+            "title": "Collection",
+            "type": "img",
+            "imageUrl": "@/assets/img/collection.jpg",
+            "platforms": {
+                "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM",
+                "soundcloud": "https://soundcloud.com/indivisualiv/sets/collection"
+            }
+        },
+        {
+            "title": "Passenger seat",
+            "type": "img",
+            "imageUrl": "@/assets/img/passenger-seat.jpg",
+            "platforms": {
+                "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8FehtlkBJqcLimhjazdzUfAJ",
+                "soundcloud": "https://soundcloud.com/rocadianco/sets/passenger-seat"
+            }
+        },
+        {
+            "title": "PDG PROJECT [2019]",
+            "type": "img",
+            "imageUrl": "@/assets/img/pdg-project-2019.jpg",
+            "platforms": {
+                "soundcloud": "https://soundcloud.com/official-pg13/sets/pdg-project-2019"
+            }
+        },
+        {
+            "title": "종이비행기 (Fly!)",
+            "type": "img",
+            "imageUrl": "@/assets/img/fly.jpg",
+            "platforms": {
+                "youtube": "https://youtube.com/watch?v=OSg0_Rz2iuU",
+                "soundcloud": "https://soundcloud.com/indivisualiv/pg-13-fly-remastered"
+            }
+        },
+        {
+            "title": "Lately",
+            "type": "img",
+            "imageUrl": "@/assets/img/lately.jpg",
+            "platforms": {
+            }
+        }
+    ]
+}

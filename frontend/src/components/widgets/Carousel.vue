@@ -19,6 +19,7 @@
                 v-show="i === activeItemIndex"
                 :key="i"
                 class="carousel-item-wrapper"
+                v-touch:tap="handleItemSelected"
             >
                 <img
                     v-if="carouselItem.type === 'img'"
@@ -80,6 +81,10 @@ export default {
             type: Array,
             default: [],
         },
+        enableNextItemTimer: {
+            type: Boolean,
+            default: true,
+        }
     },
     data() {
         return {
@@ -90,10 +95,19 @@ export default {
 
             controlDisabled: false,
 
-            nextCarouselTimer: null,
+            nextItemTimer: null,
         }
     },
     computed: {
+    },
+    watch: {
+        enableNextItemTimer() {
+            if (this.enableNextItemTimer) {
+                this.startNextItemTimer();
+            } else {
+                this.clearNextItemTimer();
+            }
+        },
     },
     created() {
         // Convert basic carousel items info into usable format
@@ -109,23 +123,23 @@ export default {
         });
     },
     mounted() {
-        this.startNextCarouselTimer();
+        this.startNextItemTimer();
     },
     beforeDestroy() {
-        this.clearNextCarouselTimer();
+        this.clearNextItemTimer();
     },
     methods: {
-        startNextCarouselTimer() {
-            this.nextCarouselTimer = setInterval(() => {
+        startNextItemTimer() {
+            this.NextItemTimer = setInterval(() => {
                 this.nextItem();
             }, 4000);
         },
-        clearNextCarouselTimer() {
-            clearInterval(this.nextCarouselTimer);
+        clearNextItemTimer() {
+            clearInterval(this.NextItemTimer);
         },
-        resetNextCarouselTimer() {
-            this.clearNextCarouselTimer();
-            this.startNextCarouselTimer();
+        resetNextItemTimer() {
+            this.clearNextItemTimer();
+            this.startNextItemTimer();
         },
         imgUrlToSrc(imageUrl) {
             // NOTE: [05/03/22] Vue3 can't resolve alias when using :src
@@ -146,12 +160,12 @@ export default {
         prevItem() {
             this.activeTransition = 'to-left';
             this.changeActiveItemIndex(this.activeItemIndex - 1);
-            this.resetNextCarouselTimer();
+            this.resetNextItemTimer();
         },
         nextItem() {
             this.activeTransition = 'to-right';
             this.changeActiveItemIndex(this.activeItemIndex + 1);
-            this.resetNextCarouselTimer();
+            this.resetNextItemTimer();
         },
         goToItem(index) {
             if (index > this.activeItemIndex) {
@@ -164,6 +178,10 @@ export default {
                 // do nothing
             }
         },
+        handleItemSelected() {
+            // In the landing page, the carousel item detail overlay should appear
+            this.$emit('itemSelected', this.activeItemIndex);
+        }
     },
 }
 </script>
@@ -202,6 +220,8 @@ $color-active-opaque: rgb(255 255 255 / 1);
             -moz-background-size: cover!important;
             -o-background-size: cover!important;
             background-position: center!important;
+
+            cursor: pointer;
 
             img {
                 // inherit props width/height

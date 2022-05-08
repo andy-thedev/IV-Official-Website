@@ -65,7 +65,7 @@ export default {
 
 <style lang="scss" scoped>
 .iv-landing-wrapper {
-    width: 100%;
+    width: 100vw;
 
     display: flex;
     flex-direction: column;
