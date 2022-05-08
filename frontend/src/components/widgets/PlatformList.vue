@@ -115,7 +115,7 @@ export default {
         cursor: pointer;
 
         .platform-option-wrapper {
-            width: 60%;
+            width: 50%;
 
             display: flex;
             align-items: center;

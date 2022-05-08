@@ -20,6 +20,7 @@
                 :key="i"
                 class="carousel-item-wrapper"
                 v-touch:tap="handleItemSelected"
+                @click="handleItemSelected"
             >
                 <img
                     v-if="carouselItem.type === 'img'"
@@ -240,7 +241,7 @@ $color-active-opaque: rgb(255 255 255 / 1);
         top: 0;
         bottom: 0;
 
-        width: 20%;
+        width: 15%;
 
         cursor: pointer;
 

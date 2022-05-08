@@ -48,8 +48,10 @@ export default {
 
     position: absolute;
 
-    top: 80px;
-    left: 35px;
+    top: 75px;
+    left: 15px;
+
+    padding: 20px 20px;
 
     cursor: pointer;
 }
