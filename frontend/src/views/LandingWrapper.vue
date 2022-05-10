@@ -3,10 +3,12 @@
         <IVLandingMobileHeader
             v-if="isMobile"
             :color="store.currentLandingHeaderColor"
+            :fontColor="store.currentLandingHeaderFontColor"
         />
         <IVLandingHeader
             v-else
             :color="store.currentLandingHeaderColor"
+            :fontColor="store.currentLandingHeaderFontColor"
         />
         <router-view />
     </div>

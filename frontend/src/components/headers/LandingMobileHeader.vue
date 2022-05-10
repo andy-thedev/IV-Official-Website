@@ -3,6 +3,7 @@
         class="iv-landing-header"
         :style="{
             backgroundColor: color,
+            color: fontColor,
         }"
     >
         <div class="left-items-container">
@@ -29,6 +30,10 @@ export default {
         color: {
             type: String,
             default: '',
+        },
+        fontColor: {
+            type: String,
+            default: '',
         }
     },
 }
@@ -36,6 +41,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
+
+@mixin menu-option-interaction {
+    cursor: pointer;
+
+    transition: $transition-landing-header-hover-text;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
 /* Assume the following css is for viewport width 1280px or below (See LandingWrapper.vue) */
 
 .iv-landing-header {
@@ -67,7 +83,7 @@ export default {
             font-size: 20px;
             margin: 0 0 0 30px;
 
-            cursor: pointer;
+            transition: $transition-landing-header-color;
         }
     }
 
@@ -75,6 +91,8 @@ export default {
         .center-text {
             font-size: 25px;
             text-align: center;
+
+            transition: $transition-landing-header-color;
         }
     }
 
@@ -86,7 +104,7 @@ export default {
             font-size: 20px;
             margin: 0 30px 0 0;
 
-            cursor: pointer;
+            transition: $transition-landing-header-color;
         }
     }
 }

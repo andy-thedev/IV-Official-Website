@@ -61,8 +61,10 @@ export default {
             // Show overlay with selected carousel item info
             this.selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
             // Change header color to artwork theme color
-            const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor
+            const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor;
+            const fontColor = this.landingMusicArtworksInfo[itemIndex].fontColor;
             this.store.changeCurrentLandingHeaderColor(headerColor);
+            this.store.changeCurrentLandingHeaderFontColor(fontColor);
         },
         closeItemDetailsOverlay() {
             // Hide overlay
@@ -71,6 +73,7 @@ export default {
             this.enableCarouselNextItemTimer = true;
             // Reset header color to default
             this.store.changeCurrentLandingHeaderColor('');
+            this.store.changeCurrentLandingHeaderFontColor('');
         },
     },
 }

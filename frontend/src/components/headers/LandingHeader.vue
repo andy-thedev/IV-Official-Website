@@ -3,6 +3,7 @@
         class="iv-landing-header"
         :style="{
             backgroundColor: color,
+            color: fontColor,
         }"
     >
         <div class="left-items-container">
@@ -27,6 +28,10 @@
 export default {
     props: {
         color: {
+            type: String,
+            default: '',
+        },
+        fontColor: {
             type: String,
             default: '',
         }
@@ -73,10 +78,12 @@ export default {
         text-align: left;
 
         .left-option-numeral {
+            @include menu-option-interaction;
+
             font-size: 20px;
             margin: 0 0 0 36px;
 
-            @include menu-option-interaction;
+            transition: $transition-landing-header-color;
         }
     }
 
@@ -84,6 +91,8 @@ export default {
         .center-text {
             font-size: 25px;
             text-align: center;
+            
+            transition: $transition-landing-header-color;
         }
     }
 
@@ -92,10 +101,12 @@ export default {
         text-align: right;
 
         .right-option-text {
+            @include menu-option-interaction;
+
             font-size: 13px;
             margin: 0 36px 0 0;
 
-            @include menu-option-interaction
+            transition: $transition-landing-header-color;
         }
     }
 }
