@@ -1,7 +1,9 @@
 <template>
     <div
         class="iv-landing-header"
-        :class="{ 'opaque-header': !isTransparent }"
+        :style="{
+            backgroundColor: color,
+        }"
     >
         <div class="left-items-container">
             <font-awesome-icon
@@ -23,22 +25,18 @@
 
 <script>
 export default {
-  props: {
-      isTransparent: {
-          type: Boolean,
-          default: true,
-      }
-  }
+    props: {
+        color: {
+            type: String,
+            default: '',
+        }
+    },
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
 /* Assume the following css is for viewport width 1280px or below (See LandingWrapper.vue) */
-
-.opaque-header {
-    background-color: black!important;
-}
 
 .iv-landing-header {
     position: fixed;

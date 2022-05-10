@@ -2,17 +2,21 @@
     <div class="iv-landing-wrapper">
         <IVLandingMobileHeader
             v-if="isMobile"
-            :isTransparent="isLandingHeaderTransparent"
+            :color="store.currentLandingHeaderColor"
         />
         <IVLandingHeader
             v-else
-            :isTransparent="isLandingHeaderTransparent"
+            :color="store.currentLandingHeaderColor"
         />
         <router-view />
     </div>
 </template>
 
 <script>
+// Store state management
+import { store } from '@/store.js'
+
+// Headers
 import IVLandingHeader from '@/components/headers/LandingHeader.vue'
 import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue'
 
@@ -27,6 +31,8 @@ export default {
     },
     data() {
         return {
+            store,
+
             isLandingHeaderTransparent: true,
             isMobile: false,
         }
@@ -45,8 +51,14 @@ export default {
     },
     methods: {
         onScroll(e) {
-            // Landing header should turn transparent -> opaque if the user scrolls down far enough
-            this.isLandingHeaderTransparent = window.top.scrollY < LANDING_HEADER_OPAQUE_HEIGHT
+            // Landing header should turn:
+            // Transparent -> opaque black if the user scrolls down far enough
+            // Opaque black -> transparent if the user scrolls up far enough
+            if (window.top.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
+                this.store.changeCurrentLandingHeaderColor('');
+            } else {
+                this.store.changeCurrentLandingHeaderColor('black');
+            }
         },
         onResize(e) {
             // Show default/mobile view depending on user's viewport width

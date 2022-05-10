@@ -14,10 +14,15 @@ import {
     faChevronLeft,
     faMinus,
     faXmark,
+    faEyeSlash
 } from "@fortawesome/free-solid-svg-icons";
 import {
     faYoutube,
-    faSoundcloud
+    faSpotify,
+    faApple,
+    faSoundcloud,
+    faDeezer,
+    faAmazon,
 } from "@fortawesome/free-brands-svg-icons";
 // import {  } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
@@ -35,8 +40,15 @@ library.add(faChevronLeft);
 library.add(faChevronRight);
 library.add(faMinus);
 library.add(faXmark);
+library.add(faEyeSlash);
+
 library.add(faYoutube);
+library.add(faSpotify);
+library.add(faApple);
 library.add(faSoundcloud);
+library.add(faDeezer);
+library.add(faAmazon);
+
 
 // App setup
 const app = createApp(App);

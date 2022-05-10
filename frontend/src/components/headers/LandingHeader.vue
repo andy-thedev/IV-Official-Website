@@ -1,7 +1,9 @@
 <template>
     <div
         class="iv-landing-header"
-        :class="{ 'opaque-header': !isTransparent }"
+        :style="{
+            backgroundColor: color,
+        }"
     >
         <div class="left-items-container">
             <span class="left-option-numeral">I</span>
@@ -23,12 +25,12 @@
 
 <script>
 export default {
-  props: {
-      isTransparent: {
-          type: Boolean,
-          default: true,
-      }
-  }
+    props: {
+        color: {
+            type: String,
+            default: '',
+        }
+    },
 }
 </script>
 
@@ -43,10 +45,6 @@ export default {
     &:hover {
         color: $primary-color;
     }
-}
-
-.opaque-header {
-    background-color: black!important;
 }
 
 .iv-landing-header {

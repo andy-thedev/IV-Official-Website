@@ -1,9 +1,8 @@
 <template>
     <div
         class="iv-platform-table"
-        :style="{
-            width: width,
-        }"
+        :class="{ 'landing-dynamic': dynamicSizePreset === 'landing'}"
+        :style="{ width: width }"
     >
         <div class="title">
             {{ title }}
@@ -25,6 +24,35 @@
                 <div class="platform-text">Youtube</div>
             </div>
         </div>
+
+        <div
+            v-if="platforms.includes('spotify')"
+            class="platform-option-container"
+            @click.stop="goToUrl(options.spotify)"
+        >
+            <div class="platform-option-wrapper">
+                <font-awesome-icon
+                    :icon="['fab', 'spotify']"
+                    class="platform-icon"
+                />
+                <div class="platform-text">Spotify</div>
+            </div>
+        </div>
+
+        <div
+            v-if="platforms.includes('appleMusic')"
+            class="platform-option-container"
+            @click.stop="goToUrl(options.appleMusic)"
+        >
+            <div class="platform-option-wrapper">
+                <font-awesome-icon
+                    :icon="['fab', 'apple']"
+                    class="platform-icon"
+                />
+                <div class="platform-text">Apple music</div>
+            </div>
+        </div>
+
         <div
             v-if="platforms.includes('soundcloud')"
             class="platform-option-container"
@@ -36,6 +64,49 @@
                     class="platform-icon"
                 />
                 <div class="platform-text">Soundcloud</div>
+            </div>
+        </div>
+
+        <div
+            v-if="platforms.includes('deezer')"
+            class="platform-option-container"
+            @click.stop="goToUrl(options.deezer)"
+        >
+            <div class="platform-option-wrapper">
+                <font-awesome-icon
+                    :icon="['fab', 'deezer']"
+                    class="platform-icon"
+                />
+                <div class="platform-text">Deezer</div>
+            </div>
+        </div>
+
+        <div
+            v-if="platforms.includes('amazonMusic')"
+            class="platform-option-container"
+            @click.stop="goToUrl(options.amazonMusic)"
+        >
+            <div class="platform-option-wrapper">
+                <font-awesome-icon
+                    :icon="['fab', 'amazon']"
+                    class="platform-icon"
+                />
+                <div class="platform-text">Amazon music</div>
+            </div>
+        </div>
+
+        <div
+            v-if="platforms.length === 0"
+            class="platform-option-container remove-cursor-pointer"
+        >
+            <div class="platform-option-wrapper">
+                <font-awesome-icon
+                    :icon="['fas', 'eye-slash']"
+                    class="platform-icon"
+                />
+                <div class="platform-text remove-nowrap">
+                    This track is no longer available
+                </div>
             </div>
         </div>
     </div>
@@ -51,12 +122,20 @@ export default {
             default: '',
         },
         width: {
+            // If `dynamicSizePreset` is set to a viable value, `width` will not affect
+            // the styling of this component.
             type: String,
             default: '100%',
         },
         options: {
             type: Object,
             default: null,
+        },
+        dynamicSizePreset: {
+            // This will overwrite existing styles of this component, and potentially
+            // other props that are passed in.
+            type: String,
+            default: ''
         }
     },
     data() {
@@ -79,6 +158,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/mixin-presets';
+
+.landing-dynamic {
+    @include landing-dynamic-sizes;
+}
+
+.remove-cursor-pointer {
+    cursor: default!important;
+}
+
 .iv-platform-table {
     display: flex;
     flex-direction: column;
@@ -99,7 +188,7 @@ export default {
     .title-border {
         width: 100%;
         border: white 1px solid;
-        margin: 18px 0 0 0;
+        margin: 25px 0 0 0;
     }
 
     .platform-option-container{
@@ -109,8 +198,8 @@ export default {
         justify-content: center;
         align-items: center;
 
-        padding: 20px 0 20px 0;
-        border-bottom: rgb(255 255 255 / 0.4) solid 1px;
+        padding: 22px 0 22px 0;
+        border-bottom: rgb(255 255 255 / 0.2) solid 2px;
 
         cursor: pointer;
 
@@ -130,9 +219,13 @@ export default {
             .platform-text {
                 font-family: Raleway;
                 font-weight: 700;
-                font-size: 20px;
+                font-size: 17px;
                 white-space: nowrap;
                 text-transform: uppercase;
+
+                &.remove-nowrap {
+                    white-space: normal;
+                }
             }
         }
     }
