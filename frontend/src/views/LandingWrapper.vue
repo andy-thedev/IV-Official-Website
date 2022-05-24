@@ -4,12 +4,30 @@
             v-if="isMobile"
             :color="store.currentLandingHeaderColor"
             :fontColor="store.currentLandingHeaderFontColor"
+            @selectedMobileMembers="showMemberOverlay"
+            @selectedMobileMenu="showMenuOverlay"
+            @close="closeOverlay"
         />
         <IVLandingHeader
             v-else
             :color="store.currentLandingHeaderColor"
             :fontColor="store.currentLandingHeaderFontColor"
+            @selectedMember="showMemberOverlay"
+            @selectedMenu="showMenuOverlay"
         />
+        <transition
+            name="fade"
+        >
+            <IVOverlay
+                v-if="store.currentOverlay && store.currentOverlay.trigger === 'member'"
+                @close="closeOverlay"
+            >
+                <IVMembersMobileList
+                    v-if="isMobile"
+                    :members="store.currentOverlay.members"
+                />
+            </IVOverlay>
+        </transition>
         <router-view />
     </div>
 </template>
@@ -18,25 +36,41 @@
 // Store state management
 import { store } from '@/store.js'
 
+// JSON file
+import commonVariables from '@/assets/data/common-variables.json';
+
 // Headers
 import IVLandingHeader from '@/components/headers/LandingHeader.vue'
 import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue'
 
-const RESIZE_WIDTH = 1280;
+// Global overlays
+import IVOverlay from '@/components/widgets/Overlay.vue';
+import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
+
+const RESIZE_WIDTH = 1281;
 const LANDING_HEADER_OPAQUE_HEIGHT = 500
 
 export default {
     name: 'LandingWrapper',
     components: {
+        // Headers
         IVLandingHeader,
         IVLandingMobileHeader,
+
+        // Global overlays
+        IVOverlay,
+        IVMembersMobileList,
     },
     data() {
         return {
             store,
-
-            isLandingHeaderTransparent: true,
             isMobile: false,
+
+            // Header properties
+            isLandingHeaderTransparent: true,
+
+            // Global overlay
+            membersList: commonVariables.members
         }
     },
     created() {
@@ -72,16 +106,44 @@ export default {
                 // Case 1: viewport width less than resize limit, but is already mobile view
                 // Case 2: viewport width greater than resize limit, but is already default view
             }
+        },
+        showMemberOverlay(index) {
+            // Disable next item timer in case user is on landing page
+            this.store.disableCarouselNextItemTimer();
+            // Reset header color to default
+            this.store.changeCurrentLandingHeaderColor('');
+            this.store.changeCurrentLandingHeaderFontColor('');
+            // Show overlay
+            this.store.changeCurrentOverlay({
+                members: this.membersList.map(member => member.name)
+            }, 'member');
+        },
+        showMenuOverlay(index) {
+            // Disable next item timer in case user is on landing page
+            this.store.disableCarouselNextItemTimer();
+            // Reset header color to default
+            this.store.changeCurrentLandingHeaderColor('');
+            this.store.changeCurrentLandingHeaderFontColor('');
+            // Show overlay
+        },
+        closeOverlay() {
+            // Hide overlay
+            this.store.closeCurrentOverlay();
+            this.store.activateCarouselNextItemTimer();
         }
     },
 }
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/mixin-presets';
+
 .iv-landing-wrapper {
     width: 100vw;
 
     display: flex;
     flex-direction: column;
+
+    @include fade-transition-preset;
 }
 </style>

@@ -7,24 +7,36 @@
         }"
     >
         <div class="left-items-container">
-            <span class="left-option-numeral">I</span>
-            <span class="left-option-numeral">II</span>
-            <span class="left-option-numeral">III</span>
-            <span class="left-option-numeral">IV</span>
+            <span
+                v-for="(member, index) in membersList"
+                :key="index"
+                class="left-option-numeral"
+                @click="selectMember(index)"
+            >
+                {{ member.key }}
+            </span>
         </div>
         <div class= "center-brand">
             <span class="center-text">INDIVISUAL</span>
         </div>
         <div class="right-items-container">
-            <span class="right-option-text">SONGS</span>
-            <span class="right-option-text">NEWS</span>
-            <span class="right-option-text">ABOUT US</span>
-            <span class="right-option-text">CONTACT</span>
+            <span
+                v-for="(menu, index) in menuList"
+                :key="index"
+                class="right-option-text"
+                @click="selectMenu(index)"
+            >
+                {{ menu.name }}
+            </span>
         </div>
+
     </div>
 </template>
 
 <script>
+// JSON file
+import commonVariables from '@/assets/data/common-variables.json';
+
 export default {
     props: {
         color: {
@@ -36,6 +48,23 @@ export default {
             default: '',
         }
     },
+    data() {
+        return {
+            // Members
+            membersList: commonVariables.members,
+
+            // Menu
+            menuList: commonVariables.landingHeaderMenu,
+        }
+    },
+    methods: {
+        selectMember(index) {
+            this.$emit('selectedMember', index);
+        },
+        selectMenu(index) {
+            this.$emit('selectedMenu', index);
+        }
+    }
 }
 </script>
 
@@ -45,7 +74,7 @@ export default {
 @mixin menu-option-interaction {
     cursor: pointer;
 
-    transition: $transition-landing-header-hover-text;
+    transition: $transition-landing-header-font-color;
 
     &:hover {
         color: $primary-color;
@@ -53,6 +82,7 @@ export default {
 }
 
 .iv-landing-header {
+
     position: fixed;
     top: 0;
     right: 0;
@@ -64,7 +94,7 @@ export default {
 
     width: 100%;
     height: 75px;
-    z-index: 1000;
+    z-index: $z-header;
 
     background-color: $background-color-landing-header;
     transition: $transition-landing-header-darken;
@@ -83,7 +113,7 @@ export default {
             font-size: 20px;
             margin: 0 0 0 36px;
 
-            transition: $transition-landing-header-color;
+            transition: $transition-landing-header-font-color;
         }
     }
 
@@ -92,7 +122,7 @@ export default {
             font-size: 25px;
             text-align: center;
             
-            transition: $transition-landing-header-color;
+            transition: $transition-landing-header-font-color;
         }
     }
 
@@ -106,7 +136,7 @@ export default {
             font-size: 13px;
             margin: 0 36px 0 0;
 
-            transition: $transition-landing-header-color;
+            transition: $transition-landing-header-font-color;
         }
     }
 }

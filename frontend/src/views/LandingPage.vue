@@ -3,19 +3,22 @@
         <div class="section">
             <IVCarousel
                 :carouselItemsInfo="landingMusicArtworksInfo"
-                :enableNextItemTimer="enableCarouselNextItemTimer"
-                @item-selected="showItemDetailsOverlay"
+                :enableNextItemTimer="store.enableCarouselNextItemTimer"
+                @itemSelected="showItemDetailsOverlay"
             />
         </div>
         <transition name="fade">
             <IVOverlay
-                v-if="selectedMusicInfo"
+                v-if="
+                    store.currentOverlay
+                    && store.currentOverlay.trigger === 'landingCarousel'
+                "
                 @close="closeItemDetailsOverlay"
             >
                 <IVPlatformList
                     dynamicSizePreset="landing"
-                    :title="selectedMusicInfo.title"
-                    :options="selectedMusicInfo.platforms"
+                    :title="store.currentOverlay.title"
+                    :options="store.currentOverlay.platforms"
                 />
             </IVOverlay>
         </transition>
@@ -47,19 +50,16 @@ export default {
 
             // Carousel content details
             landingMusicArtworksInfo: landingCarouselItemsData.items,
-            // Enables/disables auto-sliding of carousel items
-            enableCarouselNextItemTimer: true,
-
-            // Platform list overlay
-            selectedMusicInfo: null,
         }
     },
     methods: {
         showItemDetailsOverlay(itemIndex) {
             // Stop carousel items from auto-sliding
-            this.enableCarouselNextItemTimer = false;
+            this.store.disableCarouselNextItemTimer();
             // Show overlay with selected carousel item info
-            this.selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
+            const selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
+            this.store.changeCurrentOverlay(selectedMusicInfo, 'landingCarousel');
+
             // Change header color to artwork theme color
             const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor;
             const fontColor = this.landingMusicArtworksInfo[itemIndex].fontColor;
@@ -68,9 +68,9 @@ export default {
         },
         closeItemDetailsOverlay() {
             // Hide overlay
-            this.selectedMusicInfo = null;
+            this.store.closeCurrentOverlay();
             // Enable carousel auto-slide
-            this.enableCarouselNextItemTimer = true;
+            this.store.activateCarouselNextItemTimer();
             // Reset header color to default
             this.store.changeCurrentLandingHeaderColor('');
             this.store.changeCurrentLandingHeaderFontColor('');
@@ -80,23 +80,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/mixin-presets';
+
 .landing-page {
     display: flex;
     flex-direction: column;
 
     width: 100vw;
-}
 
-.fade-enter-active {
-    transition: all 0.5s ease-in-out;
-}
-
-.fade-leave-active {
-    transition: all 0.5s ease-in-out;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    opacity: 0;
+    @include fade-transition-preset;
 }
 </style>

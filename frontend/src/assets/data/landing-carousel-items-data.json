@@ -3,7 +3,7 @@
         {
             "title": "Last Dance",
             "type": "img",
-            "headerColor": "#E2A700",
+            "headerColor": "#D8A826",
             "imageUrl": "@/assets/img/last-dance.jpg",
             "platforms": {
                 "spotify": "https://open.spotify.com/album/2unI47VdIhX4PpLIA8vFf0?highlight=spotify:track:0nL1ntF63UXNAwruuoaWfx",
@@ -17,7 +17,7 @@
         {
             "title": "leftover",
             "type": "img",
-            "headerColor": "#AEAEAE",
+            "headerColor": "#AAAAAA",
             "imageUrl": "@/assets/img/left-over.jpg",
             "platforms": {
                 "soundcloud": "https://soundcloud.com/rocadianco/sets/leftover"
@@ -26,7 +26,7 @@
         {
             "title": "Collection",
             "type": "img",
-            "headerColor": "#24243C",
+            "headerColor": "#26264B",
             "imageUrl": "@/assets/img/collection.jpg",
             "platforms": {
                 "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM",
@@ -36,7 +36,7 @@
         {
             "title": "Passenger seat",
             "type": "img",
-            "headerColor": "#2F1952",
+            "headerColor": "#3A1F65",
             "imageUrl": "@/assets/img/passenger-seat.jpg",
             "platforms": {
                 "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8FehtlkBJqcLimhjazdzUfAJ",
@@ -46,7 +46,7 @@
         {
             "title": "PDG PROJECT [2019]",
             "type": "img",
-            "headerColor": "#AAAAAA",
+            "headerColor": "#D1D1D1",
             "fontColor": "black",
             "imageUrl": "@/assets/img/pdg-project-2019.jpg",
             "platforms": {
@@ -56,7 +56,7 @@
         {
             "title": "종이비행기 (Fly!)",
             "type": "img",
-            "headerColor": "#339FBD",
+            "headerColor": "#1993B5",
             "imageUrl": "@/assets/img/fly.jpg",
             "platforms": {
                 "youtube": "https://youtube.com/watch?v=OSg0_Rz2iuU",
@@ -66,7 +66,7 @@
         {
             "title": "Lately",
             "type": "img",
-            "headerColor": "#44BFD5",
+            "headerColor": "#339FBD",
             "imageUrl": "@/assets/img/lately.jpg",
             "platforms": {
             }

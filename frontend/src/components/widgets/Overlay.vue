@@ -2,11 +2,11 @@
     <div class="iv-overlay"
         @click="close"
     >
-        <font-awesome-icon
+        <!-- <font-awesome-icon
             :icon="['fas', 'xmark']"
             class="close-icon"
             @click="close"
-        />
+        /> -->
         <slot></slot>
     </div>
 </template>
@@ -15,9 +15,14 @@
 export default {
     components: {
     },
+    props: {
+        type: {
+            type: String,
+            default: ''
+        }
+    },
     methods: {
         close() {
-            // In the landing page, the carousel item detail overlay should appear
             this.$emit('close');
         },
     }
@@ -25,6 +30,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/css/common-variables';
+
 .iv-overlay {
     width: 100%;
     height: 100%;
@@ -34,6 +41,8 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
+
+    z-index: $z-under-header;
 
     display: flex;
     justify-content: center;

@@ -5,6 +5,8 @@
             'width': width,
             'height': height, 
         }"
+        v-touch:swipe.left="nextItem"
+        v-touch:swipe.right="prevItem"
     >
         <!-- Carousel content -->
         <transition-group
@@ -66,6 +68,8 @@
 </template>
 
 <script>
+const CAROUSEL_NEXT_ITEM_TIMER = 6000;
+
 export default {
     components: {
     },
@@ -133,7 +137,7 @@ export default {
         startNextItemTimer() {
             this.NextItemTimer = setInterval(() => {
                 this.nextItem();
-            }, 4000);
+            }, CAROUSEL_NEXT_ITEM_TIMER);
         },
         clearNextItemTimer() {
             clearInterval(this.NextItemTimer);
@@ -316,19 +320,19 @@ $color-active-opaque: rgb(255 255 255 / 1);
 }
 
 .to-left-enter-active {
-    animation: slide-in-left 0.61s ease-in-out;
+    animation: slide-in-left 0.65s ease-in-out;
 }
 
 .to-left-leave-active {
-    animation: slide-out-left 0.61s ease-in-out;
+    animation: slide-out-left 0.65s ease-in-out;
 }
 
 .to-right-enter-active {
-    animation: slide-in-right 0.61s ease-in-out;
+    animation: slide-in-right 0.65s ease-in-out;
 }
 
 .to-right-leave-active {
-    animation: slide-out-right 0.61s ease-in-out;
+    animation: slide-out-right 0.65s ease-in-out;
 }
 
 @keyframes slide-in-left {
