@@ -13,7 +13,7 @@ export default {
   props: {
     members: {
       type: Array,
-      default: ['PG-13', 'Vermello', 'Roca Dianco', 'JAYAN'],
+      default: () => ['PG-13', 'Vermello', 'Roca Dianco', 'JAYAN'],
     },
   },
   data() {

@@ -35,7 +35,7 @@ import IVLandingHeader from '@/components/headers/LandingHeader.vue';
 import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue';
 
 // Global overlays
-import IVOverlay from '@/components/widgets/Overlay.vue';
+import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
 
 const RESIZE_WIDTH = 1281;
@@ -83,7 +83,7 @@ export default {
     ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
     ...mapActions('overlay', ['updateOverlay', 'closeOverlay']),
     ...mapActions('carousel', ['updateEnableNextItemTimer']),
-    onScroll(e) {
+    onScroll() {
       // Landing header should turn:
       // Transparent -> opaque black if the user scrolls down far enough
       // Opaque black -> transparent if the user scrolls up far enough
@@ -93,7 +93,7 @@ export default {
         this.updateHeaderColor('black');
       }
     },
-    onResize(e) {
+    onResize() {
       // Show default/mobile view depending on user's viewport width
       if (window.innerWidth < RESIZE_WIDTH && !this.isMobile) {
         this.isMobile = true;
@@ -104,7 +104,7 @@ export default {
         // Case 2: viewport width greater than resize limit, but is already default view
       }
     },
-    showMemberOverlay(index) {
+    showMemberOverlay() {
       // Disable next item timer in case user is on landing page
       this.updateEnableNextItemTimer(false);
       // Reset header color to default
@@ -118,7 +118,7 @@ export default {
         'member',
       );
     },
-    showMenuOverlay(index) {
+    showMenuOverlay() {
       // Disable next item timer in case user is on landing page
       this.updateEnableNextItemTimer(false);
       // Reset header color to default

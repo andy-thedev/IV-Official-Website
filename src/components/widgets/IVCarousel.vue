@@ -65,7 +65,7 @@ export default {
     },
     carouselItemsInfo: {
       type: Array,
-      default: [],
+      default: () => [],
     },
     enableNextItemTimer: {
       type: Boolean,
@@ -110,7 +110,7 @@ export default {
   mounted() {
     this.startNextItemTimer();
   },
-  beforeDestroy() {
+  beforeUnmount() {
     this.clearNextItemTimer();
   },
   methods: {

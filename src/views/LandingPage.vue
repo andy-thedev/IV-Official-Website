@@ -22,8 +22,8 @@ import { mapState, mapActions } from 'vuex';
 import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
 
 // Components
-import IVCarousel from '@/components/widgets/Carousel.vue';
-import IVOverlay from '@/components/widgets/Overlay.vue';
+import IVCarousel from '@/components/widgets/IVCarousel.vue';
+import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
 
 export default {
