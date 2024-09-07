@@ -25,9 +25,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
-// JSON file
+import { computed, onBeforeUnmount, onMounted, reactive, toRefs } from 'vue';
+import { useStore } from 'vuex';
 import commonVariables from '@/assets/data/common-variables.json';
 
 // Headers
@@ -44,93 +43,78 @@ const LANDING_HEADER_OPAQUE_HEIGHT = 500;
 export default {
   name: 'LandingWrapper',
   components: {
-    // Headers
     IVLandingHeader,
     IVLandingMobileHeader,
-
-    // Global overlays
     IVOverlay,
     IVMembersMobileList,
   },
-  data() {
-    return {
-      isMobile: false,
+  setup() {
+    const store = useStore();
 
-      // Header properties
-      isLandingHeaderTransparent: true,
-
-      // Global overlay
+    const state = reactive({
+      isMobile: window.innerWidth < RESIZE_WIDTH,
       membersList: commonVariables.members,
+    });
+
+    const headerColor = computed(() => store.state.landingHeader.headerColor);
+    const headerFontColor = computed(() => store.state.landingHeader.headerFontColor);
+    const overlay = computed(() => store.state.overlay.overlay);
+
+    const onScroll = () => {
+      if (window.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
+        store.dispatch('landingHeader/updateHeaderColor', '');
+      } else {
+        store.dispatch('landingHeader/updateHeaderColor', 'black');
+      }
     };
-  },
-  computed: {
-    ...mapState('landingHeader', ['headerColor', 'headerFontColor']),
-    ...mapState('overlay', ['overlay']),
-  },
-  created() {
-    // Check user's viewport to determine default/mobile view
-    this.isMobile = window.innerWidth < RESIZE_WIDTH;
-  },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll);
-    window.addEventListener('resize', this.onResize);
-  },
-  beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
-    window.removeEventListener('resize', this.onResize);
-  },
-  methods: {
-    ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
-    ...mapActions('overlay', ['updateOverlay', 'closeOverlay']),
-    ...mapActions('carousel', ['updateEnableNextItemTimer']),
-    onScroll() {
-      // Landing header should turn:
-      // Transparent -> opaque black if the user scrolls down far enough
-      // Opaque black -> transparent if the user scrolls up far enough
-      if (window.top.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
-        this.updateHeaderColor('');
-      } else {
-        this.updateHeaderColor('black');
+
+    const onResize = () => {
+      const newIsMobile = window.innerWidth < RESIZE_WIDTH;
+      if (state.isMobile !== newIsMobile) {
+        state.isMobile = newIsMobile;
       }
-    },
-    onResize() {
-      // Show default/mobile view depending on user's viewport width
-      if (window.innerWidth < RESIZE_WIDTH && !this.isMobile) {
-        this.isMobile = true;
-      } else if (window.innerWidth >= RESIZE_WIDTH && this.isMobile) {
-        this.isMobile = false;
-      } else {
-        // Case 1: viewport width less than resize limit, but is already mobile view
-        // Case 2: viewport width greater than resize limit, but is already default view
-      }
-    },
-    showMemberOverlay() {
-      // Disable next item timer in case user is on landing page
-      this.updateEnableNextItemTimer(false);
-      // Reset header color to default
-      this.updateHeaderColor('');
-      this.updateHeaderFontColor('');
-      // Show overlay
-      this.updateOverlay(
-        {
-          members: this.membersList.map((member) => member.name),
-        },
-        'member',
-      );
-    },
-    showMenuOverlay() {
-      // Disable next item timer in case user is on landing page
-      this.updateEnableNextItemTimer(false);
-      // Reset header color to default
-      this.updateHeaderColor('');
-      this.updateHeaderFontColor('');
-      // Show overlay
-    },
-    closeOverlay() {
-      // Hide overlay
-      this.closeOverlay();
-      this.updateEnableNextItemTimer(true);
-    },
+    };
+
+    const showMemberOverlay = () => {
+      store.dispatch('carousel/updateEnableNextItemTimer', false);
+      store.dispatch('landingHeader/updateHeaderColor', '');
+      store.dispatch('landingHeader/updateHeaderFontColor', '');
+      store.dispatch('overlay/updateOverlay', {
+        members: state.membersList.map((member) => member.name),
+        trigger: 'member',
+      });
+    };
+
+    const showMenuOverlay = () => {
+      store.dispatch('carousel/updateEnableNextItemTimer', false);
+      store.dispatch('landingHeader/updateHeaderColor', '');
+      store.dispatch('landingHeader/updateHeaderFontColor', '');
+    };
+
+    const closeOverlay = () => {
+      store.dispatch('overlay/closeOverlay');
+      store.dispatch('carousel/updateEnableNextItemTimer', true);
+    };
+
+    onMounted(() => {
+      window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', onResize);
+    });
+
+    onBeforeUnmount(() => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    });
+
+    return {
+      ...toRefs(state),
+      headerColor,
+      headerFontColor,
+      overlay,
+      showMemberOverlay,
+      showMenuOverlay,
+      closeOverlay,
+    };
   },
 };
 </script>
@@ -140,10 +124,8 @@ export default {
 
 .iv-landing-wrapper {
   width: 100vw;
-
   display: flex;
   flex-direction: column;
-
   @include fade-transition-preset;
 }
 </style>

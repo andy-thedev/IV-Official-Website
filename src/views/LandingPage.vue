@@ -16,9 +16,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-
-// JSON file
+import { computed, ref } from 'vue';
+import { useStore } from 'vuex';
 import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
 
 // Components
@@ -32,43 +31,39 @@ export default {
     IVOverlay,
     IVPlatformList,
   },
-  props: {},
-  data() {
-    return {
-      // Carousel content details
-      landingMusicArtworksInfo: landingCarouselItemsData.items,
-    };
-  },
-  computed: {
-    ...mapState('overlay', ['overlay']),
-    ...mapState('carousel', ['enableNextItemTimer']),
-  },
-  methods: {
-    ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
-    ...mapActions('overlay', ['updateOverlay', 'closeOverlay']),
-    ...mapActions('carousel', ['updateEnableNextItemTimer']),
-    showItemDetailsOverlay(itemIndex) {
-      // Stop carousel items from auto-sliding
-      this.updateEnableNextItemTimer(false);
-      // Show overlay with selected carousel item info
-      const selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
-      this.updateOverlay({ overlayInfo: selectedMusicInfo, trigger: 'landingCarousel' });
+  setup() {
+    const store = useStore();
 
-      // Change header color to artwork theme color
-      const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor;
-      const fontColor = this.landingMusicArtworksInfo[itemIndex].fontColor;
-      this.updateHeaderColor(headerColor);
-      this.updateHeaderFontColor(fontColor);
-    },
-    closeItemDetailsOverlay() {
-      // Hide overlay
-      this.closeOverlay();
-      // Enable carousel auto-slide
-      this.updateEnableNextItemTimer(true);
-      // Reset header color to default
-      this.updateHeaderColor('');
-      this.updateHeaderFontColor('');
-    },
+    const landingMusicArtworksInfo = ref(landingCarouselItemsData.items);
+
+    const overlay = computed(() => store.state.overlay.overlay);
+    const enableNextItemTimer = computed(() => store.state.carousel.enableNextItemTimer);
+
+    const showItemDetailsOverlay = (itemIndex) => {
+      store.dispatch('carousel/updateEnableNextItemTimer', false);
+      const selectedMusicInfo = landingMusicArtworksInfo.value[itemIndex];
+      store.dispatch('overlay/updateOverlay', { overlayInfo: selectedMusicInfo, trigger: 'landingCarousel' });
+
+      const headerColor = selectedMusicInfo.headerColor;
+      const fontColor = selectedMusicInfo.fontColor;
+      store.dispatch('landingHeader/updateHeaderColor', headerColor);
+      store.dispatch('landingHeader/updateHeaderFontColor', fontColor);
+    };
+
+    const closeItemDetailsOverlay = () => {
+      store.dispatch('overlay/closeOverlay');
+      store.dispatch('carousel/updateEnableNextItemTimer', true);
+      store.dispatch('landingHeader/updateHeaderColor', '');
+      store.dispatch('landingHeader/updateHeaderFontColor', '');
+    };
+
+    return {
+      landingMusicArtworksInfo,
+      overlay,
+      enableNextItemTimer,
+      showItemDetailsOverlay,
+      closeItemDetailsOverlay,
+    };
   },
 };
 </script>
@@ -79,9 +74,7 @@ export default {
 .landing-page {
   display: flex;
   flex-direction: column;
-
   width: 100vw;
-
   @include fade-transition-preset;
 }
 </style>
