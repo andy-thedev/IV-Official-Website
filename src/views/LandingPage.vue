@@ -25,6 +25,8 @@
 <script>
 // Store state management
 import { store } from '@/store.js';
+import { mapActions } from 'vuex';
+
 // JSON file
 import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
 
@@ -43,12 +45,12 @@ export default {
   data() {
     return {
       store,
-
       // Carousel content details
       landingMusicArtworksInfo: landingCarouselItemsData.items,
     };
   },
   methods: {
+    ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
     showItemDetailsOverlay(itemIndex) {
       // Stop carousel items from auto-sliding
       this.store.disableCarouselNextItemTimer();
@@ -59,8 +61,8 @@ export default {
       // Change header color to artwork theme color
       const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor;
       const fontColor = this.landingMusicArtworksInfo[itemIndex].fontColor;
-      this.store.changeCurrentLandingHeaderColor(headerColor);
-      this.store.changeCurrentLandingHeaderFontColor(fontColor);
+      this.updateHeaderColor(headerColor);
+      this.updateHeaderFontColor(fontColor);
     },
     closeItemDetailsOverlay() {
       // Hide overlay
@@ -68,7 +70,7 @@ export default {
       // Enable carousel auto-slide
       this.store.activateCarouselNextItemTimer();
       // Reset header color to default
-      this.store.changeCurrentLandingHeaderColor('');
+      this.updateHeaderColor('');
       this.store.changeCurrentLandingHeaderFontColor('');
     },
   },

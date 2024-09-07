@@ -15,15 +15,6 @@
       }
     },
     {
-      "title": "leftover",
-      "type": "img",
-      "headerColor": "#AAAAAA",
-      "imageUrl": "@/assets/img/left-over.jpg",
-      "platforms": {
-        "soundcloud": "https://soundcloud.com/rocadianco/sets/leftover"
-      }
-    },
-    {
       "title": "Collection",
       "type": "img",
       "headerColor": "#26264B",
@@ -31,16 +22,6 @@
       "platforms": {
         "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM",
         "soundcloud": "https://soundcloud.com/indivisualiv/sets/collection"
-      }
-    },
-    {
-      "title": "Passenger seat",
-      "type": "img",
-      "headerColor": "#3A1F65",
-      "imageUrl": "@/assets/img/passenger-seat.jpg",
-      "platforms": {
-        "youtube": "https://youtube.com/playlist?list=PLfhZYVxDt8FehtlkBJqcLimhjazdzUfAJ",
-        "soundcloud": "https://soundcloud.com/rocadianco/sets/passenger-seat"
       }
     },
     {

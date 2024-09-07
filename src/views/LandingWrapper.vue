@@ -2,16 +2,16 @@
   <div class="iv-landing-wrapper">
     <IVLandingMobileHeader
       v-if="isMobile"
-      :color="store.currentLandingHeaderColor"
-      :fontColor="store.currentLandingHeaderFontColor"
+      :color="headerColor"
+      :fontColor="headerFontColor"
       @selectedMobileMembers="showMemberOverlay"
       @selectedMobileMenu="showMenuOverlay"
       @close="closeOverlay"
     />
     <IVLandingHeader
       v-else
-      :color="store.currentLandingHeaderColor"
-      :fontColor="store.currentLandingHeaderFontColor"
+      :color="headerColor"
+      :fontColor="headerFontColor"
       @selectedMember="showMemberOverlay"
       @selectedMenu="showMenuOverlay"
     />
@@ -27,6 +27,7 @@
 <script>
 // Store state management
 import { store } from '@/store.js';
+import { mapState, mapActions } from 'vuex';
 
 // JSON file
 import commonVariables from '@/assets/data/common-variables.json';
@@ -65,6 +66,9 @@ export default {
       membersList: commonVariables.members,
     };
   },
+  computed: {
+    ...mapState('landingHeader', ['headerColor', 'headerFontColor']),
+  },
   created() {
     // Check user's viewport to determine default/mobile view
     this.isMobile = window.innerWidth < RESIZE_WIDTH;
@@ -73,19 +77,20 @@ export default {
     window.addEventListener('scroll', this.onScroll);
     window.addEventListener('resize', this.onResize);
   },
-  beforeDestroy() {
+  beforeUnmount() {
     window.removeEventListener('scroll', this.onScroll);
     window.removeEventListener('resize', this.onResize);
   },
   methods: {
+    ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
     onScroll(e) {
       // Landing header should turn:
       // Transparent -> opaque black if the user scrolls down far enough
       // Opaque black -> transparent if the user scrolls up far enough
       if (window.top.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
-        this.store.changeCurrentLandingHeaderColor('');
+        this.updateHeaderColor('');
       } else {
-        this.store.changeCurrentLandingHeaderColor('black');
+        this.updateHeaderColor('black');
       }
     },
     onResize(e) {
@@ -103,7 +108,7 @@ export default {
       // Disable next item timer in case user is on landing page
       this.store.disableCarouselNextItemTimer();
       // Reset header color to default
-      this.store.changeCurrentLandingHeaderColor('');
+      this.updateHeaderColor('');
       this.store.changeCurrentLandingHeaderFontColor('');
       // Show overlay
       this.store.changeCurrentOverlay(
@@ -117,7 +122,7 @@ export default {
       // Disable next item timer in case user is on landing page
       this.store.disableCarouselNextItemTimer();
       // Reset header color to default
-      this.store.changeCurrentLandingHeaderColor('');
+      this.updateHeaderColor('');
       this.store.changeCurrentLandingHeaderFontColor('');
       // Show overlay
     },
