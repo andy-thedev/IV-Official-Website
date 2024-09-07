@@ -4,6 +4,7 @@ const config = {
   useTabs: false,
   singleQuote: true,
   trailingComma: 'all',
+  endOfLine: 'lf',
 };
 
-export default config;
+module.exports = config;

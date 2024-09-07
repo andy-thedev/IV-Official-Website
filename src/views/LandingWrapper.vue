@@ -16,14 +16,8 @@
       @selectedMenu="showMenuOverlay"
     />
     <transition name="fade">
-      <IVOverlay
-        v-if="store.currentOverlay && store.currentOverlay.trigger === 'member'"
-        @close="closeOverlay"
-      >
-        <IVMembersMobileList
-          v-if="isMobile"
-          :members="store.currentOverlay.members"
-        />
+      <IVOverlay v-if="store.currentOverlay && store.currentOverlay.trigger === 'member'" @close="closeOverlay">
+        <IVMembersMobileList v-if="isMobile" :members="store.currentOverlay.members" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -32,24 +26,24 @@
 
 <script>
 // Store state management
-import { store } from "@/store.js";
+import { store } from '@/store.js';
 
 // JSON file
-import commonVariables from "@/assets/data/common-variables.json";
+import commonVariables from '@/assets/data/common-variables.json';
 
 // Headers
-import IVLandingHeader from "@/components/headers/LandingHeader.vue";
-import IVLandingMobileHeader from "@/components/headers/LandingMobileHeader.vue";
+import IVLandingHeader from '@/components/headers/LandingHeader.vue';
+import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue';
 
 // Global overlays
-import IVOverlay from "@/components/widgets/Overlay.vue";
-import IVMembersMobileList from "@/components/widgets/MembersMobileList.vue";
+import IVOverlay from '@/components/widgets/Overlay.vue';
+import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
 
 const RESIZE_WIDTH = 1281;
 const LANDING_HEADER_OPAQUE_HEIGHT = 500;
 
 export default {
-  name: "LandingWrapper",
+  name: 'LandingWrapper',
   components: {
     // Headers
     IVLandingHeader,
@@ -76,12 +70,12 @@ export default {
     this.isMobile = window.innerWidth < RESIZE_WIDTH;
   },
   mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("resize", this.onResize);
+    window.addEventListener('scroll', this.onScroll);
+    window.addEventListener('resize', this.onResize);
   },
   beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll);
-    window.removeEventListener("resize", this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onResize);
   },
   methods: {
     onScroll(e) {
@@ -89,9 +83,9 @@ export default {
       // Transparent -> opaque black if the user scrolls down far enough
       // Opaque black -> transparent if the user scrolls up far enough
       if (window.top.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
-        this.store.changeCurrentLandingHeaderColor("");
+        this.store.changeCurrentLandingHeaderColor('');
       } else {
-        this.store.changeCurrentLandingHeaderColor("black");
+        this.store.changeCurrentLandingHeaderColor('black');
       }
     },
     onResize(e) {
@@ -109,22 +103,22 @@ export default {
       // Disable next item timer in case user is on landing page
       this.store.disableCarouselNextItemTimer();
       // Reset header color to default
-      this.store.changeCurrentLandingHeaderColor("");
-      this.store.changeCurrentLandingHeaderFontColor("");
+      this.store.changeCurrentLandingHeaderColor('');
+      this.store.changeCurrentLandingHeaderFontColor('');
       // Show overlay
       this.store.changeCurrentOverlay(
         {
           members: this.membersList.map((member) => member.name),
         },
-        "member"
+        'member',
       );
     },
     showMenuOverlay(index) {
       // Disable next item timer in case user is on landing page
       this.store.disableCarouselNextItemTimer();
       // Reset header color to default
-      this.store.changeCurrentLandingHeaderColor("");
-      this.store.changeCurrentLandingHeaderFontColor("");
+      this.store.changeCurrentLandingHeaderColor('');
+      this.store.changeCurrentLandingHeaderFontColor('');
       // Show overlay
     },
     closeOverlay() {
@@ -137,7 +131,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "@/assets/css/mixin-presets";
+@import '@/assets/css/mixin-presets';
 
 .iv-landing-wrapper {
   width: 100vw;

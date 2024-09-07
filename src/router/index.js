@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from "vue-router";
-import LandingWrapper from '@/views/LandingWrapper.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import LandingWrapper from '@/views/LandingWrapper.vue';
 import LandingPage from '@/views/LandingPage.vue';
 
 const router = createRouter({
@@ -15,8 +15,8 @@ const router = createRouter({
           name: 'LandingPage',
           component: LandingPage,
         },
-      ]
-    }
+      ],
+    },
   ],
 });
 

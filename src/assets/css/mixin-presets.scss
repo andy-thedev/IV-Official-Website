@@ -1,106 +1,106 @@
 @import '@/assets/css/common-variables';
 
 @mixin fade-transition-preset {
-    .fade-enter-active {
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .fade-leave-active {
-        transition: all 0.5s ease-in-out;
-    }
-    
-    .fade-enter-from,
-    .fade-leave-to {
-        opacity: 0;
-    }
+  .fade-enter-active {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .fade-leave-active {
+    transition: all 0.5s ease-in-out;
+  }
+
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
+  }
 }
 
 // Landing page overlay platform list preset
 @mixin landing-dynamic-sizes {
+  &.iv-platform-table {
+    width: 21% !important;
+  }
+
+  @media (max-width: 1499px) {
     &.iv-platform-table {
-        width: 21%!important;
+      width: 35% !important;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    &.iv-platform-table {
+      width: 45% !important;
+    }
+  }
+
+  @media (max-width: 899px) {
+    &.iv-platform-table {
+      width: 55% !important;
+    }
+  }
+
+  @media (max-width: 599px) {
+    &.iv-platform-table {
+      width: 70% !important;
+    }
+    .title {
+      font-size: 20px !important;
     }
 
-    @media(max-width: 1499px) {
-        &.iv-platform-table {
-            width: 35%!important;
-        } 
+    .platform-option-container {
+      padding: 15px 0 15px 0 !important;
     }
 
-    @media(max-width: 1199px) {
-        &.iv-platform-table {
-            width: 45%!important;
-        } 
+    .platform-icon {
+      width: 35px !important;
+      height: 35px !important;
+      font-size: 35px !important;
+      margin-right: 20px !important;
     }
 
-    @media(max-width: 899px) {
-        &.iv-platform-table {
-            width: 55%!important;
-        } 
+    .platform-text {
+      font-size: 13px !important;
+    }
+  }
+
+  @media (max-width: 299px) {
+    .platform-option-wrapper {
+      width: 70% !important;
     }
 
-    @media(max-width: 599px) {
-        &.iv-platform-table {
-            width: 70%!important;
-        }
-        .title {
-            font-size: 20px!important;
-        }
-
-        .platform-option-container{
-            padding: 15px 0 15px 0!important;
-        }
-
-        .platform-icon {
-            width: 35px!important;
-            height: 35px!important;
-            font-size: 35px!important;
-            margin-right: 20px!important;
-        }
-
-        .platform-text {
-            font-size: 13px!important;
-        }
+    .platform-icon {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 30px !important;
     }
 
-    @media(max-width: 299px) {
-        .platform-option-wrapper {
-            width: 70%!important;
-        }
+    .platform-option-container {
+      padding: 10px 0 10px 0 !important;
+    }
+  }
 
-        .platform-icon {
-            width: 30px!important;
-            height: 30px!important;
-            font-size: 30px!important;
-        }
-
-        .platform-option-container{
-            padding: 10px 0 10px 0!important;
-        }
+  @media (max-width: 1280px) and (orientation: landscape) {
+    &.iv-platform-table {
+      width: 30% !important;
     }
 
-    @media(max-width: 1280px) and (orientation: landscape) {
-        &.iv-platform-table {
-            width: 30%!important;
-        }
-
-        .title {
-            font-size: 20px!important;
-        }
-
-        .platform-option-container{
-            padding: 10px 0 10px 0!important;
-        }
-
-        .platform-icon {
-            width: 30px!important;
-            height: 30px!important;
-            font-size: 30px!important;
-            margin-right: 20px!important;
-        }
-
-        .platform-text {
-            font-size: 13px!important;
-        }
+    .title {
+      font-size: 20px !important;
     }
+
+    .platform-option-container {
+      padding: 10px 0 10px 0 !important;
+    }
+
+    .platform-icon {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 30px !important;
+      margin-right: 20px !important;
+    }
+
+    .platform-text {
+      font-size: 13px !important;
+    }
+  }
 }

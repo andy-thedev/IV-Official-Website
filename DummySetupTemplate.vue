@@ -1,13 +1,11 @@
 <template>
-    <div class="">
-    </div>
+  <div class=""></div>
 </template>
 
 <script setup>
 const props = defineProps({
-    // foo: String
-})
+  // foo: String
+});
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
