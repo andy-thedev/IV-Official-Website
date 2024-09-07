@@ -3,29 +3,20 @@
     <div class="section">
       <IVCarousel
         :carouselItemsInfo="landingMusicArtworksInfo"
-        :enableNextItemTimer="store.enableCarouselNextItemTimer"
+        :enableNextItemTimer="enableNextItemTimer"
         @itemSelected="showItemDetailsOverlay"
       />
     </div>
     <transition name="fade">
-      <IVOverlay
-        v-if="store.currentOverlay && store.currentOverlay.trigger === 'landingCarousel'"
-        @close="closeItemDetailsOverlay"
-      >
-        <IVPlatformList
-          dynamicSizePreset="landing"
-          :title="store.currentOverlay.title"
-          :options="store.currentOverlay.platforms"
-        />
+      <IVOverlay v-if="overlay && overlay.trigger === 'landingCarousel'" @close="closeItemDetailsOverlay">
+        <IVPlatformList dynamicSizePreset="landing" :title="overlay.title" :options="overlay.platforms" />
       </IVOverlay>
     </transition>
   </div>
 </template>
 
 <script>
-// Store state management
-import { store } from '@/store.js';
-import { mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 // JSON file
 import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
@@ -44,19 +35,24 @@ export default {
   props: {},
   data() {
     return {
-      store,
       // Carousel content details
       landingMusicArtworksInfo: landingCarouselItemsData.items,
     };
   },
+  computed: {
+    ...mapState('overlay', ['overlay']),
+    ...mapState('carousel', ['enableNextItemTimer']),
+  },
   methods: {
     ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
+    ...mapActions('overlay', ['updateOverlay', 'closeOverlay']),
+    ...mapActions('carousel', ['updateEnableNextItemTimer']),
     showItemDetailsOverlay(itemIndex) {
       // Stop carousel items from auto-sliding
-      this.store.disableCarouselNextItemTimer();
+      this.updateEnableNextItemTimer(false);
       // Show overlay with selected carousel item info
       const selectedMusicInfo = this.landingMusicArtworksInfo[itemIndex];
-      this.store.changeCurrentOverlay(selectedMusicInfo, 'landingCarousel');
+      this.updateOverlay({ overlayInfo: selectedMusicInfo, trigger: 'landingCarousel' });
 
       // Change header color to artwork theme color
       const headerColor = this.landingMusicArtworksInfo[itemIndex].headerColor;
@@ -66,12 +62,12 @@ export default {
     },
     closeItemDetailsOverlay() {
       // Hide overlay
-      this.store.closeCurrentOverlay();
+      this.closeOverlay();
       // Enable carousel auto-slide
-      this.store.activateCarouselNextItemTimer();
+      this.updateEnableNextItemTimer(true);
       // Reset header color to default
       this.updateHeaderColor('');
-      this.store.changeCurrentLandingHeaderFontColor('');
+      this.updateHeaderFontColor('');
     },
   },
 };

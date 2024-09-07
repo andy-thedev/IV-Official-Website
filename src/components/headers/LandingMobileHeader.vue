@@ -19,8 +19,7 @@
 </template>
 
 <script>
-// Store state management
-import { store } from '@/store.js';
+import { mapState } from 'vuex';
 
 export default {
   props: {
@@ -33,16 +32,14 @@ export default {
       default: '',
     },
   },
-  data() {
-    return {
-      store,
-    };
+  computed: {
+    ...mapState('overlay', ['overlay']),
   },
   methods: {
     selectMembers() {
       // If overlay is already visible, disable it.
       // Otherwise, show overlay
-      if (this.store.currentOverlay && this.store.currentOverlay.trigger === 'member') {
+      if (this.overlay && this.overlay.trigger === 'member') {
         this.$emit('close');
       } else {
         this.$emit('selectedMobileMembers');

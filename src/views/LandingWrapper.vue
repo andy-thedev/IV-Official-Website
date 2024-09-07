@@ -16,8 +16,8 @@
       @selectedMenu="showMenuOverlay"
     />
     <transition name="fade">
-      <IVOverlay v-if="store.currentOverlay && store.currentOverlay.trigger === 'member'" @close="closeOverlay">
-        <IVMembersMobileList v-if="isMobile" :members="store.currentOverlay.members" />
+      <IVOverlay v-if="overlay && overlay.trigger === 'member'" @close="closeOverlay">
+        <IVMembersMobileList v-if="isMobile" :members="overlay.members" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -25,8 +25,6 @@
 </template>
 
 <script>
-// Store state management
-import { store } from '@/store.js';
 import { mapState, mapActions } from 'vuex';
 
 // JSON file
@@ -56,7 +54,6 @@ export default {
   },
   data() {
     return {
-      store,
       isMobile: false,
 
       // Header properties
@@ -68,6 +65,7 @@ export default {
   },
   computed: {
     ...mapState('landingHeader', ['headerColor', 'headerFontColor']),
+    ...mapState('overlay', ['overlay']),
   },
   created() {
     // Check user's viewport to determine default/mobile view
@@ -83,6 +81,8 @@ export default {
   },
   methods: {
     ...mapActions('landingHeader', ['updateHeaderColor', 'updateHeaderFontColor']),
+    ...mapActions('overlay', ['updateOverlay', 'closeOverlay']),
+    ...mapActions('carousel', ['updateEnableNextItemTimer']),
     onScroll(e) {
       // Landing header should turn:
       // Transparent -> opaque black if the user scrolls down far enough
@@ -106,12 +106,12 @@ export default {
     },
     showMemberOverlay(index) {
       // Disable next item timer in case user is on landing page
-      this.store.disableCarouselNextItemTimer();
+      this.updateEnableNextItemTimer(false);
       // Reset header color to default
       this.updateHeaderColor('');
-      this.store.changeCurrentLandingHeaderFontColor('');
+      this.updateHeaderFontColor('');
       // Show overlay
-      this.store.changeCurrentOverlay(
+      this.updateOverlay(
         {
           members: this.membersList.map((member) => member.name),
         },
@@ -120,16 +120,16 @@ export default {
     },
     showMenuOverlay(index) {
       // Disable next item timer in case user is on landing page
-      this.store.disableCarouselNextItemTimer();
+      this.updateEnableNextItemTimer(false);
       // Reset header color to default
       this.updateHeaderColor('');
-      this.store.changeCurrentLandingHeaderFontColor('');
+      this.updateHeaderFontColor('');
       // Show overlay
     },
     closeOverlay() {
       // Hide overlay
-      this.store.closeCurrentOverlay();
-      this.store.activateCarouselNextItemTimer();
+      this.closeOverlay();
+      this.updateEnableNextItemTimer(true);
     },
   },
 };
