@@ -3,48 +3,48 @@
     <div class="section">
       <IVCarousel
         :carouselItemsInfo="landingMusicArtworksInfo"
-        :enableNextItemTimer="enableNextItemTimer"
+        :enableNextItemTimer="useLandingCarousel.isNextItemTimerEnabled"
         @itemSelected="showItemDetailsOverlay"
       />
     </div>
     <transition name="fade">
-      <IVOverlay v-if="overlay && overlay.trigger === 'landingCarousel'" @close="closeItemDetailsOverlay">
-        <IVPlatformList dynamicSizePreset="landing" :title="overlay.title" :options="overlay.platforms" />
+      <IVOverlay
+        v-if="useOverlay.overlay && useOverlay.overlay.trigger === 'landingCarousel'"
+        @close="closeItemDetailsOverlay"
+      >
+        <IVPlatformList
+          dynamicSizePreset="landing"
+          :title="useOverlay.overlay.title"
+          :options="useOverlay.overlay.platforms"
+        />
       </IVOverlay>
     </transition>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
-import { useStore } from 'vuex';
+import { ref } from 'vue';
 import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
 import IVCarousel from '@/components/widgets/IVCarousel.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
-
-const store = useStore();
+import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
+import { useLandingHeader } from '@/composables/headers/useLandingHeader';
+import { useOverlay } from '@/composables/overlays/useOverlay';
 
 const landingMusicArtworksInfo = ref(landingCarouselItemsData.items);
-const overlay = computed(() => store.state.overlay.overlay);
-const enableNextItemTimer = computed(() => store.state.carousel.enableNextItemTimer);
 
 const showItemDetailsOverlay = (itemIndex) => {
-  store.dispatch('carousel/updateEnableNextItemTimer', false);
+  useLandingCarousel.enableNextItemTimer(false);
   const selectedMusicInfo = landingMusicArtworksInfo.value[itemIndex];
-  store.dispatch('overlay/updateOverlay', {
-    overlayInfo: selectedMusicInfo,
-    trigger: 'landingCarousel',
-  });
-  store.dispatch('landingHeader/updateHeaderColor', selectedMusicInfo.headerColor);
-  store.dispatch('landingHeader/updateHeaderFontColor', selectedMusicInfo.fontColor);
+  useOverlay.updateOverlay(selectedMusicInfo, 'landingCarousel');
+  useLandingHeader.updateHeaderAndFontColors(selectedMusicInfo.headerColor, selectedMusicInfo.fontColor);
 };
 
 const closeItemDetailsOverlay = () => {
-  store.dispatch('overlay/closeOverlay');
-  store.dispatch('carousel/updateEnableNextItemTimer', true);
-  store.dispatch('landingHeader/updateHeaderColor', '');
-  store.dispatch('landingHeader/updateHeaderFontColor', '');
+  useOverlay.closeOverlay();
+  useLandingCarousel.enableNextItemTimer(true);
+  useLandingHeader.resetHeaderAndFontColors();
 };
 </script>
 

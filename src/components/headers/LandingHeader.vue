@@ -19,8 +19,8 @@
 </template>
 
 <script setup>
-import { useStore } from 'vuex';
-import { computed, defineEmits } from 'vue';
+import { defineEmits } from 'vue';
+import { useOverlay } from '@/composables/overlays/useOverlay';
 
 defineProps({
   color: {
@@ -35,11 +35,8 @@ defineProps({
 
 const emit = defineEmits(['close', 'selectedMembers', 'selectedMenu']);
 
-const store = useStore();
-const overlay = computed(() => store.state.overlay.overlay);
-
 const selectMembers = () => {
-  if (overlay.value && overlay.value.trigger === 'member') {
+  if (useOverlay.overlay && useOverlay.overlay.trigger === 'member') {
     emit('close');
   } else {
     emit('selectedMembers');

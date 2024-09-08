@@ -1,7 +1,6 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
-import store from './store/index';
 
 // Global css styling
 import '@/assets/css/global-styles.scss';
@@ -47,7 +46,6 @@ library.add(faAmazon);
 const app = createApp(App);
 
 app.use(router);
-app.use(store);
 app.use(Vue3TouchEvents);
 
 app.component('font-awesome-icon', FontAwesomeIcon);
