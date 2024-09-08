@@ -1,23 +1,15 @@
 <template>
   <div class="iv-landing-wrapper">
-    <IVLandingMobileHeader
-      v-if="isMobile"
-      :color="headerColor"
-      :fontColor="headerFontColor"
-      @selectedMobileMembers="showMemberOverlay"
-      @selectedMobileMenu="showMenuOverlay"
-      @close="closeOverlay"
-    />
     <IVLandingHeader
-      v-else
       :color="headerColor"
       :fontColor="headerFontColor"
-      @selectedMember="showMemberOverlay"
+      @selectedMembers="showMemberOverlay"
       @selectedMenu="showMenuOverlay"
+      @close="closeOverlay"
     />
     <transition name="fade">
       <IVOverlay v-if="overlay && overlay.trigger === 'member'" @close="closeOverlay">
-        <IVMembersMobileList v-if="isMobile" :members="overlay.members" />
+        <IVMembersMobileList :members="overlay.members" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -25,11 +17,10 @@
 </template>
 
 <script setup>
-import { computed, onBeforeUnmount, onMounted, reactive, toRefs } from 'vue';
+import { computed, onBeforeUnmount, onMounted, reactive } from 'vue';
 import { useStore } from 'vuex';
 import commonVariables from '@/assets/data/common-variables.json';
 import IVLandingHeader from '@/components/headers/LandingHeader.vue';
-import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
 
@@ -91,8 +82,6 @@ onBeforeUnmount(() => {
   window.removeEventListener('scroll', onScroll);
   window.removeEventListener('resize', onResize);
 });
-
-const { isMobile } = toRefs(state);
 </script>
 
 <style lang="scss" scoped>
