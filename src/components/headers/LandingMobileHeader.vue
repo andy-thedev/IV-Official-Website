@@ -18,37 +18,36 @@
   </div>
 </template>
 
-<script>
-import { mapState } from 'vuex';
+<script setup>
+import { useStore } from 'vuex';
+import { computed, defineEmits } from 'vue';
 
-export default {
-  props: {
-    color: {
-      type: String,
-      default: '',
-    },
-    fontColor: {
-      type: String,
-      default: '',
-    },
+defineProps({
+  color: {
+    type: String,
+    default: '',
   },
-  computed: {
-    ...mapState('overlay', ['overlay']),
+  fontColor: {
+    type: String,
+    default: '',
   },
-  methods: {
-    selectMembers() {
-      // If overlay is already visible, disable it.
-      // Otherwise, show overlay
-      if (this.overlay && this.overlay.trigger === 'member') {
-        this.$emit('close');
-      } else {
-        this.$emit('selectedMobileMembers');
-      }
-    },
-    selectMenu() {
-      this.$emit('selectedMobileMenu');
-    },
-  },
+});
+
+const emit = defineEmits(['close', 'selectedMobileMembers', 'selectedMobileMenu']);
+
+const store = useStore();
+const overlay = computed(() => store.state.overlay.overlay);
+
+const selectMembers = () => {
+  if (overlay.value && overlay.value.trigger === 'member') {
+    emit('close');
+  } else {
+    emit('selectedMobileMembers');
+  }
+};
+
+const selectMenu = () => {
+  emit('selectedMobileMenu');
 };
 </script>
 
@@ -57,33 +56,25 @@ export default {
 
 @mixin menu-option-interaction {
   cursor: pointer;
-
   transition: $transition-landing-header-font-color;
-
   &:hover {
     color: $primary-color;
   }
 }
 
-/* Assume the following css is for viewport width 1280px or below (See LandingWrapper.vue) */
-
 .iv-landing-header {
   position: fixed;
   top: 0;
   right: 0;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-
   width: 100%;
   height: 75px;
   z-index: $z-header;
-
   background-color: $background-color-landing-header;
   transition: $transition-landing-header-darken;
-
   color: white;
   font-family: josefin sans, sans-serif;
   text-transform: uppercase;
@@ -91,11 +82,9 @@ export default {
   .left-items-container {
     flex: 1;
     text-align: left;
-
     .left-icon {
       font-size: 20px;
       margin: 0 0 0 30px;
-
       transition: $transition-landing-header-font-color;
     }
   }
@@ -104,7 +93,6 @@ export default {
     .center-text {
       font-size: 25px;
       text-align: center;
-
       transition: $transition-landing-header-font-color;
     }
   }
@@ -112,11 +100,9 @@ export default {
   .right-items-container {
     flex: 1;
     text-align: right;
-
     .right-icon {
       font-size: 20px;
       margin: 0 30px 0 0;
-
       transition: $transition-landing-header-font-color;
     }
   }

@@ -7,26 +7,14 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import IVTable from '@/components/widgets/Table.vue';
-
-export default {
-  components: {
-    IVTable,
-  },
-  props: {},
-  data() {},
-  computed: {},
-  created() {},
-  methods: {},
-};
 </script>
 
 <style lang="scss" scoped>
 .section {
   width: 100vw;
   height: 100vh;
-
   display: flex;
   justify-content: center;
   align-items: center;

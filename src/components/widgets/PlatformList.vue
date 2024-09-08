@@ -9,57 +9,15 @@
     </div>
     <div class="title-border" />
 
-    <div v-if="platforms.includes('youtube')" class="platform-option-container" @click.stop="goToUrl(options.youtube)">
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'youtube']" class="platform-icon" />
-        <div class="platform-text">Youtube</div>
-      </div>
-    </div>
-
-    <div v-if="platforms.includes('spotify')" class="platform-option-container" @click.stop="goToUrl(options.spotify)">
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'spotify']" class="platform-icon" />
-        <div class="platform-text">Spotify</div>
-      </div>
-    </div>
-
     <div
-      v-if="platforms.includes('appleMusic')"
+      v-for="platform in platforms"
+      :key="platform"
       class="platform-option-container"
-      @click.stop="goToUrl(options.appleMusic)"
+      @click.stop="goToUrl(options[platform])"
     >
       <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'apple']" class="platform-icon" />
-        <div class="platform-text">Apple music</div>
-      </div>
-    </div>
-
-    <div
-      v-if="platforms.includes('soundcloud')"
-      class="platform-option-container"
-      @click.stop="goToUrl(options.soundcloud)"
-    >
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'soundcloud']" class="platform-icon" />
-        <div class="platform-text">Soundcloud</div>
-      </div>
-    </div>
-
-    <div v-if="platforms.includes('deezer')" class="platform-option-container" @click.stop="goToUrl(options.deezer)">
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'deezer']" class="platform-icon" />
-        <div class="platform-text">Deezer</div>
-      </div>
-    </div>
-
-    <div
-      v-if="platforms.includes('amazonMusic')"
-      class="platform-option-container"
-      @click.stop="goToUrl(options.amazonMusic)"
-    >
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', 'amazon']" class="platform-icon" />
-        <div class="platform-text">Amazon music</div>
+        <font-awesome-icon :icon="['fab', platformIcon(platform)]" class="platform-icon" />
+        <div class="platform-text">{{ platformName(platform) }}</div>
       </div>
     </div>
 
@@ -72,45 +30,73 @@
   </div>
 </template>
 
-<script>
-export default {
-  components: {},
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    width: {
-      // If `dynamicSizePreset` is set to a viable value, `width` will not affect
-      // the styling of this component.
-      type: String,
-      default: '100%',
-    },
-    options: {
-      type: Object,
-      default: null,
-    },
-    dynamicSizePreset: {
-      // This will overwrite existing styles of this component, and potentially
-      // other props that are passed in.
-      type: String,
-      default: '',
-    },
+<script setup>
+import { computed } from 'vue';
+
+const props = defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-  data() {
-    return {};
+  width: {
+    type: String,
+    default: '100%',
   },
-  computed: {
-    platforms() {
-      return Object.keys(this.options);
-    },
+  options: {
+    type: Object,
+    default: () => ({}),
   },
-  created() {},
-  methods: {
-    goToUrl(url) {
-      window.open(url, '_blank');
-    },
+  dynamicSizePreset: {
+    type: String,
+    default: '',
   },
+});
+
+// Reactive references for data properties and computed values
+const platforms = computed(() => Object.keys(props.options));
+
+// Method defined in setup
+const goToUrl = (url) => {
+  window.open(url, '_blank');
+};
+
+// Helper method for formatting platform names
+const platformName = (name) => {
+  switch (name) {
+    case 'youtube':
+      return 'Youtube';
+    case 'spotify':
+      return 'Spotify';
+    case 'appleMusic':
+      return 'Apple Music';
+    case 'soundcloud':
+      return 'Soundcloud';
+    case 'deezer':
+      return 'Deezer';
+    case 'amazonMusic':
+      return 'Amazon Music';
+    default:
+      return name.charAt(0).toUpperCase() + name.slice(1);
+  }
+};
+
+const platformIcon = (name) => {
+  switch (name) {
+    case 'youtube':
+      return 'youtube';
+    case 'spotify':
+      return 'spotify';
+    case 'appleMusic':
+      return 'apple';
+    case 'soundcloud':
+      return 'soundcloud';
+    case 'deezer':
+      return 'deezer';
+    case 'amazonMusic':
+      return 'amazon';
+    default:
+      return 'headphones-alt';
+  }
 };
 </script>
 

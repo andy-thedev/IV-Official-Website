@@ -7,34 +7,26 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  components: {},
-  props: {
-    members: {
-      type: Array,
-      default: () => ['PG-13', 'Vermello', 'Roca Dianco', 'JAYAN'],
-    },
+
+<script setup>
+import { defineProps } from 'vue';
+
+defineProps({
+  members: {
+    type: Array,
+    default: () => ['PG-13', 'Vermello', 'Roca Dianco', 'JAYAN'],
   },
-  data() {
-    return {};
-  },
-  computed: {},
-  created() {},
-  methods: {},
-};
+});
 </script>
 
 <style lang="scss" scoped>
 .iv-members-mobile-list {
   width: 25%;
   height: 100%;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   font-family: Josefin Sans;
   font-weight: 600;
   text-transform: uppercase;
@@ -44,10 +36,8 @@ export default {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     width: 100%;
     border-bottom: rgb(255 255 255 / 0.2) solid 2px;
-
     padding: 50px 0 50px 0;
 
     .iv-member-list-item-text {
@@ -81,7 +71,6 @@ export default {
 @media (max-width: 899px) {
   .iv-members-mobile-list {
     width: 50%;
-
     .iv-member-list-item-wrapper {
       .iv-member-list-item-text {
         font-size: 35px;
@@ -93,7 +82,6 @@ export default {
 @media (max-width: 599px) {
   .iv-members-mobile-list {
     width: 50%;
-
     .iv-member-list-item-wrapper {
       .iv-member-list-item-text {
         font-size: 25px;
@@ -105,10 +93,8 @@ export default {
 @media (max-width: 450px) {
   .iv-members-mobile-list {
     width: 70%;
-
     .iv-member-list-item-wrapper {
       padding: 40px 0 40px 0;
-
       .iv-member-list-item-text {
         font-size: 25px;
       }
@@ -129,10 +115,8 @@ export default {
 @media (max-width: 1280px) and (orientation: landscape) {
   .iv-members-mobile-list {
     width: 30%;
-
     .iv-member-list-item-wrapper {
       padding: 35px 0 35px 0;
-
       .iv-member-list-item-text {
         font-size: 20px;
       }

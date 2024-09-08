@@ -24,99 +24,75 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import { computed, onBeforeUnmount, onMounted, reactive, toRefs } from 'vue';
 import { useStore } from 'vuex';
 import commonVariables from '@/assets/data/common-variables.json';
-
-// Headers
 import IVLandingHeader from '@/components/headers/LandingHeader.vue';
 import IVLandingMobileHeader from '@/components/headers/LandingMobileHeader.vue';
-
-// Global overlays
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
 
 const RESIZE_WIDTH = 1281;
 const LANDING_HEADER_OPAQUE_HEIGHT = 500;
 
-export default {
-  name: 'LandingWrapper',
-  components: {
-    IVLandingHeader,
-    IVLandingMobileHeader,
-    IVOverlay,
-    IVMembersMobileList,
-  },
-  setup() {
-    const store = useStore();
+const store = useStore();
+const state = reactive({
+  isMobile: window.innerWidth < RESIZE_WIDTH,
+  membersList: commonVariables.members,
+});
 
-    const state = reactive({
-      isMobile: window.innerWidth < RESIZE_WIDTH,
-      membersList: commonVariables.members,
-    });
+const headerColor = computed(() => store.state.landingHeader.headerColor);
+const headerFontColor = computed(() => store.state.landingHeader.headerFontColor);
+const overlay = computed(() => store.state.overlay.overlay);
 
-    const headerColor = computed(() => store.state.landingHeader.headerColor);
-    const headerFontColor = computed(() => store.state.landingHeader.headerFontColor);
-    const overlay = computed(() => store.state.overlay.overlay);
-
-    const onScroll = () => {
-      if (window.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
-        store.dispatch('landingHeader/updateHeaderColor', '');
-      } else {
-        store.dispatch('landingHeader/updateHeaderColor', 'black');
-      }
-    };
-
-    const onResize = () => {
-      const newIsMobile = window.innerWidth < RESIZE_WIDTH;
-      if (state.isMobile !== newIsMobile) {
-        state.isMobile = newIsMobile;
-      }
-    };
-
-    const showMemberOverlay = () => {
-      store.dispatch('carousel/updateEnableNextItemTimer', false);
-      store.dispatch('landingHeader/updateHeaderColor', '');
-      store.dispatch('landingHeader/updateHeaderFontColor', '');
-      store.dispatch('overlay/updateOverlay', {
-        members: state.membersList.map((member) => member.name),
-        trigger: 'member',
-      });
-    };
-
-    const showMenuOverlay = () => {
-      store.dispatch('carousel/updateEnableNextItemTimer', false);
-      store.dispatch('landingHeader/updateHeaderColor', '');
-      store.dispatch('landingHeader/updateHeaderFontColor', '');
-    };
-
-    const closeOverlay = () => {
-      store.dispatch('overlay/closeOverlay');
-      store.dispatch('carousel/updateEnableNextItemTimer', true);
-    };
-
-    onMounted(() => {
-      window.addEventListener('scroll', onScroll);
-      window.addEventListener('resize', onResize);
-    });
-
-    onBeforeUnmount(() => {
-      window.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', onResize);
-    });
-
-    return {
-      ...toRefs(state),
-      headerColor,
-      headerFontColor,
-      overlay,
-      showMemberOverlay,
-      showMenuOverlay,
-      closeOverlay,
-    };
-  },
+const onScroll = () => {
+  if (window.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
+    store.dispatch('landingHeader/updateHeaderColor', '');
+  } else {
+    store.dispatch('landingHeader/updateHeaderColor', 'black');
+  }
 };
+
+const onResize = () => {
+  const newIsMobile = window.innerWidth < RESIZE_WIDTH;
+  if (state.isMobile !== newIsMobile) {
+    state.isMobile = newIsMobile;
+  }
+};
+
+const showMemberOverlay = () => {
+  store.dispatch('carousel/updateEnableNextItemTimer', false);
+  store.dispatch('landingHeader/updateHeaderColor', '');
+  store.dispatch('landingHeader/updateHeaderFontColor', '');
+  store.dispatch('overlay/updateOverlay', {
+    members: state.membersList.map((member) => member.name),
+    trigger: 'member',
+  });
+};
+
+const showMenuOverlay = () => {
+  store.dispatch('carousel/updateEnableNextItemTimer', false);
+  store.dispatch('landingHeader/updateHeaderColor', '');
+  store.dispatch('landingHeader/updateHeaderFontColor', '');
+};
+
+const closeOverlay = () => {
+  store.dispatch('overlay/closeOverlay');
+  store.dispatch('carousel/updateEnableNextItemTimer', true);
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll);
+  window.addEventListener('resize', onResize);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener('scroll', onScroll);
+  window.removeEventListener('resize', onResize);
+});
+
+const { isMobile } = toRefs(state);
 </script>
 
 <style lang="scss" scoped>
