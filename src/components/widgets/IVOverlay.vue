@@ -1,17 +1,10 @@
 <template>
   <div class="iv-overlay" @click="close">
-    <!-- <font-awesome-icon
-      :icon="['fas', 'xmark']"
-      class="close-icon"
-      @click.stop="close"
-    /> -->
     <slot></slot>
   </div>
 </template>
 
 <script setup>
-import { defineProps, defineEmits } from 'vue';
-
 defineProps({
   type: {
     type: String,

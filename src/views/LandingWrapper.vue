@@ -8,8 +8,12 @@
       @close="closeOverlay"
     />
     <transition name="fade">
-      <IVOverlay v-if="useOverlay.overlay && useOverlay.overlay.trigger === 'member'" @close="closeOverlay">
-        <IVMembersMobileList :members="useOverlay.overlay.members" />
+      <IVOverlay
+        v-if="useOverlay.overlay && (useOverlay.overlay.trigger === 'member' || useOverlay.overlay.trigger === 'menu')"
+        @close="closeOverlay"
+      >
+        <IVMembersMobileList v-if="useOverlay.overlay.trigger === 'member'" :members="useOverlay.overlay.members" />
+        <IVPreviewTable v-else-if="useOverlay.overlay.trigger === 'menu'" :options="useOverlay.overlay.options" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -17,44 +21,31 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, reactive } from 'vue';
-import commonVariables from '@/assets/data/common-variables.json';
-import IVLandingHeader from '@/components/headers/LandingHeader.vue';
-import IVOverlay from '@/components/widgets/IVOverlay.vue';
-import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
+import { reactive } from 'vue';
+
+import ivMembers from '@/assets/data/iv-members.json';
+import ivMenu from '@/assets/data/iv-menu.js';
+
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
 
-const RESIZE_WIDTH = 1281;
-const LANDING_HEADER_OPAQUE_HEIGHT = 500;
+import IVLandingHeader from '@/components/headers/LandingHeader.vue';
+import IVOverlay from '@/components/widgets/IVOverlay.vue';
+import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
+import IVPreviewTable from '@/components/layout/preview-table/PreviewTable.vue';
 
 const state = reactive({
-  isMobile: window.innerWidth < RESIZE_WIDTH,
-  membersList: commonVariables.members,
+  membersList: ivMembers,
+  menuList: ivMenu,
 });
-
-const onScroll = () => {
-  if (window.scrollY < LANDING_HEADER_OPAQUE_HEIGHT) {
-    useLandingHeader.updateHeaderColor('');
-  } else {
-    useLandingHeader.updateHeaderColor('black');
-  }
-};
-
-const onResize = () => {
-  const newIsMobile = window.innerWidth < RESIZE_WIDTH;
-  if (state.isMobile !== newIsMobile) {
-    state.isMobile = newIsMobile;
-  }
-};
 
 const showMemberOverlay = () => {
   useLandingCarousel.enableNextItemTimer(false);
   useLandingHeader.resetHeaderAndFontColors();
   useOverlay.updateOverlay(
     {
-      members: state.membersList.map((member) => member.name),
+      members: state.membersList,
     },
     'member',
   );
@@ -63,22 +54,18 @@ const showMemberOverlay = () => {
 const showMenuOverlay = () => {
   useLandingCarousel.enableNextItemTimer(false);
   useLandingHeader.resetHeaderAndFontColors();
+  useOverlay.updateOverlay(
+    {
+      options: state.menuList,
+    },
+    'menu',
+  );
 };
 
 const closeOverlay = () => {
   useOverlay.closeOverlay();
   useLandingCarousel.enableNextItemTimer(true);
 };
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll);
-  window.addEventListener('resize', onResize);
-});
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', onScroll);
-  window.removeEventListener('resize', onResize);
-});
 </script>
 
 <style lang="scss" scoped>

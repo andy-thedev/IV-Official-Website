@@ -1,8 +1,8 @@
 <template>
-  <div class="iv-members-mobile-list">
-    <div v-for="(member, index) in members" :key="index" class="iv-member-list-item-wrapper">
-      <span class="iv-member-list-item-text">
-        {{ member.name }}
+  <div class="iv-preview-table-mobile">
+    <div v-for="(option, index) in options" :key="index" class="item-wrapper">
+      <span class="item-text">
+        {{ option }}
       </span>
     </div>
   </div>
@@ -10,34 +10,38 @@
 
 <script setup>
 defineProps({
-  members: {
+  options: {
     type: Array,
   },
 });
 </script>
 
 <style lang="scss" scoped>
-.iv-members-mobile-list {
-  width: 25%;
+.iv-preview-table-mobile {
+  width: 100%;
   height: 100%;
+
+  padding: 0 40px 0 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   font-family: Josefin Sans;
   font-weight: 600;
   text-transform: uppercase;
 
-  .iv-member-list-item-wrapper {
+  .item-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     width: 100%;
     border-bottom: rgb(255 255 255 / 0.2) solid 2px;
-    padding: 50px 0 50px 0;
+    padding: 25px 0 25px 0;
 
-    .iv-member-list-item-text {
+    .item-text {
       font-size: 30px;
       color: white;
     }
@@ -60,16 +64,16 @@ defineProps({
 }
 
 @media (max-width: 1199px) {
-  .iv-members-mobile-list {
-    width: 35%;
+  .iv-preview-table-mobile {
+    width: 100%;
   }
 }
 
 @media (max-width: 899px) {
-  .iv-members-mobile-list {
-    width: 50%;
-    .iv-member-list-item-wrapper {
-      .iv-member-list-item-text {
+  .iv-preview-table-mobile {
+    width: 100%;
+    .item-wrapper {
+      .item-text {
         font-size: 35px;
       }
     }
@@ -77,10 +81,10 @@ defineProps({
 }
 
 @media (max-width: 599px) {
-  .iv-members-mobile-list {
-    width: 50%;
-    .iv-member-list-item-wrapper {
-      .iv-member-list-item-text {
+  .iv-preview-table-mobile {
+    width: 100%;
+    .item-wrapper {
+      .item-text {
         font-size: 25px;
       }
     }
@@ -88,11 +92,10 @@ defineProps({
 }
 
 @media (max-width: 450px) {
-  .iv-members-mobile-list {
-    width: 70%;
-    .iv-member-list-item-wrapper {
-      padding: 40px 0 40px 0;
-      .iv-member-list-item-text {
+  .iv-preview-table-mobile {
+    width: 100%;
+    .item-wrapper {
+      .item-text {
         font-size: 25px;
       }
     }
@@ -100,9 +103,9 @@ defineProps({
 }
 
 @media (max-width: 300px) {
-  .iv-members-mobile-list {
-    .iv-member-list-item-wrapper {
-      .iv-member-list-item-text {
+  .iv-preview-table-mobile {
+    .item-wrapper {
+      .item-text {
         font-size: 20px;
       }
     }
@@ -110,11 +113,10 @@ defineProps({
 }
 
 @media (max-width: 1280px) and (orientation: landscape) {
-  .iv-members-mobile-list {
-    width: 30%;
-    .iv-member-list-item-wrapper {
-      padding: 35px 0 35px 0;
-      .iv-member-list-item-text {
+  .iv-preview-table-mobile {
+    width: 100%;
+    .item-wrapper {
+      .item-text {
         font-size: 20px;
       }
     }

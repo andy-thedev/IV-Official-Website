@@ -5,17 +5,17 @@ export const useLandingHeader = reactive({
   headerFontColor: '',
 
   updateHeaderColor(color) {
-    this.headerColor = color;
+    useLandingHeader.headerColor = color;
   },
   updateHeaderFontColor(color) {
-    this.headerFontColor = color;
+    useLandingHeader.headerFontColor = color;
   },
   updateHeaderAndFontColors(headerColor, fontColor) {
-    this.updateHeaderColor(headerColor);
-    this.updateHeaderFontColor(fontColor);
+    useLandingHeader.updateHeaderColor(headerColor);
+    useLandingHeader.updateHeaderFontColor(fontColor);
   },
   resetHeaderAndFontColors() {
-    this.updateHeaderColor('');
-    this.updateHeaderFontColor('');
+    useLandingHeader.updateHeaderColor('');
+    useLandingHeader.updateHeaderFontColor('');
   },
 });

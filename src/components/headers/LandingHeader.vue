@@ -9,7 +9,7 @@
     <div class="left-items-container">
       <font-awesome-icon :icon="['fas', 'headphones-alt']" class="left-icon" @click="selectMembers" />
     </div>
-    <div class="center-brand">
+    <div class="center-brand" @click="selectBrand">
       <span class="center-text">INDIVISUAL</span>
     </div>
     <div class="right-items-container">
@@ -20,6 +20,7 @@
 
 <script setup>
 import { defineEmits } from 'vue';
+
 import { useOverlay } from '@/composables/overlays/useOverlay';
 
 defineProps({
@@ -44,7 +45,15 @@ const selectMembers = () => {
 };
 
 const selectMenu = () => {
-  emit('selectedMenu');
+  if (useOverlay.overlay && useOverlay.overlay.trigger === 'menu') {
+    emit('close');
+  } else {
+    emit('selectedMenu');
+  }
+};
+
+const selectBrand = () => {
+  // TODO
 };
 </script>
 
@@ -83,10 +92,13 @@ const selectMenu = () => {
       font-size: 20px;
       margin: 0 0 0 30px;
       transition: $transition-landing-header-font-color;
+      cursor: pointer;
     }
   }
 
   .center-brand {
+    cursor: pointer;
+
     .center-text {
       font-size: 25px;
       text-align: center;
@@ -101,6 +113,8 @@ const selectMenu = () => {
       font-size: 20px;
       margin: 0 30px 0 0;
       transition: $transition-landing-header-font-color;
+
+      cursor: pointer;
     }
   }
 }
