@@ -2,7 +2,7 @@
   <div class="iv-preview-table-mobile">
     <div v-for="(option, index) in options" :key="index" class="item-wrapper">
       <span class="item-text">
-        {{ option }}
+        {{ option.name }}
       </span>
     </div>
   </div>
