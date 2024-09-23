@@ -44,21 +44,6 @@ defineProps({
   }
 }
 
-@mixin fade-transition-preset {
-  .fade-enter-active {
-    transition: all 0.5s ease-in-out;
-  }
-
-  .fade-leave-active {
-    transition: all 0.5s ease-in-out;
-  }
-
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
-  }
-}
-
 @media (max-width: 1199px) {
   .iv-members-mobile-list {
     width: 35%;
