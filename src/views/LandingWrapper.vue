@@ -12,8 +12,9 @@
         v-if="useOverlay.overlay && (useOverlay.overlay.trigger === 'member' || useOverlay.overlay.trigger === 'menu')"
         @close="closeOverlay"
       >
+        <!-- TODO: Remove members mobile list, and make preview menu use data innately -->
         <IVMembersMobileList v-if="useOverlay.overlay.trigger === 'member'" :members="useOverlay.overlay.members" />
-        <IVPreviewTable v-else-if="useOverlay.overlay.trigger === 'menu'" :options="useOverlay.overlay.options" />
+        <IVPreviewMenu v-else-if="useOverlay.overlay.trigger === 'menu'" :menu="useOverlay.overlay.options" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -33,7 +34,7 @@ import { useOverlay } from '@/composables/overlays/useOverlay';
 import IVLandingHeader from '@/components/headers/LandingHeader.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVMembersMobileList from '@/components/widgets/MembersMobileList.vue';
-import IVPreviewTable from '@/components/layout/preview-table/PreviewTable.vue';
+import IVPreviewMenu from '@/components/layout/preview-menu/PreviewMenu.vue';
 
 const state = reactive({
   membersList: ivMembers,
