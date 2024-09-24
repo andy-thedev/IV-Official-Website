@@ -22,6 +22,7 @@
 import { defineEmits } from 'vue';
 
 import { useOverlay } from '@/composables/overlays/useOverlay';
+import { useRouter } from 'vue-router';
 
 defineProps({
   color: {
@@ -35,6 +36,8 @@ defineProps({
 });
 
 const emit = defineEmits(['close', 'selectedMembers', 'selectedMenu']);
+
+const router = useRouter();
 
 const selectMembers = () => {
   if (useOverlay.overlay && useOverlay.overlay.trigger === 'member') {
@@ -53,7 +56,7 @@ const selectMenu = () => {
 };
 
 const selectBrand = () => {
-  // TODO
+  router.push({ name: 'LandingPage' });
 };
 </script>
 

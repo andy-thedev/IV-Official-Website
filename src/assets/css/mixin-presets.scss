@@ -2,11 +2,11 @@
 
 @mixin fade-transition-preset {
   .fade-enter-active {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .fade-leave-active {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 
   .fade-enter-from,
