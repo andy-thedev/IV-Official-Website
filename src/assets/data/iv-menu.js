@@ -19,11 +19,11 @@ const ivMenu = [
     children: [
       {
         name: 'Home',
-        routeName: '',
+        routeName: 'LandingPage',
       },
       {
         name: 'Discography',
-        routeName: '',
+        routeName: 'IVDiscography',
       },
     ],
   },

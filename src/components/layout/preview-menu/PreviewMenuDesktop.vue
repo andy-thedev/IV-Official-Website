@@ -35,17 +35,31 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+import { useOverlay } from '@/composables/overlays/useOverlay';
 
-defineProps({
+const props = defineProps({
   menu: {
     type: Array,
   },
 });
 
+const router = useRouter();
+
 const selectedItemIndex = ref(0);
 
 const selectItem = (index) => {
   selectedItemIndex.value = index;
+};
+
+const selectChildItem = (index) => {
+  const selectedChildRouteName = props?.menu[selectedItemIndex.value]?.children[index]?.routeName;
+  if (selectedChildRouteName) {
+    router.push({ name: selectedChildRouteName });
+    useOverlay.closeOverlay();
+  } else {
+    console.log('Route name is not provided.');
+  }
 };
 </script>
 
