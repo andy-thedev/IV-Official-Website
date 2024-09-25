@@ -7,7 +7,7 @@
     }"
   >
     <div class="left-items-container">
-      <font-awesome-icon :icon="['fas', 'headphones-alt']" class="left-icon" @click="selectMembers" />
+      <!-- <font-awesome-icon :icon="['fas', 'headphones-alt']" class="left-icon" @click="selectMembers" /> -->
     </div>
     <div class="center-brand" @click="selectBrand">
       <span class="center-text">INDIVISUAL</span>
@@ -35,17 +35,9 @@ defineProps({
   },
 });
 
-const emit = defineEmits(['close', 'selectedMembers', 'selectedMenu']);
+const emit = defineEmits(['close', 'selectedMenu']);
 
 const router = useRouter();
-
-const selectMembers = () => {
-  if (useOverlay.overlay && useOverlay.overlay.trigger === 'member') {
-    emit('close');
-  } else {
-    emit('selectedMembers');
-  }
-};
 
 const selectMenu = () => {
   if (useOverlay.overlay && useOverlay.overlay.trigger === 'menu') {
