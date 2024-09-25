@@ -50,22 +50,3 @@ body::-webkit-scrollbar {
 .section-container {
   max-width: 1320px;
 }
-
-.primary-container {
-  width: 1320px;
-  max-width: 1320px;
-  margin: auto;
-}
-
-@media (max-width: 1399px) {
-  /* Applies when < 1399px width*/
-  .primary-container {
-    max-width: 85%;
-  }
-}
-
-@media (max-width: 600px) {
-  .primary-container {
-    max-width: 90%;
-  }
-}

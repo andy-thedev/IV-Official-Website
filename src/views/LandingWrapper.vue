@@ -7,12 +7,8 @@
       @close="closeOverlay"
     />
     <transition name="fade">
-      <IVOverlay
-        v-if="useOverlay.overlay && (useOverlay.overlay.trigger === 'member' || useOverlay.overlay.trigger === 'menu')"
-        @close="closeOverlay"
-      >
-        <!-- TODO: Make preview menu use data innately -->
-        <IVPreviewMenu v-if="useOverlay.overlay.trigger === 'menu'" :menu="useOverlay.overlay.options" />
+      <IVOverlay v-if="useOverlay.overlay && useOverlay.overlay.trigger === 'menu'" @close="closeOverlay">
+        <IVPreviewMenu v-if="useOverlay.overlay.trigger === 'menu'" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -20,10 +16,6 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue';
-
-import ivMenu from '@/assets/data/iv-menu.js';
-
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
@@ -32,19 +24,10 @@ import IVLandingHeader from '@/components/headers/LandingHeader.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPreviewMenu from '@/components/layout/preview-menu/PreviewMenu.vue';
 
-const state = reactive({
-  menuList: ivMenu,
-});
-
 const showMenuOverlay = () => {
   useLandingCarousel.enableNextItemTimer(false);
   useLandingHeader.resetHeaderAndFontColors();
-  useOverlay.updateOverlay(
-    {
-      options: state.menuList,
-    },
-    'menu',
-  );
+  useOverlay.updateOverlay({}, 'menu');
 };
 
 const closeOverlay = () => {

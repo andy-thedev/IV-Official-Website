@@ -1,21 +1,17 @@
 <template>
   <div class="iv-preview-menu">
-    <IVPreviewMenuMobile v-if="useGlobals.isMobile" :menu="menu" />
-    <IVPreviewMenuDesktop v-else :menu="menu" />
+    <IVPreviewMenuMobile v-if="useGlobals.isMobile" :menu="ivMenu" />
+    <IVPreviewMenuDesktop v-else :menu="ivMenu" />
   </div>
 </template>
 
 <script setup>
+import ivMenu from '@/assets/data/iv-menu.js';
+
 import { useGlobals } from '@/composables/useGlobals';
 
 import IVPreviewMenuMobile from '@/components/layout/preview-menu/PreviewMenuMobile.vue';
 import IVPreviewMenuDesktop from '@/components/layout/preview-menu/PreviewMenuDesktop.vue';
-
-defineProps({
-  menu: {
-    type: Array,
-  },
-});
 </script>
 
 <style lang="scss" scoped>

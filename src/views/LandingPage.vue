@@ -24,7 +24,7 @@
 
 <script setup>
 import { ref } from 'vue';
-import landingCarouselItemsData from '@/assets/data/landing-carousel-items-data.json';
+import ivDiscographyData from '@/assets/data/iv-discography.js';
 import IVCarousel from '@/components/widgets/IVCarousel.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
@@ -32,13 +32,13 @@ import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
 
-const landingMusicArtworksInfo = ref(landingCarouselItemsData.items);
+const landingMusicArtworksInfo = ref(ivDiscographyData);
 
 const showItemDetailsOverlay = (itemIndex) => {
   useLandingCarousel.enableNextItemTimer(false);
   const selectedMusicInfo = landingMusicArtworksInfo.value[itemIndex];
   useOverlay.updateOverlay(selectedMusicInfo, 'landingCarousel');
-  useLandingHeader.updateHeaderAndFontColors(selectedMusicInfo.headerColor, selectedMusicInfo.fontColor);
+  useLandingHeader.updateHeaderAndFontColors(selectedMusicInfo.colors.primary, selectedMusicInfo.colors.font);
 };
 
 const closeItemDetailsOverlay = () => {

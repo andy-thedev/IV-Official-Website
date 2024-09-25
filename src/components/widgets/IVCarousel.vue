@@ -17,14 +17,14 @@
       @leave="controlDisabled = true"
     >
       <div
-        v-for="(carouselItem, i) in carouselItems"
+        v-for="(carouselItem, i) in carouselItemsInfo"
         v-show="i === activeItemIndex"
         :key="i"
         class="carousel-item-wrapper"
         v-touch:tap="handleItemSelected"
         @click="handleItemSelected"
       >
-        <img v-if="carouselItem.type === 'img'" :src="carouselItem.imageSrc" draggable="false" />
+        <img :src="carouselItem.media.carousel" draggable="false" />
       </div>
     </transition-group>
     <!-- Left/right controls -->
@@ -38,7 +38,7 @@
     <div class="carousel-indicators-container">
       <!-- Dummy variable to start v-for index from 0 -->
       <font-awesome-icon
-        v-for="(dummy, i) in carouselItems.length"
+        v-for="(dummy, i) in carouselItemsInfo.length"
         :key="i"
         :icon="['fas', 'minus']"
         class="carousel-indicator"
@@ -74,8 +74,6 @@ export default {
   },
   data() {
     return {
-      carouselItems: [],
-
       activeItemIndex: 0,
       activeTransition: '',
 
@@ -93,19 +91,6 @@ export default {
         this.clearNextItemTimer();
       }
     },
-  },
-  created() {
-    // Convert basic carousel items info into usable format
-    this.carouselItems = this.carouselItemsInfo.map((carouselItemInfo) => {
-      if (carouselItemInfo.type === 'img') {
-        return {
-          type: 'img',
-          imageSrc: this.imgUrlToSrc(carouselItemInfo.imageUrl),
-        };
-      } else {
-        // should not occur
-      }
-    });
   },
   mounted() {
     this.startNextItemTimer();
@@ -126,18 +111,12 @@ export default {
       this.clearNextItemTimer();
       this.startNextItemTimer();
     },
-    imgUrlToSrc(imageUrl) {
-      // NOTE: [05/03/22] Vue3 can't resolve alias when using :src
-      // We must translate url manually
-      const aliasTranslatedImageUrl = imageUrl.replace('@/', '../../');
-      return new URL(aliasTranslatedImageUrl, import.meta.url).href;
-    },
     changeActiveItemIndex(n) {
       // Force index to be within bounds of [0, carouselItems.length)
-      if (n > this.carouselItems.length - 1) {
+      if (n > this.carouselItemsInfo.length - 1) {
         this.activeItemIndex = 0;
       } else if (n < 0) {
-        this.activeItemIndex = this.carouselItems.length - 1;
+        this.activeItemIndex = this.carouselItemsInfo.length - 1;
       } else {
         this.activeItemIndex = n;
       }
