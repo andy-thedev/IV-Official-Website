@@ -2,7 +2,7 @@
   <div class="landing-page">
     <div class="section">
       <IVCarousel
-        :carouselItemsInfo="landingMusicArtworksInfo"
+        :carouselItemsInfo="carouselItemsInfo"
         :enableNextItemTimer="useLandingCarousel.isNextItemTimerEnabled"
         @itemSelected="showItemDetailsOverlay"
       />
@@ -32,11 +32,13 @@ import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
 
-const landingMusicArtworksInfo = ref(ivDiscographyData);
+// Filter items that have carousel feature flag enabled
+const filteredIvDiscographyData = ivDiscographyData.filter((item) => item.feature.iv.carousel === true);
+const carouselItemsInfo = ref(filteredIvDiscographyData);
 
 const showItemDetailsOverlay = (itemIndex) => {
   useLandingCarousel.enableNextItemTimer(false);
-  const selectedMusicInfo = landingMusicArtworksInfo.value[itemIndex];
+  const selectedMusicInfo = carouselItemsInfo.value[itemIndex];
   useOverlay.updateOverlay(selectedMusicInfo, 'landingCarousel');
   useLandingHeader.updateHeaderAndFontColors(selectedMusicInfo.colors.primary, selectedMusicInfo.colors.font);
 };

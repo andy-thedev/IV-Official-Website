@@ -1,4 +1,4 @@
-import discographyPreviewImg from '@/assets/img/covers/last-dance.jpeg';
+import discographyPreviewImg from '@/assets/img/artworks/youth.jpeg';
 
 {
   /* <p>An aesthetic dive into an elaborate collection of our releases.</p>

@@ -6,37 +6,39 @@
     </div>
     <div class="items-container">
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
       <div class="item-img-wrapper">
-        <img src="@/assets/img/covers/last-dance.jpeg" draggable="false" />
+        <img :src="lastDanceArtworkImg" draggable="false" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
