@@ -1,5 +1,32 @@
 @import '@/assets/css/common-variables';
 
+// Font-size presets
+@mixin generic-font-preset {
+  &.text-xl {
+    font-size: 60px;
+  }
+
+  @media (max-width: 1499px) {
+    &.text-xl {
+      font-size: 50px;
+    }
+  }
+
+  @media (max-width: 599px) {
+    &.text-xl {
+      font-size: 35px;
+    }
+  }
+
+  @media (max-width: 299px) {
+    &.text-xl {
+      font-size: 25px;
+    }
+  }
+}
+
+// Transition presets
+
 @mixin fade-transition-preset {
   .fade-enter-active {
     transition: all 0.3s ease-in-out;

@@ -1,4 +1,4 @@
-import latelyArtworkImg from '@/assets/img/artworks/lately.jpg';
+import latelyArtworkImg from '@/assets/img/artworks/lately.jpeg';
 import latelyCarouselImg from '@/assets/img/carousel/lately.jpg';
 
 import flyArtworkImg from '@/assets/img/artworks/fly.jpeg';

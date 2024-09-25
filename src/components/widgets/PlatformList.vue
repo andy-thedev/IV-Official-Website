@@ -123,8 +123,6 @@ const platformIcon = (name) => {
   .title {
     font-size: 26px;
     text-transform: uppercase;
-
-    font-family: Josefin Sans;
     font-weight: 700;
   }
 

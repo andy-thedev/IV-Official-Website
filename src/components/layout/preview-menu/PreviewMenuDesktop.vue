@@ -74,7 +74,6 @@ const selectChildItem = (index) => {
   flex-direction: row;
   justify-content: center;
 
-  font-family: Josefin Sans;
   font-weight: 600;
   text-transform: uppercase;
 

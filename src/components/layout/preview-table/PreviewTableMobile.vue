@@ -28,7 +28,6 @@ defineProps({
   justify-content: center;
   align-items: center;
 
-  font-family: Josefin Sans;
   font-weight: 600;
   text-transform: uppercase;
 
