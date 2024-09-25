@@ -9,22 +9,33 @@
     </div>
     <div class="title-border" />
 
-    <div
-      v-for="platform in platforms"
-      :key="platform"
-      class="platform-option-container"
-      @click.stop="goToUrl(options[platform])"
-    >
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fab', platformIcon(platform)]" class="platform-icon" />
-        <div class="platform-text">{{ platformName(platform) }}</div>
+    <div class="platforms-list-container">
+      <div
+        v-for="platform in platforms"
+        :key="platform"
+        class="platform-option-container"
+        @click.stop="goToUrl(options[platform])"
+      >
+        <div class="platform-option-wrapper">
+          <font-awesome-icon
+            v-if="platformIcon(platform).type === 'fontawesome'"
+            :icon="['fab', platformIcon(platform).icon]"
+            class="platform-icon"
+          />
+          <img
+            v-else-if="platformIcon(platform).type === 'svg'"
+            :src="platformIcon(platform).icon"
+            class="platform-icon"
+          />
+          <div class="platform-text">{{ platformName(platform) }}</div>
+        </div>
       </div>
-    </div>
 
-    <div v-if="platforms.length === 0" class="platform-option-container remove-cursor-pointer">
-      <div class="platform-option-wrapper">
-        <font-awesome-icon :icon="['fas', 'eye-slash']" class="platform-icon" />
-        <div class="platform-text remove-nowrap">This track is no longer available</div>
+      <div v-if="platforms.length === 0" class="platform-option-container remove-cursor-pointer">
+        <div class="platform-option-wrapper">
+          <font-awesome-icon :icon="['fas', 'eye-slash']" class="platform-icon" />
+          <div class="platform-text remove-nowrap">This track is no longer available</div>
+        </div>
       </div>
     </div>
   </div>
@@ -32,6 +43,12 @@
 
 <script setup>
 import { computed } from 'vue';
+
+import melonIcon from '@/assets/icons/platforms/melon.svg';
+import genieIcon from '@/assets/icons/platforms/genie.svg';
+import bugsIcon from '@/assets/icons/platforms/bugs.svg';
+import floIcon from '@/assets/icons/platforms/flo.svg';
+import vibeIcon from '@/assets/icons/platforms/vibe.svg';
 
 const props = defineProps({
   title: {
@@ -52,6 +69,9 @@ const props = defineProps({
   },
 });
 
+const fontAwesomePlatforms = ['youtube', 'spotify', 'appleMusic', 'soundcloud', 'deezer', 'amazonMusic'];
+const svgPlatforms = ['melon', 'genie', 'bugs', 'flo', 'vibe'];
+
 // Reactive references for data properties and computed values
 const platforms = computed(() => Object.keys(props.options));
 
@@ -63,6 +83,16 @@ const goToUrl = (url) => {
 // Helper method for formatting platform names
 const platformName = (name) => {
   switch (name) {
+    case 'melon':
+      return 'Melon';
+    case 'genie':
+      return 'Genie';
+    case 'bugs':
+      return 'Bugs';
+    case 'flo':
+      return 'Flo';
+    case 'vibe':
+      return 'Vibe';
     case 'youtube':
       return 'Youtube';
     case 'spotify':
@@ -81,21 +111,40 @@ const platformName = (name) => {
 };
 
 const platformIcon = (name) => {
-  switch (name) {
-    case 'youtube':
-      return 'youtube';
-    case 'spotify':
-      return 'spotify';
-    case 'appleMusic':
-      return 'apple';
-    case 'soundcloud':
-      return 'soundcloud';
-    case 'deezer':
-      return 'deezer';
-    case 'amazonMusic':
-      return 'amazon';
-    default:
-      return 'headphones-alt';
+  if (fontAwesomePlatforms.includes(name)) {
+    switch (name) {
+      case 'youtube':
+        return { type: 'fontawesome', icon: 'youtube' };
+      case 'spotify':
+        return { type: 'fontawesome', icon: 'spotify' };
+      case 'appleMusic':
+        return { type: 'fontawesome', icon: 'apple' };
+      case 'soundcloud':
+        return { type: 'fontawesome', icon: 'soundcloud' };
+      case 'deezer':
+        return { type: 'fontawesome', icon: 'deezer' };
+      case 'amazonMusic':
+        return { type: 'fontawesome', icon: 'amazon' };
+      default:
+        // Should not happen
+        return { type: 'fontawesome', icon: 'headphones-alt' };
+    }
+  } else if (svgPlatforms.includes(name)) {
+    switch (name) {
+      case 'melon':
+        return { type: 'svg', icon: melonIcon };
+      case 'genie':
+        return { type: 'svg', icon: genieIcon };
+      case 'bugs':
+        return { type: 'svg', icon: bugsIcon };
+      case 'flo':
+        return { type: 'svg', icon: floIcon };
+      case 'vibe':
+        return { type: 'svg', icon: vibeIcon };
+    }
+  } else {
+    // Should not happen
+    return { type: 'fontawesome', icon: 'headphones-alt' };
   }
 };
 </script>
@@ -130,6 +179,12 @@ const platformIcon = (name) => {
     width: 100%;
     border: white 1px solid;
     margin: 25px 0 0 0;
+  }
+
+  .platforms-list-container {
+    width: 100%;
+    max-height: 50vh;
+    overflow: scroll;
   }
 
   .platform-option-container {
