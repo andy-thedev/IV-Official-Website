@@ -1,5 +1,6 @@
 <template>
   <div class="iv-discography-page">
+    <!-- Intro -->
     <div class="page-title-container">
       <h1 class="text-xl">Discography</h1>
       <div className="border"></div>
@@ -15,14 +16,24 @@
         yourself into the perspective of your favourite artists.
       </p>
     </div>
+    <!-- Items -->
     <div class="items-container">
       <div
-        v-for="(item, index) in filteredIvDiscographyData"
+        v-for="(item, index) in enabledDiscographyItems"
         :key="index"
         class="item-img-wrapper"
-        @click="selectDiscography"
+        @click="selectItem(item.id)"
       >
+        <!-- Item Img -->
         <img :src="item.media.artwork" draggable="false" />
+        <!-- Item Overlay -->
+        <div class="item-img-overlay-container">
+          <div class="overlay-title">{{ item.title }}</div>
+          <div v-if="isItemUnavailable(item.platforms)" class="item-unavailable-container">
+            <font-awesome-icon :icon="['fas', 'eye-slash']" class="item-unavailable-icon" />
+            <div class="item-unavailable-text">No longer available</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -30,26 +41,30 @@
 
 <script setup>
 import ivDiscographyData from '@/assets/data/iv-discography.js';
+import { useRouter } from 'vue-router';
 
-const filteredIvDiscographyData = ivDiscographyData.filter((item) => item.feature.iv.discography === true);
+const enabledDiscographyItems = ivDiscographyData.filter((item) => item.feature.iv.discography === true);
+
+const router = useRouter();
+
+const isItemUnavailable = (platforms) => {
+  return Object.keys(platforms).length === 0;
+};
+
+const selectItem = (id) => {
+  router.push(`/discography/${id}`);
+};
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
 @import '@/assets/css/mixin-presets';
+@import '@/assets/css/discography.scss';
 
 .iv-discography-page {
-  box-sizing: border-box;
-
-  width: 100vw;
-  padding: 200px 0 200px 0;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include generic-font-preset;
 
   background-color: $iv-dark-grey;
-
   color: white;
 
   .page-title-container {
@@ -63,7 +78,7 @@ const filteredIvDiscographyData = ivDiscographyData.filter((item) => item.featur
       margin: 0;
       text-transform: uppercase;
 
-      @include generic-font-preset;
+      // @include generic-font-preset;
     }
 
     .border {
@@ -102,9 +117,62 @@ const filteredIvDiscographyData = ivDiscographyData.filter((item) => item.featur
     grid-template-columns: repeat(3, 1fr);
 
     .item-img-wrapper {
+      position: relative;
+      cursor: pointer;
+
       img {
         width: 100%;
         height: auto;
+      }
+
+      .item-img-overlay-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background-color: rgba(0, 0, 0, 0.7);
+
+        opacity: 0;
+        transition: opacity 0.3s ease;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-transform: uppercase;
+        color: white;
+        font-weight: bold;
+
+        .overlay-title {
+          font-size: 20px;
+        }
+
+        .item-unavailable-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+
+          margin: 5px 0 0 0;
+
+          .item-unavailable-icon {
+            width: 15px;
+            height: 15px;
+
+            margin: 0 10px 0 0;
+          }
+          .item-unavailable-text {
+            font-size: 10px;
+          }
+        }
+      }
+
+      &:hover .item-img-overlay-container {
+        opacity: 1;
       }
     }
   }

@@ -14,7 +14,7 @@ import discographyPreviewImg from '@/assets/img/artworks/youth.jpeg';
 
 const ivMenu = [
   {
-    name: 'IV',
+    name: 'Indivisual',
     previewImgSrc: discographyPreviewImg,
     children: [
       {
@@ -23,7 +23,7 @@ const ivMenu = [
       },
       {
         name: 'Discography',
-        routeName: 'IVDiscography',
+        routeName: 'IVDiscographyPage',
       },
     ],
   },

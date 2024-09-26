@@ -16,6 +16,7 @@
           dynamicSizePreset="landing"
           :title="useOverlay.overlay.title"
           :options="useOverlay.overlay.platforms"
+          maxHeight="50vh"
         />
       </IVOverlay>
     </transition>

@@ -9,7 +9,7 @@
     </div>
     <div class="title-border" />
 
-    <div class="platforms-list-container">
+    <div class="platforms-list-container" :style="{ 'max-height': maxHeight }">
       <div
         v-for="platform in platforms"
         :key="platform"
@@ -56,6 +56,10 @@ const props = defineProps({
     default: '',
   },
   width: {
+    type: String,
+    default: '100%',
+  },
+  maxHeight: {
     type: String,
     default: '100%',
   },
@@ -183,7 +187,6 @@ const platformIcon = (name) => {
 
   .platforms-list-container {
     width: 100%;
-    max-height: 50vh;
     overflow: scroll;
   }
 

@@ -19,8 +19,6 @@
 </template>
 
 <script setup>
-import { defineEmits } from 'vue';
-
 import { useOverlay } from '@/composables/overlays/useOverlay';
 import { useRouter } from 'vue-router';
 

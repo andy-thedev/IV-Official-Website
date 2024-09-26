@@ -17,6 +17,7 @@ import youthArtworkImg from '@/assets/img/artworks/youth.jpeg';
 
 const ivDiscography = [
   {
+    id: 'youth',
     title: 'Youth',
     colors: {
       primary: '#6699ff',
@@ -26,7 +27,20 @@ const ivDiscography = [
       artwork: youthArtworkImg,
       carousel: youthArtworkImg,
     },
-    platforms: {},
+    // platforms: {},
+    platforms: {
+      melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
+      genie: 'https://www.genie.co.kr/detail/albumInfo?axnm=83503159',
+      vibe: 'https://vibe.naver.com/album/8830730',
+      flo: 'https://www.music-flo.com/detail/album/eaaayozaz/albumtrack',
+      bugs: 'https://music.bugs.co.kr/album/20543823?wl_ref=list_ab_01',
+      spotify: 'https://open.spotify.com/album/2unI47VdIhX4PpLIA8vFf0?highlight=spotify:track:0nL1ntF63UXNAwruuoaWfx',
+      youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8FeU6FRCxkSfYYm9hZuOm1_d',
+      appleMusic: 'https://music.apple.com/us/album/last-dance-single/1574115349',
+      soundcloud: 'https://soundcloud.com/indivisualiv/sets/last-dance',
+      deezer: 'https://deezer.com/us/album/240383532',
+      amazonMusic: 'https://amazon.com/gp/product/B0982KW7GR',
+    },
     feature: {
       iv: {
         carousel: false,
@@ -39,6 +53,7 @@ const ivDiscography = [
     },
   },
   {
+    id: 'last-dance',
     title: 'Last Dance',
     colors: {
       primary: '#D8A826',
@@ -73,6 +88,7 @@ const ivDiscography = [
     },
   },
   {
+    id: 'collection',
     title: 'Collection',
     colors: {
       primary: '#26264B',
@@ -98,6 +114,7 @@ const ivDiscography = [
     },
   },
   {
+    id: 'pdg-project-2019',
     title: 'PDG PROJECT [2019]',
     colors: {
       primary: '#D1D1D1',
@@ -122,6 +139,7 @@ const ivDiscography = [
     },
   },
   {
+    id: 'fly',
     title: '종이비행기 (Fly!)',
     colors: {
       primary: '#1993B5',
@@ -147,6 +165,7 @@ const ivDiscography = [
     },
   },
   {
+    id: 'lately',
     title: 'Lately',
     colors: {
       primary: '#339FBD',

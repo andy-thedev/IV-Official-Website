@@ -2,24 +2,24 @@
 
 // Font-size presets
 @mixin generic-font-preset {
-  &.text-xl {
+  .text-xl {
     font-size: 60px;
   }
 
   @media (max-width: 1499px) {
-    &.text-xl {
+    .text-xl {
       font-size: 50px;
     }
   }
 
   @media (max-width: 599px) {
-    &.text-xl {
+    .text-xl {
       font-size: 35px;
     }
   }
 
   @media (max-width: 299px) {
-    &.text-xl {
+    .text-xl {
       font-size: 25px;
     }
   }
