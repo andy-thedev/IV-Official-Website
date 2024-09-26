@@ -51,9 +51,9 @@ const ivDiscography = [
     platforms: {
       melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
       genie: 'https://www.genie.co.kr/detail/albumInfo?axnm=83503159',
-      bugs: 'https://music.bugs.co.kr/album/20543823?wl_ref=list_ab_01',
-      flo: 'https://www.music-flo.com/detail/album/eaaayozaz/albumtrack',
       vibe: 'https://vibe.naver.com/album/8830730',
+      flo: 'https://www.music-flo.com/detail/album/eaaayozaz/albumtrack',
+      bugs: 'https://music.bugs.co.kr/album/20543823?wl_ref=list_ab_01',
       spotify: 'https://open.spotify.com/album/2unI47VdIhX4PpLIA8vFf0?highlight=spotify:track:0nL1ntF63UXNAwruuoaWfx',
       youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8FeU6FRCxkSfYYm9hZuOm1_d',
       appleMusic: 'https://music.apple.com/us/album/last-dance-single/1574115349',
