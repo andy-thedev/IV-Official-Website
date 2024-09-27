@@ -29,6 +29,7 @@ const ivDiscography = [
     },
     // platforms: {},
     platforms: {
+      publication: 'YouthPublication',
       melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
       genie: 'https://www.genie.co.kr/detail/albumInfo?axnm=83503159',
       vibe: 'https://vibe.naver.com/album/8830730',

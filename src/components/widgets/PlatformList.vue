@@ -14,12 +14,12 @@
         v-for="platform in platforms"
         :key="platform"
         class="platform-option-container"
-        @click.stop="goToUrl(options[platform])"
+        @click.stop="goToUrl(options[platform], platform)"
       >
-        <div class="platform-option-wrapper">
+        <div class="platform-option-wrapper" :style="{ width: optionInnerWidth }">
           <font-awesome-icon
             v-if="platformIcon(platform).type === 'fontawesome'"
-            :icon="['fab', platformIcon(platform).icon]"
+            :icon="[platformIcon(platform).faType, platformIcon(platform).icon]"
             class="platform-icon"
           />
           <img
@@ -43,6 +43,7 @@
 
 <script setup>
 import { computed } from 'vue';
+import { useRouter } from 'vue-router';
 
 import melonIcon from '@/assets/icons/platforms/melon.svg';
 import genieIcon from '@/assets/icons/platforms/genie.svg';
@@ -59,6 +60,10 @@ const props = defineProps({
     type: String,
     default: '100%',
   },
+  optionInnerWidth: {
+    type: String,
+    default: '50%',
+  },
   maxHeight: {
     type: String,
     default: '100%',
@@ -73,20 +78,29 @@ const props = defineProps({
   },
 });
 
+const innatePlatforms = ['publication'];
 const fontAwesomePlatforms = ['youtube', 'spotify', 'appleMusic', 'soundcloud', 'deezer', 'amazonMusic'];
 const svgPlatforms = ['melon', 'genie', 'bugs', 'flo', 'vibe'];
+
+const router = useRouter();
 
 // Reactive references for data properties and computed values
 const platforms = computed(() => Object.keys(props.options));
 
 // Method defined in setup
-const goToUrl = (url) => {
-  window.open(url, '_blank');
+const goToUrl = (url, platform) => {
+  if (innatePlatforms.includes(platform)) {
+    router.push({ name: url });
+  } else {
+    window.open(url, '_blank');
+  }
 };
 
 // Helper method for formatting platform names
 const platformName = (name) => {
   switch (name) {
+    case 'publication':
+      return 'Publication';
     case 'melon':
       return 'Melon';
     case 'genie':
@@ -118,37 +132,39 @@ const platformIcon = (name) => {
   if (fontAwesomePlatforms.includes(name)) {
     switch (name) {
       case 'youtube':
-        return { type: 'fontawesome', icon: 'youtube' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'youtube' };
       case 'spotify':
-        return { type: 'fontawesome', icon: 'spotify' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'spotify' };
       case 'appleMusic':
-        return { type: 'fontawesome', icon: 'apple' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'apple' };
       case 'soundcloud':
-        return { type: 'fontawesome', icon: 'soundcloud' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'soundcloud' };
       case 'deezer':
-        return { type: 'fontawesome', icon: 'deezer' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'deezer' };
       case 'amazonMusic':
-        return { type: 'fontawesome', icon: 'amazon' };
-      default:
-        // Should not happen
-        return { type: 'fontawesome', icon: 'headphones-alt' };
+        return { type: 'fontawesome', faType: 'fab', icon: 'amazon' };
     }
   } else if (svgPlatforms.includes(name)) {
     switch (name) {
       case 'melon':
-        return { type: 'svg', icon: melonIcon };
+        return { type: 'svg', faType: null, icon: melonIcon };
       case 'genie':
-        return { type: 'svg', icon: genieIcon };
+        return { type: 'svg', faType: null, icon: genieIcon };
       case 'bugs':
-        return { type: 'svg', icon: bugsIcon };
+        return { type: 'svg', faType: null, icon: bugsIcon };
       case 'flo':
-        return { type: 'svg', icon: floIcon };
+        return { type: 'svg', faType: null, icon: floIcon };
       case 'vibe':
-        return { type: 'svg', icon: vibeIcon };
+        return { type: 'svg', faType: null, icon: vibeIcon };
+    }
+  } else if (innatePlatforms.includes(name)) {
+    switch (name) {
+      case 'publication':
+        return { type: 'fontawesome', faType: 'fas', icon: 'barcode' };
     }
   } else {
     // Should not happen
-    return { type: 'fontawesome', icon: 'headphones-alt' };
+    return { type: 'fontawesome', faType: 'fab', icon: 'headphones-alt' };
   }
 };
 </script>
@@ -203,8 +219,6 @@ const platformIcon = (name) => {
     cursor: pointer;
 
     .platform-option-wrapper {
-      width: 50%;
-
       display: flex;
       align-items: center;
 

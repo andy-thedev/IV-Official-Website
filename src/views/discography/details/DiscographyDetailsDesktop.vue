@@ -22,7 +22,7 @@
           </div>
         </div>
         <div v-else class="platform-list-wrapper">
-          <IVPlatformList :options="discographyDetails.platforms" maxHeight="400px" />
+          <IVPlatformList :options="discographyDetails.platforms" maxHeight="400px" optionInnerWidth="70%" />
         </div>
       </div>
     </div>
