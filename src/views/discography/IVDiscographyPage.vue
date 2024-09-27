@@ -1,5 +1,5 @@
 <template>
-  <div class="iv-discography-page">
+  <div class="iv-discography-page iv-page">
     <!-- Intro -->
     <div class="page-title-container">
       <h1 class="text-xl">Discography</h1>
@@ -58,8 +58,8 @@ const selectItem = (id) => {
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
-@import '@/assets/css/mixin-presets';
-@import '@/assets/css/discography.scss';
+@import '@/assets/css/presets/font-presets';
+@import '@/assets/css/common-styles';
 
 .iv-discography-page {
   @include generic-font-preset;
@@ -77,8 +77,6 @@ const selectItem = (id) => {
     h1 {
       margin: 0;
       text-transform: uppercase;
-
-      // @include generic-font-preset;
     }
 
     .border {

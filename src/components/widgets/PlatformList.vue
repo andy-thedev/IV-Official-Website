@@ -170,7 +170,94 @@ const platformIcon = (name) => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/mixin-presets';
+@mixin landing-dynamic-sizes {
+  &.iv-platform-table {
+    width: 21% !important;
+  }
+
+  @media (max-width: 1499px) {
+    &.iv-platform-table {
+      width: 35% !important;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    &.iv-platform-table {
+      width: 45% !important;
+    }
+  }
+
+  @media (max-width: 899px) {
+    &.iv-platform-table {
+      width: 55% !important;
+    }
+  }
+
+  @media (max-width: 599px) {
+    &.iv-platform-table {
+      width: 70% !important;
+    }
+    .title {
+      font-size: 20px !important;
+    }
+
+    .platform-option-container {
+      padding: 15px 0 15px 0 !important;
+    }
+
+    .platform-icon {
+      width: 35px !important;
+      height: 35px !important;
+      font-size: 35px !important;
+      margin-right: 20px !important;
+    }
+
+    .platform-text {
+      font-size: 13px !important;
+    }
+  }
+
+  @media (max-width: 299px) {
+    .platform-option-wrapper {
+      width: 70% !important;
+    }
+
+    .platform-icon {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 30px !important;
+    }
+
+    .platform-option-container {
+      padding: 10px 0 10px 0 !important;
+    }
+  }
+
+  @media (max-width: 1280px) and (orientation: landscape) {
+    &.iv-platform-table {
+      width: 30% !important;
+    }
+
+    .title {
+      font-size: 20px !important;
+    }
+
+    .platform-option-container {
+      padding: 10px 0 10px 0 !important;
+    }
+
+    .platform-icon {
+      width: 30px !important;
+      height: 30px !important;
+      font-size: 30px !important;
+      margin-right: 20px !important;
+    }
+
+    .platform-text {
+      font-size: 13px !important;
+    }
+  }
+}
 
 .landing-dynamic {
   @include landing-dynamic-sizes;

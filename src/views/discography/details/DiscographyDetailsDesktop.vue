@@ -1,5 +1,5 @@
 <template>
-  <div class="discography-details iv-discography-page">
+  <div class="discography-details iv-page">
     <div class="album-container">
       <div class="album-img-wrapper">
         <img :src="discographyDetails.media.artwork" draggable="false" />
@@ -60,10 +60,10 @@ const trackFeature = (featureList) => {
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
-@import '@/assets/css/mixin-presets';
-@import '@/assets/css/discography.scss';
+@import '@/assets/css/presets/font-presets';
+@import '@/assets/css/common-styles';
 
-.discography-details.iv-discography-page {
+.discography-details {
   @include generic-font-preset;
 
   background-color: $iv-near-black;

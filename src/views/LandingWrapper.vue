@@ -37,7 +37,7 @@ const closeOverlay = () => {
 </script>
 
 <style lang="scss" scoped>
-@import '@/assets/css/mixin-presets';
+@import '@/assets/css/presets/transition-presets';
 
 .iv-landing-wrapper {
   width: 100vw;
