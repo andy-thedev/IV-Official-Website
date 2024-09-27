@@ -1,5 +1,5 @@
 <template>
-  <div class="iv-preview-menu">
+  <div class="iv-preview-menu-wrapper">
     <IVPreviewMenuMobile v-if="useGlobals.isMobile" :menu="ivMenu" />
     <IVPreviewMenuDesktop v-else :menu="ivMenu" />
   </div>
@@ -15,10 +15,9 @@ import IVPreviewMenuDesktop from '@/components/layout/preview-menu/PreviewMenuDe
 </script>
 
 <style lang="scss" scoped>
-.iv-preview-menu {
-  height: 70%;
-  width: 70%;
-  overflow: auto;
+.iv-preview-menu-wrapper {
+  height: 100%;
+  width: 100%;
 
   display: flex;
   justify-content: center;
