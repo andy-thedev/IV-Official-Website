@@ -6,7 +6,7 @@
       </div>
       <div class="album-details-container" @mouseover="isHoveringAlbum = true" @mouseleave="isHoveringAlbum = false">
         <div class="album-title-wrapper">
-          <h1 class="album-title text-xl">{{ discographyDetails.title }}</h1>
+          <h1 class="album-title text-xl">{{ discographyDetails.title[useGlobals.currLang] }}</h1>
         </div>
         <div v-if="!isHoveringAlbum" class="track-list-container">
           <div v-for="(track, index) in trackList" class="track-container" :key="index">
@@ -37,6 +37,8 @@ import ivDiscography from '@/assets/data/iv-discography.js';
 import ivTrackList from '@/assets/data/iv-track-list.js';
 
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
+
+import { useGlobals } from '@/composables/useGlobals';
 
 const isHoveringAlbum = ref(false);
 

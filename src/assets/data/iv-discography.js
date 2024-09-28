@@ -18,7 +18,10 @@ import youthArtworkImg from '@/assets/img/artworks/youth.jpeg';
 const ivDiscography = [
   {
     id: 'youth',
-    title: 'Youth',
+    title: {
+      EN: 'Youth',
+      KR: '철부지',
+    },
     colors: {
       primary: '#6699ff',
       font: null,
@@ -43,7 +46,10 @@ const ivDiscography = [
   },
   {
     id: 'last-dance',
-    title: 'Last Dance',
+    title: {
+      EN: 'LAST DANCE',
+      KR: 'LAST DANCE',
+    },
     colors: {
       primary: '#D8A826',
       font: null,
@@ -78,7 +84,10 @@ const ivDiscography = [
   },
   {
     id: 'collection',
-    title: 'Collection',
+    title: {
+      EN: 'Collection',
+      KR: 'Collection',
+    },
     colors: {
       primary: '#26264B',
       font: null,
@@ -104,7 +113,10 @@ const ivDiscography = [
   },
   {
     id: 'pdg-project-2019',
-    title: 'PDG PROJECT [2019]',
+    title: {
+      EN: 'PDG PROJECT [2019]',
+      KR: 'PDG PROJECT [2019]',
+    },
     colors: {
       primary: '#D1D1D1',
       font: 'black',
@@ -129,7 +141,10 @@ const ivDiscography = [
   },
   {
     id: 'fly',
-    title: '종이비행기 (Fly!)',
+    title: {
+      EN: 'Fly!',
+      KR: '종이비행기',
+    },
     colors: {
       primary: '#1993B5',
       font: null,
@@ -155,7 +170,10 @@ const ivDiscography = [
   },
   {
     id: 'lately',
-    title: 'Lately',
+    title: {
+      EN: 'Lately',
+      KR: 'Lately',
+    },
     colors: {
       primary: '#339FBD',
       font: null,

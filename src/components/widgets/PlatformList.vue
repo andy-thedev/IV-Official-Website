@@ -18,16 +18,16 @@
       >
         <div class="platform-option-wrapper" :style="{ width: optionInnerWidth }">
           <font-awesome-icon
-            v-if="platformIcon(platform).type === 'fontawesome'"
-            :icon="[platformIcon(platform).faType, platformIcon(platform).icon]"
+            v-if="PlatformIconMapping[platform].type === 'fontawesome'"
+            :icon="[PlatformIconMapping[platform].faType, PlatformIconMapping[platform].icon]"
             class="platform-icon"
           />
           <img
-            v-else-if="platformIcon(platform).type === 'svg'"
-            :src="platformIcon(platform).icon"
+            v-else-if="PlatformIconMapping[platform].type === 'svg'"
+            :src="PlatformIconMapping[platform].icon"
             class="platform-icon"
           />
-          <div class="platform-text">{{ platformName(platform) }}</div>
+          <div class="platform-text">{{ PlatformNameMapping[platform] }}</div>
         </div>
       </div>
 
@@ -42,14 +42,18 @@
 </template>
 
 <script setup>
-import { computed } from 'vue';
 import { useRouter } from 'vue-router';
+import { computed } from 'vue';
 
-import melonIcon from '@/assets/icons/platforms/melon.svg';
-import genieIcon from '@/assets/icons/platforms/genie.svg';
-import bugsIcon from '@/assets/icons/platforms/bugs.svg';
-import floIcon from '@/assets/icons/platforms/flo.svg';
-import vibeIcon from '@/assets/icons/platforms/vibe.svg';
+import {
+  SupportedPlatforms,
+  PlatformIconMapping,
+  PlatformNameMapping,
+  OrderedInnatePlatforms,
+  LangOrderedPlatforms,
+} from '@/lib/enums/platforms';
+
+import { useGlobals } from '@/composables/useGlobals';
 
 const props = defineProps({
   title: {
@@ -78,93 +82,17 @@ const props = defineProps({
   },
 });
 
-const innatePlatforms = ['publication'];
-const fontAwesomePlatforms = ['youtube', 'spotify', 'appleMusic', 'soundcloud', 'deezer', 'amazonMusic'];
-const svgPlatforms = ['melon', 'genie', 'bugs', 'flo', 'vibe'];
-
 const router = useRouter();
 
-// Reactive references for data properties and computed values
-const platforms = computed(() => Object.keys(props.options));
+const platforms = computed(() => {
+  return LangOrderedPlatforms[useGlobals.currLang].filter((platform) => props.options[platform]);
+});
 
-// Method defined in setup
 const goToUrl = (url, platform) => {
-  if (innatePlatforms.includes(platform)) {
+  if (OrderedInnatePlatforms.includes(SupportedPlatforms[platform])) {
     router.push({ name: url });
   } else {
     window.open(url, '_blank');
-  }
-};
-
-// Helper method for formatting platform names
-const platformName = (name) => {
-  switch (name) {
-    case 'publication':
-      return 'Publication';
-    case 'melon':
-      return 'Melon';
-    case 'genie':
-      return 'Genie';
-    case 'bugs':
-      return 'Bugs';
-    case 'flo':
-      return 'Flo';
-    case 'vibe':
-      return 'Vibe';
-    case 'youtube':
-      return 'Youtube';
-    case 'spotify':
-      return 'Spotify';
-    case 'appleMusic':
-      return 'Apple Music';
-    case 'soundcloud':
-      return 'Soundcloud';
-    case 'deezer':
-      return 'Deezer';
-    case 'amazonMusic':
-      return 'Amazon Music';
-    default:
-      return name.charAt(0).toUpperCase() + name.slice(1);
-  }
-};
-
-const platformIcon = (name) => {
-  if (fontAwesomePlatforms.includes(name)) {
-    switch (name) {
-      case 'youtube':
-        return { type: 'fontawesome', faType: 'fab', icon: 'youtube' };
-      case 'spotify':
-        return { type: 'fontawesome', faType: 'fab', icon: 'spotify' };
-      case 'appleMusic':
-        return { type: 'fontawesome', faType: 'fab', icon: 'apple' };
-      case 'soundcloud':
-        return { type: 'fontawesome', faType: 'fab', icon: 'soundcloud' };
-      case 'deezer':
-        return { type: 'fontawesome', faType: 'fab', icon: 'deezer' };
-      case 'amazonMusic':
-        return { type: 'fontawesome', faType: 'fab', icon: 'amazon' };
-    }
-  } else if (svgPlatforms.includes(name)) {
-    switch (name) {
-      case 'melon':
-        return { type: 'svg', faType: null, icon: melonIcon };
-      case 'genie':
-        return { type: 'svg', faType: null, icon: genieIcon };
-      case 'bugs':
-        return { type: 'svg', faType: null, icon: bugsIcon };
-      case 'flo':
-        return { type: 'svg', faType: null, icon: floIcon };
-      case 'vibe':
-        return { type: 'svg', faType: null, icon: vibeIcon };
-    }
-  } else if (innatePlatforms.includes(name)) {
-    switch (name) {
-      case 'publication':
-        return { type: 'fontawesome', faType: 'fas', icon: 'barcode' };
-    }
-  } else {
-    // Should not happen
-    return { type: 'fontawesome', faType: 'fab', icon: 'headphones-alt' };
   }
 };
 </script>

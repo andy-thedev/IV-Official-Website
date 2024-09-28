@@ -28,7 +28,7 @@
         <img :src="item.media.artwork" draggable="false" />
         <!-- Item Overlay -->
         <div class="item-img-overlay-container">
-          <div class="overlay-title">{{ item.title }}</div>
+          <div class="overlay-title">{{ item.title[useGlobals.currLang] }}</div>
           <div v-if="isItemUnavailable(item.platforms)" class="item-unavailable-container">
             <font-awesome-icon :icon="['fas', 'eye-slash']" class="item-unavailable-icon" />
             <div class="item-unavailable-text">No longer available</div>
@@ -40,8 +40,11 @@
 </template>
 
 <script setup>
-import ivDiscographyData from '@/assets/data/iv-discography.js';
 import { useRouter } from 'vue-router';
+
+import ivDiscographyData from '@/assets/data/iv-discography.js';
+
+import { useGlobals } from '@/composables/useGlobals';
 
 const enabledDiscographyItems = ivDiscographyData.filter((item) => item.feature.iv.discography === true);
 

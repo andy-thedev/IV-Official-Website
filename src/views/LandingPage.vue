@@ -14,7 +14,7 @@
       >
         <IVPlatformList
           dynamicSizePreset="landing"
-          :title="useOverlay.overlay.title"
+          :title="useOverlay.overlay.title[useGlobals.currLang]"
           :options="useOverlay.overlay.platforms"
           maxHeight="50vh"
         />
@@ -25,13 +25,17 @@
 
 <script setup>
 import { ref } from 'vue';
+
 import ivDiscographyData from '@/assets/data/iv-discography.js';
+
 import IVCarousel from '@/components/widgets/IVCarousel.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
+
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
+import { useGlobals } from '@/composables/useGlobals';
 
 // Filter items that have carousel feature flag enabled
 const filteredIvDiscographyData = ivDiscographyData.filter((item) => item.feature.iv.carousel === true);
