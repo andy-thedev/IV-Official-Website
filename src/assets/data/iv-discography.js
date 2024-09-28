@@ -27,7 +27,6 @@ const ivDiscography = [
       artwork: youthArtworkImg,
       carousel: youthArtworkImg,
     },
-    // platforms: {},
     platforms: {
       publication: 'YouthPublication',
     },
