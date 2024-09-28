@@ -1,4 +1,5 @@
-import discographyPreviewImg from '@/assets/img/artworks/youth.jpeg';
+import youthArtworkImg from '@/assets/img/artworks/youth.jpeg';
+import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
 
 {
   /* <p>An aesthetic dive into an elaborate collection of our releases.</p>
@@ -15,7 +16,7 @@ import discographyPreviewImg from '@/assets/img/artworks/youth.jpeg';
 const ivMenu = [
   {
     name: 'Indivisual',
-    previewImgSrc: discographyPreviewImg,
+    previewImgSrc: youthArtworkImg,
     children: [
       {
         name: 'Home',
@@ -29,8 +30,8 @@ const ivMenu = [
   },
   {
     name: 'PG-13',
-    previewImgSrc: discographyPreviewImg,
-    menu: [
+    previewImgSrc: lastDanceArtworkImg,
+    children: [
       {
         name: 'Home',
         routeName: '',

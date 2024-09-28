@@ -32,7 +32,7 @@
       </div>
 
       <div v-if="platforms.length === 0" class="platform-option-container remove-cursor-pointer">
-        <div class="platform-option-wrapper">
+        <div class="platform-option-wrapper" :style="{ width: optionInnerWidth }">
           <font-awesome-icon :icon="['fas', 'eye-slash']" class="platform-icon" />
           <div class="platform-text remove-nowrap">This track is no longer available</div>
         </div>
