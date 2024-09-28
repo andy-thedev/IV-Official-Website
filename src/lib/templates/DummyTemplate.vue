@@ -16,8 +16,6 @@ export default {
       // something = 1,
     };
   },
-  computed: {},
-  created() {},
   methods: {
     //   test() {
     //   },

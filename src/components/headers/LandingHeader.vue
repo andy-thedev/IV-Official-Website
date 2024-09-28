@@ -7,7 +7,7 @@
     }"
   >
     <div class="left-items-container">
-      <!-- <font-awesome-icon :icon="['fas', 'headphones-alt']" class="left-icon" @click="selectMembers" /> -->
+      <LangIcon />
     </div>
     <div class="center-brand" @click="selectBrand">
       <span class="center-text">INDIVISUAL</span>
@@ -21,6 +21,7 @@
 <script setup>
 import { useOverlay } from '@/composables/overlays/useOverlay';
 import { useRouter } from 'vue-router';
+import LangIcon from '@/components/widgets/LangIcon.vue';
 
 defineProps({
   color: {
