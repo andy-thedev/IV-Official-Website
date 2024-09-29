@@ -6,7 +6,7 @@ const RESIZE_WIDTH = 1281;
 
 export const useGlobals = reactive({
   isMobile: window.innerWidth < RESIZE_WIDTH,
-  currLang: SupportedLanguages.KR,
+  currLang: SupportedLanguages.EN,
 
   onResize() {
     const newIsMobile = window.innerWidth < RESIZE_WIDTH;
