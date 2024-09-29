@@ -16,6 +16,9 @@
 </template>
 
 <script setup>
+import { watch, ref } from 'vue';
+import { useRoute } from 'vue-router';
+
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
 import { useOverlay } from '@/composables/overlays/useOverlay';
@@ -23,6 +26,8 @@ import { useOverlay } from '@/composables/overlays/useOverlay';
 import IVLandingHeader from '@/components/headers/LandingHeader.vue';
 import IVOverlay from '@/components/widgets/IVOverlay.vue';
 import IVPreviewMenu from '@/components/layout/preview-menu/PreviewMenu.vue';
+
+const route = useRoute();
 
 const showMenuOverlay = () => {
   useLandingCarousel.enableNextItemTimer(false);
@@ -34,6 +39,21 @@ const closeOverlay = () => {
   useOverlay.closeOverlay();
   useLandingCarousel.enableNextItemTimer(true);
 };
+
+watch(
+  () => route.meta,
+  (newMeta) => {
+    const newHeaderColor = newMeta?.headerColor;
+    const newHeaderFontColor = newMeta?.headerFontColor;
+
+    if (newHeaderColor && newHeaderFontColor) {
+      useLandingHeader.updateHeaderAndFontColors(newMeta.headerColor, newMeta.headerFontColor);
+    } else {
+      useLandingHeader.resetHeaderAndFontColors();
+    }
+  },
+  { immediate: true },
+);
 </script>
 
 <style lang="scss" scoped>

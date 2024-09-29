@@ -29,6 +29,10 @@ const router = createRouter({
           path: 'discography',
           name: 'DiscographyWrapper',
           component: DiscographyWrapper,
+          meta: {
+            headerColor: 'black',
+            headerFontColor: 'white',
+          },
           children: [
             {
               path: '',

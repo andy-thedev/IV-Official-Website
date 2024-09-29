@@ -13,7 +13,7 @@ import collectionCarouselImg from '@/assets/img/carousel/collection.jpg';
 import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
 import lastDanceCarouselImg from '@/assets/img/carousel/last-dance.jpg';
 
-import youthArtworkImg from '@/assets/img/artworks/youth.jpeg';
+import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
 
 const ivDiscography = [
   {
