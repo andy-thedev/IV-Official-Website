@@ -149,7 +149,7 @@ const trackFeature = (featureList) => {
   }
 }
 
-@media (max-width: 399px) {
+@media (max-width: 349px) {
   .text-xl {
     font-size: 40px;
   }

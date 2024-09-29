@@ -145,7 +145,7 @@ const goToUrl = (url, platform) => {
     }
   }
 
-  @media (max-width: 299px) {
+  @media (max-width: 349px) {
     .platform-option-wrapper {
       width: 70% !important;
     }

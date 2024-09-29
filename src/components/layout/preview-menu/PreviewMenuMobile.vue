@@ -155,6 +155,30 @@ const selectChildItem = (index) => {
   }
 }
 
+@media (max-width: 1199px) {
+  .iv-preview-menu {
+    .iv-preview-menu-container {
+      width: 90%;
+      .primary-list {
+        .item-wrapper {
+          .item-text {
+            font-size: 30px;
+          }
+        }
+      }
+      .preview-container {
+        .children-list {
+          .item-wrapper {
+            .item-text {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 599px) {
   .iv-preview-menu {
     .iv-preview-menu-container {
@@ -179,7 +203,7 @@ const selectChildItem = (index) => {
   }
 }
 
-@media (max-width: 299px) {
+@media (max-width: 349px) {
   .iv-preview-menu {
     .iv-preview-menu-container {
       .primary-list {

@@ -23,7 +23,7 @@ const ivDiscography = [
       KR: '철부지',
     },
     colors: {
-      primary: '#6699ff',
+      primary: '#416492',
       font: null,
     },
     media: {

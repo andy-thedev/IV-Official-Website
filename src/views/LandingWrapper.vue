@@ -16,7 +16,7 @@
 </template>
 
 <script setup>
-import { watch, ref } from 'vue';
+import { watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
@@ -37,6 +37,7 @@ const showMenuOverlay = () => {
 
 const closeOverlay = () => {
   useOverlay.closeOverlay();
+  useLandingHeader.revertHeaderAndFontColors();
   useLandingCarousel.enableNextItemTimer(true);
 };
 

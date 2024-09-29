@@ -29,20 +29,24 @@ const router = createRouter({
           path: 'discography',
           name: 'DiscographyWrapper',
           component: DiscographyWrapper,
-          meta: {
-            headerColor: 'black',
-            headerFontColor: 'white',
-          },
           children: [
             {
               path: '',
               name: 'IVDiscographyPage',
               component: IVDiscographyPage,
+              meta: {
+                headerColor: 'black',
+                headerFontColor: 'white',
+              },
             },
             {
               path: ':id',
               name: 'DiscographyDetails',
               component: DiscographyDetails,
+              meta: {
+                headerColor: 'black',
+                headerFontColor: 'white',
+              },
             },
             {
               path: 'publication',
@@ -52,6 +56,10 @@ const router = createRouter({
                   path: 'youth',
                   name: 'YouthPublication',
                   component: YouthPublication,
+                  meta: {
+                    headerColor: '#416492',
+                    headerFontColor: 'white',
+                  },
                 },
               ],
             },

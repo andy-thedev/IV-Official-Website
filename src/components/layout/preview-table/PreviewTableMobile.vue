@@ -86,7 +86,7 @@ defineProps({
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 349px) {
   .iv-preview-table-mobile {
     .item-wrapper {
       .item-text {

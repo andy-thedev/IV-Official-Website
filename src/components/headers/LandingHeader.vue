@@ -123,7 +123,7 @@ const selectBrand = () => {
   }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 349px) {
   .iv-landing-header {
     .center-brand {
       .center-text {
