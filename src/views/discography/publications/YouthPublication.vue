@@ -12,7 +12,7 @@
           (Paris Molokwu), PG-13, JAYAN (Jay An), Meesung Park, Daniel Kangeon Choi.
         </p>
         <p>
-          This photo shoot for the album cover of "Youth" marks the final gathering of the presented members, and
+          This photo shoot for the album cover of "Youth" marks the final gathering of the presented members, before
           PG-13's journey to South Korea to complete the album's production.
         </p>
       </div>

@@ -100,12 +100,12 @@ export default {
   },
   methods: {
     startNextItemTimer() {
-      this.NextItemTimer = setInterval(() => {
+      this.nextItemTimer = setInterval(() => {
         this.nextItem();
       }, CAROUSEL_NEXT_ITEM_TIMER);
     },
     clearNextItemTimer() {
-      clearInterval(this.NextItemTimer);
+      clearInterval(this.nextItemTimer);
     },
     resetNextItemTimer() {
       this.clearNextItemTimer();
