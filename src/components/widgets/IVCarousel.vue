@@ -92,8 +92,15 @@ export default {
       }
     },
   },
+  activated() {
+    if (this.enableNextItemTimer) {
+      this.startNextItemTimer();
+    }
+  },
   mounted() {
-    this.startNextItemTimer();
+    if (this.enableNextItemTimer) {
+      this.startNextItemTimer();
+    }
   },
   beforeUnmount() {
     this.clearNextItemTimer();

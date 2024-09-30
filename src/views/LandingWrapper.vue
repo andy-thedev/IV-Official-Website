@@ -36,8 +36,17 @@ const showMenuOverlay = () => {
 };
 
 const closeOverlay = () => {
+  const newHeaderColor = route?.meta?.headerColor;
+  const newHeaderFontColor = route?.meta?.headerFontColor;
+
   useOverlay.closeOverlay();
-  useLandingHeader.revertHeaderAndFontColors();
+
+  if (newHeaderColor && newHeaderFontColor) {
+    useLandingHeader.updateHeaderAndFontColors(newHeaderColor, newHeaderFontColor);
+  } else {
+    useLandingHeader.resetHeaderAndFontColors();
+  }
+
   useLandingCarousel.enableNextItemTimer(true);
 };
 
@@ -48,7 +57,7 @@ watch(
     const newHeaderFontColor = newMeta?.headerFontColor;
 
     if (newHeaderColor && newHeaderFontColor) {
-      useLandingHeader.updateHeaderAndFontColors(newMeta.headerColor, newMeta.headerFontColor);
+      useLandingHeader.updateHeaderAndFontColors(newHeaderColor, newHeaderFontColor);
     } else {
       useLandingHeader.resetHeaderAndFontColors();
     }
