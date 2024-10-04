@@ -33,6 +33,11 @@ const ivDiscography = [
     platforms: {
       publication: 'YouthPublication',
     },
+    collaborators: {
+      artists: ['PG-13'],
+      producers: ['Vincent Park'],
+      ['mix-master']: ['Vincent Park'],
+    },
     feature: {
       iv: {
         carousel: false,
@@ -71,6 +76,11 @@ const ivDiscography = [
       deezer: 'https://deezer.com/us/album/240383532',
       amazonMusic: 'https://amazon.com/gp/product/B0982KW7GR',
     },
+    collaborators: {
+      artists: ['PG-13'],
+      producers: ['Vermello'],
+      ['mix-master']: ['Vermello'],
+    },
     feature: {
       iv: {
         carousel: true,
@@ -100,6 +110,11 @@ const ivDiscography = [
       youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM',
       soundcloud: 'https://soundcloud.com/indivisualiv/sets/collection',
     },
+    collaborators: {
+      artists: ['PG-13'],
+      producers: ['Vermello'],
+      ['mix-master']: ['Vermello'],
+    },
     feature: {
       iv: {
         carousel: true,
@@ -127,6 +142,11 @@ const ivDiscography = [
     },
     platforms: {
       soundcloud: 'https://soundcloud.com/official-pg13/sets/pdg-project-2019',
+    },
+    collaborators: {
+      artists: ['PG-13'],
+      producers: ['Vermello'],
+      ['mix-master']: ['Vermello'],
     },
     feature: {
       iv: {
@@ -157,6 +177,11 @@ const ivDiscography = [
       youtube: 'https://youtube.com/watch?v=OSg0_Rz2iuU',
       soundcloud: 'https://soundcloud.com/indivisualiv/pg-13-fly-remastered',
     },
+    collaborators: {
+      artists: ['PG-13'],
+      producers: ['Vermello'],
+      ['mix-master']: ['Vermello'],
+    },
     feature: {
       iv: {
         carousel: true,
@@ -183,6 +208,11 @@ const ivDiscography = [
       carousel: latelyCarouselImg,
     },
     platforms: {},
+    collaborators: {
+      artists: ['PG-13', 'Vermello'],
+      producers: ['Vermello'],
+      ['mix-master']: ['Vermello'],
+    },
     feature: {
       iv: {
         carousel: true,
