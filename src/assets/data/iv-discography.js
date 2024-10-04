@@ -22,6 +22,9 @@ const ivDiscography = [
       EN: 'Youth',
       KR: '철부지',
     },
+    dates: {
+      release: '2024-10-04',
+    },
     colors: {
       primary: '#416492',
       font: null,

@@ -3,9 +3,17 @@
     font-size: 60px;
   }
 
+  .text-l {
+    font-size: 40px;
+  }
+
   @media (max-width: 1499px) {
     .text-xl {
       font-size: 50px;
+    }
+
+    .text-l {
+      font-size: 30px;
     }
   }
 
@@ -13,11 +21,19 @@
     .text-xl {
       font-size: 35px;
     }
+
+    .text-l {
+      font-size: 24px;
+    }
   }
 
   @media (max-width: 349px) {
     .text-xl {
       font-size: 25px;
+    }
+
+    .text-l {
+      font-size: 20px;
     }
   }
 }
