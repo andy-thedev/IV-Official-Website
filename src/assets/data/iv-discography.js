@@ -58,6 +58,9 @@ const ivDiscography = [
       EN: 'LAST DANCE',
       KR: 'LAST DANCE',
     },
+    dates: {
+      release: '2021-06-28',
+    },
     colors: {
       primary: '#D8A826',
       font: null,
@@ -101,6 +104,9 @@ const ivDiscography = [
       EN: 'Collection',
       KR: 'Collection',
     },
+    dates: {
+      release: '2020-11-17',
+    },
     colors: {
       primary: '#26264B',
       font: null,
@@ -135,6 +141,9 @@ const ivDiscography = [
       EN: 'PDG PROJECT [2019]',
       KR: 'PDG PROJECT [2019]',
     },
+    dates: {
+      release: '2019-01-31',
+    },
     colors: {
       primary: '#D1D1D1',
       font: 'black',
@@ -167,6 +176,9 @@ const ivDiscography = [
     title: {
       EN: 'Fly!',
       KR: '종이비행기',
+    },
+    dates: {
+      release: '2021-04-27',
     },
     colors: {
       primary: '#1993B5',
@@ -201,6 +213,9 @@ const ivDiscography = [
     title: {
       EN: 'Lately',
       KR: 'Lately',
+    },
+    dates: {
+      release: '2019-08-19',
     },
     colors: {
       primary: '#339FBD',
