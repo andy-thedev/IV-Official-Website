@@ -218,7 +218,16 @@ const goToUrl = (url, platform) => {
 
   .platforms-list-container {
     width: 100%;
-    overflow: scroll;
+    overflow-y: auto;
+
+    /* Hide scrollbar for */
+    -ms-overflow-style: none; // IE and Edge
+    scrollbar-width: none; // Firefox
+  }
+
+  .platforms-list-container::-webkit-scrollbar {
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    display: none;
   }
 
   .platform-option-container {
