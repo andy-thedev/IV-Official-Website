@@ -37,9 +37,10 @@ const ivDiscography = [
       publication: 'YouthPublication',
     },
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13'],
       producers: ['Vincent Park'],
-      ['mix-master']: ['Vincent Park'],
+      artwork: ['Meesung Park', 'PG-13'],
     },
     feature: {
       iv: {
@@ -83,9 +84,10 @@ const ivDiscography = [
       amazonMusic: 'https://amazon.com/gp/product/B0982KW7GR',
     },
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13'],
       producers: ['Vermello'],
-      ['mix-master']: ['Vermello'],
+      artwork: ['Meesung Park', 'PG-13'],
     },
     feature: {
       iv: {
@@ -120,9 +122,10 @@ const ivDiscography = [
       soundcloud: 'https://soundcloud.com/indivisualiv/sets/collection',
     },
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13'],
       producers: ['Vermello'],
-      ['mix-master']: ['Vermello'],
+      artwork: ['PG-13'],
     },
     feature: {
       iv: {
@@ -156,9 +159,10 @@ const ivDiscography = [
       soundcloud: 'https://soundcloud.com/official-pg13/sets/pdg-project-2019',
     },
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13'],
       producers: ['Vermello'],
-      ['mix-master']: ['Vermello'],
+      artwork: ['PG-13'],
     },
     feature: {
       iv: {
@@ -193,9 +197,10 @@ const ivDiscography = [
       soundcloud: 'https://soundcloud.com/indivisualiv/pg-13-fly-remastered',
     },
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13'],
       producers: ['Vermello'],
-      ['mix-master']: ['Vermello'],
+      artwork: ['PG-13'],
     },
     feature: {
       iv: {
@@ -227,9 +232,10 @@ const ivDiscography = [
     },
     platforms: {},
     collaborators: {
+      directors: ['PG-13'],
       artists: ['PG-13', 'Vermello'],
       producers: ['Vermello'],
-      ['mix-master']: ['Vermello'],
+      artwork: ['PG-13'],
     },
     feature: {
       iv: {
