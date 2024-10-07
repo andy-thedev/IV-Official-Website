@@ -1,64 +1,74 @@
 <template>
   <div class="discography-details iv-page">
-    <!-- Overview -->
-    <div class="album-details-section">
-      <!-- Album artwork -->
-      <div class="album-img-wrapper">
-        <!-- Album img -->
-        <img :src="discographyDetails.media.artwork" draggable="false" />
+    <!-- Section: Overview -->
+    <div class="album-overview-section">
+      <div class="album-overview-container">
+        <!-- Album artwork -->
+        <div class="album-img-wrapper">
+          <!-- Album img -->
+          <img :src="discographyDetails.media.artwork" draggable="false" />
+        </div>
 
-        <!-- Benchmarks -->
-        <div class="album-benchmarks-section">
-          <div class="album-release-hu-sae">{{ dateToHuSae(discographyDetails.dates.release) }}</div>
-          <div class="album-release-human-readable">
-            {{ dateToHumanReadable(discographyDetails.dates.release, useGlobals.currLang) }}
+        <!-- Album details -->
+        <div class="album-details-container" @mouseover="isHoveringAlbum = true" @mouseleave="isHoveringAlbum = false">
+          <!-- Title -->
+          <div class="album-title-wrapper">
+            <h1 class="album-title text-xl">{{ discographyDetails.title[useGlobals.currLang] }}</h1>
           </div>
-          <div class="album-director">DIRECTED BY {{ commaJoinArray(discographyDetails.collaborators.directors) }}</div>
 
-          <div class="album-collaborators-container">
-            <div class="participant-wrapper">
-              <span class="label">ARTISTS</span>
-              <span>{{ commaJoinArray(discographyDetails.collaborators.artists) }}</span>
-            </div>
-            <div class="participant-wrapper">
-              <span class="label">PRODUCERS</span>
-              <span>{{ commaJoinArray(discographyDetails.collaborators.producers) }}</span>
-            </div>
-            <div class="participant-wrapper">
-              <span class="label">ARTWORK</span>
-              <span>{{ commaJoinArray(discographyDetails.collaborators.artwork) }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Album details -->
-      <div class="album-details-container" @mouseover="isHoveringAlbum = true" @mouseleave="isHoveringAlbum = false">
-        <!-- Title -->
-        <div class="album-title-wrapper">
-          <h1 class="album-title text-xl">{{ discographyDetails.title[useGlobals.currLang] }}</h1>
-        </div>
-        <!-- Track list -->
-        <div v-if="!isHoveringAlbum" class="track-list-container">
-          <div v-for="(track, index) in trackList" class="track-container" :key="index">
-            <div class="track-number-wrapper">
-              <span class="track-number">{{ index + 1 }}</span>
-            </div>
-            <div class="track-title-wrapper">
-              <span class="track-title"> {{ track.title }}</span>
-            </div>
-            <div v-if="commaJoinArray(track.feat)" class="track-feat-wrapper">
-              <span class="track-feat">(feat. {{ commaJoinArray(track.feat) }})</span>
+          <!-- Track list -->
+          <div v-if="!isHoveringAlbum" class="track-list-container">
+            <div v-for="(track, index) in trackList" class="track-container" :key="index">
+              <div class="track-number-wrapper">
+                <span class="track-number">{{ index + 1 }}</span>
+              </div>
+              <div class="track-title-wrapper">
+                <span class="track-title"> {{ track.title }}</span>
+              </div>
+              <div v-if="commaJoinArray(track.feat)" class="track-feat-wrapper">
+                <span class="track-feat">(feat. {{ commaJoinArray(track.feat) }})</span>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- Platform list -->
-        <div v-else class="platform-list-wrapper">
-          <IVPlatformList :options="discographyDetails.platforms" maxHeight="400px" optionInnerWidth="70%" />
+
+          <!-- Platform list -->
+          <div v-else class="platform-list-wrapper">
+            <IVPlatformList :options="discographyDetails.platforms" maxHeight="100%" optionInnerWidth="70%" />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- Credits -->
+    <!-- Intermediate Img -->
+    <div class="intermediate-img-wrapper" id="intermediate">
+      <img :src="discographyDetails.media.intermediate" draggable="false" />
+    </div>
+
+    <!-- Benchmarks -->
+    <div class="album-benchmarks-container">
+      <div class="album-release-hu-sae">{{ dateToHuSae(discographyDetails.dates.release) }}</div>
+      <div class="album-release-human-readable">
+        {{ dateToHumanReadable(discographyDetails.dates.release, useGlobals.currLang) }}
+      </div>
+      <div class="album-director">DIRECTED BY {{ commaJoinArray(discographyDetails.collaborators.directors) }}</div>
+
+      <div class="album-collaborators-container">
+        <div class="participant-wrapper">
+          <span class="label">ARTISTS</span>
+          <span>{{ commaJoinArray(discographyDetails.collaborators.artists) }}</span>
+        </div>
+        <div class="participant-wrapper">
+          <span class="label">PRODUCERS</span>
+          <span>{{ commaJoinArray(discographyDetails.collaborators.producers) }}</span>
+        </div>
+        <div class="participant-wrapper">
+          <span class="label">ARTWORK</span>
+          <span>{{ commaJoinArray(discographyDetails.collaborators.artwork) }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section: Credits -->
     <div class="album-credits-section">
       <div v-for="(track, index) in trackList" class="track-credits-container" :key="index">
         <!-- Track title -->
@@ -70,12 +80,14 @@
             <span>{{ track.title }}</span>
           </div>
         </h1>
+
         <!-- Track credits -->
         <div class="credits-details-container">
           <!-- Dummy placeholder -->
           <h1 class="track-title-container text-l" :style="{ opacity: 0 }">
             <div class="track-title-wrapper">{{ track.title }}</div>
           </h1>
+
           <!-- Credit list -->
           <div class="credit-list-container">
             <div class="credit-wrapper">
@@ -122,7 +134,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useRoute } from 'vue-router';
 
 import ivDiscography from '@/assets/data/iv-discography.js';
@@ -131,7 +143,8 @@ import ivTrackList from '@/assets/data/iv-track-list.js';
 import { commaJoinArray } from '@/lib/helpers/array.js';
 import { dateToHuSae, dateToHumanReadable } from '@/lib/helpers/date.js';
 
-import { useGlobals } from '@/composables/useGlobals';
+import { useGlobals } from '@/composables/useGlobals.js';
+import { useLandingHeader } from '@/composables/headers/useLandingHeader.js';
 
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
 
@@ -144,6 +157,76 @@ const discographyId = route.params.id;
 // Data
 const discographyDetails = ivDiscography.find((item) => item.id === discographyId);
 const trackList = ivTrackList[discographyId];
+
+/*
+  For header color automation.
+
+  Changes header color to transparent when user scrolls
+  to a specific section of the page.
+*/
+onMounted(() => {
+  const targetSection = document.getElementById('intermediate');
+
+  if (targetSection) {
+    const observerOptions = {
+      root: null, // Use the viewport as the container
+      threshold: 0.3, // Trigger when 30% of the target is visible
+    };
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          useLandingHeader.updateHeaderAndFontColors(null, null);
+        } else {
+          useLandingHeader.updateHeaderAndFontColors('black', 'white');
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    observer.observe(targetSection);
+
+    onUnmounted(() => {
+      observer.disconnect();
+    });
+  }
+});
+
+/*
+  For album overview section's grid consistency.
+
+  Ensures that the height of `album-details-container` does not exceed
+  the height of `album-img-wrapper` to ensure layout consistency.
+
+  Issue exists due to dynamic & responsive CSS implementation of page
+  layout, and consequently, dynamic & responsive size of album img.
+*/
+onMounted(() => {
+  const img = document.querySelector('.album-img-wrapper img');
+  const detailsContainer = document.querySelector('.album-details-container');
+
+  const updateDetailsContainerHeight = () => {
+    // Get the height of the image wrapper
+    const imgWrapperHeight = img.offsetHeight;
+    // Set the max-height of the details container
+    detailsContainer.style.maxHeight = imgWrapperHeight + 'px';
+  };
+
+  // Update height after image loads
+  if (img.complete) {
+    updateDetailsContainerHeight();
+  } else {
+    img.addEventListener('load', updateDetailsContainerHeight);
+  }
+
+  // Update height on window resize
+  window.addEventListener('resize', updateDetailsContainerHeight);
+
+  onUnmounted(() => {
+    window.removeEventListener('resize', updateDetailsContainerHeight);
+    img.removeEventListener('load', updateDetailsContainerHeight);
+  });
+});
 </script>
 
 <style lang="scss" scoped>
@@ -157,97 +240,129 @@ const trackList = ivTrackList[discographyId];
   background-color: $iv-near-black;
   color: white;
 
-  .album-details-section {
-    width: 60%;
+  padding-top: 75px;
 
-    display: grid;
-    grid-gap: 50px;
-    grid-template-columns: repeat(2, 1fr);
+  .album-overview-section {
+    width: 70%;
+    height: calc(100vh - 75px);
 
-    .album-img-wrapper {
-      position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-      img {
-        width: 100%;
-        height: auto;
-      }
-    }
-    .album-details-container {
-      display: flex;
-      flex-direction: column;
+    .album-overview-container {
+      display: grid;
+      grid-gap: 50px;
+      grid-template-columns: repeat(2, 1fr);
 
-      .album-title-wrapper {
-        margin: 0 0 0 0;
+      .album-img-wrapper {
+        position: relative;
 
-        .album-title {
-          margin: 0;
-          text-transform: uppercase;
-          font-family: Raleway;
+        img {
+          width: 100%;
+          height: auto;
         }
       }
 
-      .track-list-container {
-        margin: 30px 0 0 0;
+      .album-details-container::-webkit-scrollbar {
+        /* Hide scrollbar for Chrome, Safari, and Opera */
+        display: none;
+      }
 
-        .track-container {
-          margin: 0 0 15px 0;
+      .album-details-container {
+        display: flex;
+        flex-direction: column;
 
-          display: flex;
-          flex-direction: row;
+        overflow-y: auto;
 
-          font-size: 17px;
-          font-weight: 600;
+        /* Hide scrollbar */
+        -ms-overflow-style: none; // IE and Edge
+        scrollbar-width: none; // Firefox
 
-          .track-number-wrapper {
-            width: 20px;
+        .album-title-wrapper {
+          margin: 0 0 0 0;
 
-            margin: 0 40px 0 0;
+          .album-title {
+            margin: 0;
+            text-transform: uppercase;
+            font-family: Raleway;
+          }
+        }
+
+        .track-list-container {
+          margin: 30px 0 0 0;
+
+          .track-container {
+            margin: 0 0 15px 0;
 
             display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+            flex-direction: row;
 
-          .track-title-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+            font-size: 17px;
+            font-weight: 600;
 
-          .track-feat-wrapper {
-            margin: 0 0 0 20px;
+            .track-number-wrapper {
+              width: 20px;
+
+              margin: 0 40px 0 0;
+
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .track-title-wrapper {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .track-feat-wrapper {
+              margin: 0 0 0 20px;
+            }
           }
         }
       }
     }
   }
 
-  .album-benchmarks-section {
-    width: 60%;
+  .intermediate-img-wrapper {
+    position: relative;
 
-    margin: 30px 0 0 0;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .album-benchmarks-container {
+    width: 70%;
+
+    margin: 100px 0 100px 0;
 
     display: flex;
     flex-direction: column;
 
-    font-size: 12px;
+    font-size: 15px;
 
     .album-release-hu-sae {
       text-transform: uppercase;
 
-      margin: 0 0 15px 0;
+      margin: 0 0 30px 0;
     }
 
     .album-release-human-readable {
       text-transform: uppercase;
 
-      margin: 0 0 15px 0;
+      margin: 0 0 30px 0;
     }
 
     .album-director {
       text-transform: uppercase;
 
-      margin: 0 0 15px 0;
+      margin: 0 0 30px 0;
     }
 
     .album-collaborators-container {
@@ -268,9 +383,7 @@ const trackList = ivTrackList[discographyId];
   }
 
   .album-credits-section {
-    width: 60%;
-
-    margin: 125px 0 0 0;
+    width: 70%;
 
     .track-credits-container {
       display: grid;

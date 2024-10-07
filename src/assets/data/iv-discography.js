@@ -14,6 +14,7 @@ import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
 import lastDanceCarouselImg from '@/assets/img/carousel/last-dance.jpg';
 
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
+import youthIntermediateImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
 
 const ivDiscography = [
   {
@@ -32,6 +33,7 @@ const ivDiscography = [
     media: {
       artwork: youthArtworkImg,
       carousel: youthArtworkImg,
+      intermediate: youthIntermediateImg,
     },
     platforms: {
       publication: 'YouthPublication',
@@ -69,6 +71,7 @@ const ivDiscography = [
     media: {
       artwork: lastDanceArtworkImg,
       carousel: lastDanceCarouselImg,
+      intermediate: lastDanceCarouselImg,
     },
     platforms: {
       melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
@@ -116,6 +119,7 @@ const ivDiscography = [
     media: {
       artwork: collectionArtworkImg,
       carousel: collectionCarouselImg,
+      intermediate: collectionCarouselImg,
     },
     platforms: {
       youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM',
@@ -154,6 +158,7 @@ const ivDiscography = [
     media: {
       artwork: pdgProjectArtworkImg,
       carousel: pdgProjectCarouselImg,
+      intermediate: pdgProjectCarouselImg,
     },
     platforms: {
       soundcloud: 'https://soundcloud.com/official-pg13/sets/pdg-project-2019',
@@ -191,6 +196,7 @@ const ivDiscography = [
     media: {
       artwork: flyArtworkImg,
       carousel: flyCarouselImg,
+      intermediate: flyCarouselImg,
     },
     platforms: {
       youtube: 'https://youtube.com/watch?v=OSg0_Rz2iuU',
@@ -229,6 +235,7 @@ const ivDiscography = [
     media: {
       artwork: latelyArtworkImg,
       carousel: latelyCarouselImg,
+      intermediate: latelyCarouselImg,
     },
     platforms: {},
     collaborators: {

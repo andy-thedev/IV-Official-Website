@@ -97,6 +97,9 @@ export default {
       this.startNextItemTimer();
     }
   },
+  deactivated() {
+    this.clearNextItemTimer();
+  },
   mounted() {
     if (this.enableNextItemTimer) {
       this.startNextItemTimer();
