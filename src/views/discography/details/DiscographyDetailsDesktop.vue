@@ -3,6 +3,10 @@
     <!-- Section: Overview -->
     <div class="album-overview section">
       <div class="album-overview-container">
+        <!-- Back navigation -->
+        <div class="back-nav-wrapper">
+          <font-awesome-icon :icon="['fas', 'arrow-left-long']" class="back-nav-icon" @click="selectBackNav()" />
+        </div>
         <!-- Album artwork -->
         <div class="album-img-wrapper">
           <img :src="discographyDetails.media.artwork" draggable="false" />
@@ -134,7 +138,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 import ivDiscography from '@/assets/data/iv-discography.js';
 import ivTrackList from '@/assets/data/iv-track-list.js';
@@ -150,12 +154,21 @@ import IVPlatformList from '@/components/widgets/PlatformList.vue';
 const isHoveringAlbum = ref(false);
 
 // Route
+
 const route = useRoute();
 const discographyId = route.params.id;
+const router = useRouter();
 
 // Data
+
 const discographyDetails = ivDiscography.find((item) => item.id === discographyId);
 const trackList = ivTrackList[discographyId];
+
+// Functions
+
+const selectBackNav = () => {
+  router.push({ name: 'IVDiscographyPage' });
+};
 
 /*
   For header color automation.
@@ -242,7 +255,7 @@ onMounted(() => {
   padding-top: 75px;
 
   .section {
-    width: 75%;
+    width: 70%;
   }
 
   .album-overview {
@@ -253,9 +266,29 @@ onMounted(() => {
     align-items: center;
 
     .album-overview-container {
+      margin-bottom: 50px;
+
       display: grid;
       grid-gap: 50px;
       grid-template-columns: repeat(2, 1fr);
+
+      position: relative;
+
+      .back-nav-wrapper {
+        position: absolute;
+        bottom: 100%;
+        left: 0;
+
+        margin: 0 0 40px 10px;
+
+        cursor: pointer;
+
+        .back-nav-icon {
+          font-size: 20px;
+
+          color: rgba(255, 255, 255, 0.5);
+        }
+      }
 
       .album-img-wrapper {
         position: relative;
@@ -426,6 +459,20 @@ onMounted(() => {
           .credit-title {
             margin: 0 60px 0 0;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 2560px) {
+  .discography-details {
+    .album-overview {
+      .album-overview-container {
+        margin-bottom: 0px;
+
+        .back-nav-wrapper {
+          margin: 0 0 20px 0;
         }
       }
     }

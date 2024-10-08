@@ -4,6 +4,10 @@
     <div class="album-overview section">
       <!-- Album artwork -->
       <div class="album-img-wrapper">
+        <!-- Back navigation -->
+        <div class="back-nav-wrapper">
+          <font-awesome-icon :icon="['fas', 'arrow-left-long']" class="back-nav-icon" @click="selectBackNav()" />
+        </div>
         <img :src="discographyDetails.media.artwork" draggable="false" />
       </div>
 
@@ -126,7 +130,7 @@
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 import ivDiscography from '@/assets/data/iv-discography.js';
 import ivTrackList from '@/assets/data/iv-track-list.js';
@@ -139,12 +143,21 @@ import { useGlobals } from '@/composables/useGlobals';
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
 
 // Route
+
 const route = useRoute();
 const discographyId = route.params.id;
+const router = useRouter();
 
 // Data
+
 const discographyDetails = ivDiscography.find((item) => item.id === discographyId);
 const trackList = ivTrackList[discographyId];
+
+// Functions
+
+const selectBackNav = () => {
+  router.push({ name: 'IVDiscographyPage' });
+};
 </script>
 
 <style lang="scss" scoped>
@@ -169,6 +182,22 @@ const trackList = ivTrackList[discographyId];
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(1, 1fr);
+
+    .back-nav-wrapper {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+
+      margin: 0 0 30px 10px;
+
+      cursor: pointer;
+
+      .back-nav-icon {
+        font-size: 20px;
+
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
 
     .album-img-wrapper {
       position: relative;
@@ -343,6 +372,14 @@ const trackList = ivTrackList[discographyId];
   }
 
   .discography-details {
+    .album-overview {
+      .back-nav-wrapper {
+        .back-nav-icon {
+          font-size: 15px;
+        }
+      }
+    }
+
     .album-benchmarks {
       font-size: 12px;
     }
@@ -363,6 +400,14 @@ const trackList = ivTrackList[discographyId];
   }
 
   .discography-details {
+    .album-overview {
+      .back-nav-wrapper {
+        .back-nav-icon {
+          font-size: 12px;
+        }
+      }
+    }
+
     .album-benchmarks {
       font-size: 10px;
     }
