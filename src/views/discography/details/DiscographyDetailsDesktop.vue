@@ -1,7 +1,7 @@
 <template>
   <div class="discography-details iv-page">
     <!-- Section: Overview -->
-    <div class="album-overview-section">
+    <div class="album-overview section">
       <div class="album-overview-container">
         <!-- Album artwork -->
         <div class="album-img-wrapper">
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Benchmarks -->
-    <div class="album-benchmarks-container">
+    <div class="album-benchmarks section">
       <div class="album-release-hu-sae">{{ dateToHuSae(discographyDetails.dates.release) }}</div>
       <div class="album-release-human-readable">
         {{ dateToHumanReadable(discographyDetails.dates.release, useGlobals.currLang) }}
@@ -69,7 +69,7 @@
     </div>
 
     <!-- Section: Credits -->
-    <div class="album-credits-section">
+    <div class="album-credits section">
       <div v-for="(track, index) in trackList" class="track-credits-container" :key="index">
         <!-- Track title -->
         <h1 class="track-title-container text-l">
@@ -242,8 +242,11 @@ onMounted(() => {
 
   padding-top: 75px;
 
-  .album-overview-section {
-    width: 70%;
+  .section {
+    width: 75%;
+  }
+
+  .album-overview {
     height: calc(100vh - 75px);
 
     display: flex;
@@ -337,9 +340,7 @@ onMounted(() => {
     }
   }
 
-  .album-benchmarks-container {
-    width: 70%;
-
+  .album-benchmarks {
     margin: 100px 0 100px 0;
 
     display: flex;
@@ -382,9 +383,7 @@ onMounted(() => {
     }
   }
 
-  .album-credits-section {
-    width: 70%;
-
+  .album-credits {
     .track-credits-container {
       display: grid;
       grid-gap: 50px;
