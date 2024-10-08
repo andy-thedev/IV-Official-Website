@@ -5,7 +5,6 @@
       <div class="album-overview-container">
         <!-- Album artwork -->
         <div class="album-img-wrapper">
-          <!-- Album img -->
           <img :src="discographyDetails.media.artwork" draggable="false" />
         </div>
 
