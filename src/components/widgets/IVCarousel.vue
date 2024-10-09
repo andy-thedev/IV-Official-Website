@@ -100,33 +100,43 @@ export default {
     this.clearNextItemTimer();
   },
   mounted() {
-    this.preloadImages();
+    // Check if user is watching the carousel
+    document.addEventListener('visibilitychange', this.handleVisibilityChange);
 
     if (this.enableNextItemTimer) {
       this.startNextItemTimer();
     }
   },
   beforeUnmount() {
+    document.removeEventListener('visibilitychange', this.handleVisibilityChange);
+
     this.clearNextItemTimer();
   },
   methods: {
-    preloadImages() {
-      this.carouselItemsInfo.forEach((item) => {
-        const img = new Image();
-        img.src = item.media.carousel;
-      });
+    /* To prevent bug where timer is causing animations to fire while user is not observing the page/carousel */
+    handleVisibilityChange() {
+      if (document.hidden) {
+        // Page is hidden, stop the timer
+        this.clearNextItemTimer();
+      } else {
+        // Page is visible, restart the timer
+        this.resetNextItemTimer();
+      }
     },
     startNextItemTimer() {
-      this.nextItemTimer = setInterval(() => {
+      this.nextItemTimer = setTimeout(() => {
         this.nextItem();
       }, CAROUSEL_NEXT_ITEM_TIMER);
     },
     clearNextItemTimer() {
       clearInterval(this.nextItemTimer);
+      this.nextItemTimer = null;
     },
     resetNextItemTimer() {
       this.clearNextItemTimer();
-      this.startNextItemTimer();
+      if (this.enableNextItemTimer) {
+        this.startNextItemTimer();
+      }
     },
     changeActiveItemIndex(n) {
       // Force index to be within bounds of [0, carouselItems.length)
