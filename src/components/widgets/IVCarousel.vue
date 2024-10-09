@@ -180,8 +180,8 @@ $color-active-opaque: rgb(255 255 255 / 1);
   // Carousel content
   .carousel-items-container {
     // inherit props width/height
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 
     .carousel-item-wrapper {
       overflow: hidden;
