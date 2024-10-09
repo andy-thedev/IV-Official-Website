@@ -28,4 +28,8 @@ coverage
 *.sw?
 
 # Template file
-./DummyTemplate.vue
+./src/lib/templates/DummyTemplate.vue
+./src/lib/templates/DummySetupTemplate.vue
+
+# Config
+./src/assets/data/iv-discography.js
