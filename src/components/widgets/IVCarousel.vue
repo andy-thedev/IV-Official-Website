@@ -188,6 +188,9 @@ $color-active-opaque: rgb(255 255 255 / 1);
       // inherit props width/height
       width: 100%;
       height: 100%;
+      min-width: 100%;
+      min-height: 100%;
+      aspect-ratio: 16/9;
 
       background-size: cover !important;
       -webkit-background-size: cover !important;
