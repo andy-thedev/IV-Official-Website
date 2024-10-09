@@ -32,7 +32,7 @@ const ivDiscography = [
     },
     media: {
       artwork: youthArtworkImg,
-      carousel: youthArtworkImg,
+      carousel: youthIntermediateImg,
       intermediate: youthIntermediateImg,
     },
     platforms: {
@@ -46,11 +46,11 @@ const ivDiscography = [
     },
     feature: {
       iv: {
-        carousel: false,
+        carousel: true,
         discography: true,
       },
       pg13: {
-        carousel: false,
+        carousel: true,
         discography: true,
       },
     },
