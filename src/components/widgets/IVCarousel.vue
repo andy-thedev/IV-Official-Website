@@ -23,9 +23,8 @@
         class="carousel-item-wrapper"
         v-touch:tap="handleItemSelected"
         @click="handleItemSelected"
-      >
-        <img :src="carouselItem.media.carousel" draggable="false" />
-      </div>
+        :style="{ backgroundImage: `url(${carouselItem.media.carousel})` }"
+      />
     </transition-group>
     <!-- Left/right controls -->
     <button class="carousel-control-wrapper left unselectable" :disabled="controlDisabled" @click="prevItem">
@@ -180,8 +179,8 @@ $color-active-opaque: rgb(255 255 255 / 1);
   // Carousel content
   .carousel-items-container {
     // inherit props width/height
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 
     .carousel-item-wrapper {
       overflow: hidden;
@@ -198,19 +197,15 @@ $color-active-opaque: rgb(255 255 255 / 1);
       height: 100%;
 
       background-size: cover !important;
+      background-position: center !important;
+      background-repeat: no-repeat;
+
       -webkit-background-size: cover !important;
       -moz-background-size: cover !important;
       -o-background-size: cover !important;
       background-position: center !important;
 
       cursor: pointer;
-
-      img {
-        // inherit props width/height
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
     }
   }
 
