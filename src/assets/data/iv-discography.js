@@ -46,8 +46,8 @@ const ivDiscography = [
     },
     feature: {
       iv: {
-        carousel: false,
-        discography: false,
+        carousel: true,
+        discography: true,
       },
       pg13: {
         carousel: true,

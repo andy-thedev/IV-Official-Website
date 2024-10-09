@@ -1,6 +1,6 @@
 <template>
   <div class="publication iv-page">
-    <img class="full-width-img" :src="youthArtworkImg" draggable="false" />
+    <img class="full-width-img first" :src="youthArtworkImg" draggable="false" />
     <div class="img-caption">
       <p class="caption-title">
         Youth (10.23.2022)<br />
@@ -17,6 +17,7 @@
         </p>
       </div>
     </div>
+
     <div class="text-block-container">
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
         Youth, adolescence, immaturity. <br />
@@ -42,6 +43,7 @@
         probably call it youth.
       </p> -->
     </div>
+
     <div class="text-block-container">
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
         For this 27-year-old, however, a vastly different range of connotations and concepts arise from the depths of
@@ -55,6 +57,7 @@
         본뜨고 있었다.
       </p>
     </div>
+
     <div class="text-block-container">
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
         Now, enough with being articulate. Let's talk. <br />
@@ -78,6 +81,7 @@
       </p>
       <!-- I began this album back in mid-2021, more than 3 years ago from today (late-2024), and -->
     </div>
+
     <div class="text-block-container">
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
         So what's with all of this "TMI"? <br />
@@ -95,6 +99,20 @@
         강렬하고 극단적이었으며 생생했던 청춘의 향기를, 더 이상 희미해지기 전에 붙잡으려는 몸부림 같은 것이다.
       </p>
     </div>
+
+    <!-- <img class="full-width-img" :src="testImg" draggable="false" />
+    <div class="img-caption">
+      <p class="caption-title">
+        Youth (10.23.2022)<br />
+        A parking lot in North York
+      </p>
+      <div class="caption-text">
+        <p>
+          Following the album cover shoot, select members are smoking in a nearby parking lot. PG-13 (25 years old),
+          suddenly bursts into laughter while conversing with friends.
+        </p>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -123,7 +141,29 @@ import { useGlobals } from '@/composables/useGlobals.js';
   .full-width-img {
     width: 100%;
 
-    margin: 0 0 20px 0;
+    margin: 50px 0 20px 0;
+
+    &.first {
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .four-grid-img-container {
+    width: 100%;
+
+    display: grid;
+    grid-gap: 15px;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+
+    .grid-item-wrapper {
+      position: relative;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
   }
 
   .img-caption {
