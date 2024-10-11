@@ -58,7 +58,14 @@
       </p>
     </div>
 
-    <img class="full-width-img" :src="youthBtsImg1" draggable="false" />
+    <picture>
+      <source :srcset="youthBtsMobileImg1" media="(max-width: 600px)" />
+      <source :srcset="youthBtsTabletImg1" media="(max-width: 1024)" />
+      <source :srcset="youthBtsHdImg1" media="(max-width: 1920px)" />
+      <source :srcset="youthBtsQhdImg1" media="(max-width: 2560px)" />
+      <source :srcset="youthBts4kImg1" media="(min-width: 3840px)" />
+      <img class="full-width-img" :src="youthBtsOriginalImg1" draggable="false" />
+    </picture>
     <div class="img-caption">
       <p class="caption-title">
         Youth (10.23.2022)<br />
@@ -134,7 +141,12 @@
 <script setup>
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
 
-import youthBtsImg1 from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
+import youthBtsOriginalImg1 from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
+import youthBts4kImg1 from '@/assets/img/bts/youth/4k/a-grass-lying-down.webp';
+import youthBtsQhdImg1 from '@/assets/img/bts/youth/qhd/a-grass-lying-down.webp';
+import youthBtsHdImg1 from '@/assets/img/bts/youth/hd/a-grass-lying-down.webp';
+import youthBtsTabletImg1 from '@/assets/img/bts/youth/tablet/a-grass-lying-down.webp';
+import youthBtsMobileImg1 from '@/assets/img/bts/youth/mobile/a-grass-lying-down.webp';
 
 import SupportedLanguages from '@/lib/enums/lang.js';
 
