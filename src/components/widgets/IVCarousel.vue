@@ -23,8 +23,15 @@
         class="carousel-item-wrapper"
         v-touch:tap="handleItemSelected"
         @click="handleItemSelected"
-        :style="{ backgroundImage: `url(${carouselItem.media.carousel})` }"
-      />
+      >
+        <picture>
+          <source :srcset="carouselItem.media.carousel['mobile']" media="(max-width: 1280)" />
+          <source :srcset="carouselItem.media.carousel['hd']" media="(max-width: 1920px)" />
+          <source :srcset="carouselItem.media.carousel['qhd']" media="(max-width: 2560px)" />
+          <source :srcset="carouselItem.media.carousel['4k']" media="(min-width: 3840px)" />
+          <img :src="carouselItem.media.carousel['original']" draggable="false" />
+        </picture>
+      </div>
     </transition-group>
     <!-- Left/right controls -->
     <button class="carousel-control-wrapper left unselectable" :disabled="controlDisabled" @click="prevItem">
@@ -193,8 +200,6 @@ $color-active-opaque: rgb(255 255 255 / 1);
     height: 100%;
 
     .carousel-item-wrapper {
-      overflow: hidden;
-
       /* Needed to trigger animation */
       position: absolute;
       top: 0;
@@ -206,16 +211,17 @@ $color-active-opaque: rgb(255 255 255 / 1);
       width: 100%;
       height: 100%;
 
-      background-size: cover !important;
-      background-position: center !important;
-      background-repeat: no-repeat;
-
-      -webkit-background-size: cover !important;
-      -moz-background-size: cover !important;
-      -o-background-size: cover !important;
-      background-position: center !important;
+      overflow: hidden;
 
       cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: center;
+      }
     }
   }
 

@@ -11,10 +11,13 @@ import collectionArtworkImg from '@/assets/img/artworks/collection.jpeg';
 import collectionCarouselImg from '@/assets/img/carousel/collection.jpg';
 
 import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
-import lastDanceCarouselImg from '@/assets/img/carousel/last-dance.jpg';
 
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
-import youthIntermediateImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
+import youthBtsAGrassLyingDownImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
+import youthBtsAGrassLyingDownImg4k from '@/assets/img/bts/youth/4k/a-grass-lying-down.webp';
+import youthBtsAGrassLyingDownImgQhd from '@/assets/img/bts/youth/qhd/a-grass-lying-down.webp';
+import youthBtsAGrassLyingDownImgHd from '@/assets/img/bts/youth/hd/a-grass-lying-down.webp';
+import youthBtsAGrassLyingDownImgMobile from '@/assets/img/bts/youth/mobile/a-grass-lying-down.webp';
 
 const ivDiscography = [
   {
@@ -32,8 +35,20 @@ const ivDiscography = [
     },
     media: {
       artwork: youthArtworkImg,
-      carousel: youthIntermediateImg,
-      intermediate: youthIntermediateImg,
+      carousel: {
+        ['4k']: youthBtsAGrassLyingDownImg4k,
+        ['qhd']: youthBtsAGrassLyingDownImgQhd,
+        ['hd']: youthBtsAGrassLyingDownImgHd,
+        ['mobile']: youthBtsAGrassLyingDownImgMobile,
+        ['original']: youthBtsAGrassLyingDownImg,
+      },
+      intermediate: {
+        ['4k']: youthBtsAGrassLyingDownImg4k,
+        ['qhd']: youthBtsAGrassLyingDownImgQhd,
+        ['hd']: youthBtsAGrassLyingDownImgHd,
+        ['mobile']: youthBtsAGrassLyingDownImgMobile,
+        ['original']: youthBtsAGrassLyingDownImg,
+      },
     },
     platforms: {
       publication: 'YouthPublication',
@@ -70,8 +85,6 @@ const ivDiscography = [
     },
     media: {
       artwork: lastDanceArtworkImg,
-      carousel: lastDanceCarouselImg,
-      intermediate: lastDanceCarouselImg,
     },
     platforms: {
       melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
