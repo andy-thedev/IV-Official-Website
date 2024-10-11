@@ -8,8 +8,8 @@
       </p>
       <div class="caption-text">
         <p>
-          Gen 1 members of Indivisual and friends stand from left to right - Vermello (Daniel Min), Yerin Lim, Unlimited
-          (Paris Molokwu), PG-13, JAYAN (Jay An), Meesung Park, Daniel Kangeon Choi.
+          Gen 1 members of Indivisual and friends stand from left to right - Vermello (Daniel Min), Meesung Park, Yerin
+          Lim, Daniel Kangeon Choi, Unlimited (Paris Molokwu), PG-13, JAYAN (Jay An).
         </p>
         <p>
           This photo shoot for the album cover of "Youth" marks the final gathering of the presented members, before
@@ -58,19 +58,34 @@
       </p>
     </div>
 
+    <img class="full-width-img" :src="youthBtsImg1" draggable="false" />
+    <div class="img-caption">
+      <p class="caption-title">
+        Youth (10.23.2022)<br />
+        North York, Hendon Park
+      </p>
+      <div class="caption-text">
+        <p>
+          Following the album cover shoot, Gen 1 members of Indivisual and friends lie down in a public park for
+          additional A-shots. Meesung Park is absent from this photo, being the photographer.
+        </p>
+        <p>
+          On this day, PG-13 had already planned for this publication, gathering content with the expectation of results
+          years down the line.
+        </p>
+      </div>
+    </div>
+
     <div class="text-block-container">
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
-        Now, enough with being articulate. Let's talk. <br />
         In my early twenties, my life was vastly different, and I was a very, very different person. Addicted, broke,
-        and most of all, <b>extremely intense</b>. Not only in circumstances, but as a person entirely. Ask anyone who
-        knew me back then, and they would either describe interactions with me as either interesting, or uncomfortable
-        (with more the latter than the former). Chasing "fun" with all other means disregarded, I was partaking in
-        radical, impulsive schemes, ranging from substance to dangerous activities. I could go into more detail, but it
-        would either require an NDA, or be just another byproduct of my cynical interpretation of everything, at that
-        time.
+        and most of all, extremely intense. Not only in circumstances, but as a person entirely. Ask anyone who knew me
+        back then, and they would either describe interactions with me as either interesting, or uncomfortable (with
+        more the latter than the former). Chasing "fun" with all other means disregarded, I was partaking in radical,
+        impulsive schemes, ranging from substance to dangerous activities. I could go into more detail, but it would
+        either require an NDA, or be just another byproduct of my cynical interpretation of everything, at that time.
       </p>
       <p v-else-if="useGlobals.currLang == SupportedLanguages.KR">
-        이제 그만. 이딴 허례허식은 거두절미하고, 조금 더 솔직해져보자. <br />
         내 20대 초반은 지금과 완전히 달랐고, 나는 아주, 아주 다른 사람이었다. 진취적인 일은 극도로 피하며 중독에
         빠져있었고, 한마디로 "음침한 그지새끼" - 무엇보다 극도로 강렬하며 극단적인 사람이었다. 내 상황과 환경에 기대
         위장하고 싶지도 않고, 그냥 나라는 사람 그 자체가 그랬다. 그때 나를 알았던 사람, 누구든 한 명에게 물어본다면,
@@ -92,11 +107,11 @@
         intense, extreme, and vivid.
       </p>
       <p v-else-if="useGlobals.currLang == SupportedLanguages.KR">
-        그래서 이딴 TMI를 구구절절 늘어놓고 있을까? <br />
-        이 앨범을 제대로 이해하고, 왜 이런 앨범이 나왔는지 알기 위해서는 저자의 20대 초반을 렌즈삼아 바라봐야 한다. 이
+        그래서 왜 이런 "TMI"를 구구절절 늘어놓고 있을까? <br />
+        이 앨범을 제대로 이해하고, 왜 이런 앨범이 나왔는지 알기 위해서는 저자의 20대 초반을 투영해 관찰해야 한다. 이
         앨범은 히트곡을 만들거나, 좋은 노래를 찾을 수 있는 보물상자를 제공하기 위해 제작된 것이 아니다. 그저 한때
         감당하기 힘들 정도로 차오르던 스트레스, 고통, 후회, 답답함을 해소하려던 필사적인 시도들을 고이 모아, 너무나도
-        강렬하고 극단적이었으며 생생했던 청춘의 향기를, 더 이상 희미해지기 전에 붙잡으려는 몸부림 같은 것이다.
+        강렬하고 생생했던 청춘의 향기를, 더 이상 희미해지기 전에 붙잡으려는 몸부림 같은 것이다.
       </p>
     </div>
 
@@ -118,6 +133,8 @@
 
 <script setup>
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
+
+import youthBtsImg1 from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
 
 import SupportedLanguages from '@/lib/enums/lang.js';
 
@@ -229,15 +246,25 @@ import { useGlobals } from '@/composables/useGlobals.js';
   }
 }
 
+@media (max-width: 800px) {
+  .iv-page {
+    .img-caption {
+      margin: 0 0 50px 0;
+    }
+  }
+}
+
 @media (max-width: 599px) {
   .iv-page {
     padding: 100px 25px 100px 25px;
 
     .full-width-img {
-      margin: 0 0 15px 0;
+      margin: 15px 0 15px 0;
     }
 
     .img-caption {
+      margin: 0 0 40px 0;
+
       font-size: 8px;
     }
   }
