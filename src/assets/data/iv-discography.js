@@ -1,16 +1,17 @@
-import latelyArtworkImg from '@/assets/img/artworks/lately.jpeg';
-import latelyCarouselImg from '@/assets/img/carousel/lately.jpg';
+// import latelyArtworkImg from '@/assets/img/artworks/lately.jpeg';
+// import latelyCarouselImg from '@/assets/img/carousel/lately.jpg';
 
-import flyArtworkImg from '@/assets/img/artworks/fly.jpeg';
-import flyCarouselImg from '@/assets/img/carousel/fly.jpg';
+// import flyArtworkImg from '@/assets/img/artworks/fly.jpeg';
+// import flyCarouselImg from '@/assets/img/carousel/fly.jpg';
 
-import pdgProjectArtworkImg from '@/assets/img/artworks/pdg-project-2019.jpeg';
-import pdgProjectCarouselImg from '@/assets/img/carousel/pdg-project-2019.jpg';
+// import pdgProjectArtworkImg from '@/assets/img/artworks/pdg-project-2019.jpeg';
+// import pdgProjectCarouselImg from '@/assets/img/carousel/pdg-project-2019.jpg';
 
-import collectionArtworkImg from '@/assets/img/artworks/collection.jpeg';
-import collectionCarouselImg from '@/assets/img/carousel/collection.jpg';
+// import collectionArtworkImg from '@/assets/img/artworks/collection.jpeg';
+// import collectionCarouselImg from '@/assets/img/carousel/collection.jpg';
 
 import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
+import lastDanceCarouselImg from '@/assets/img/carousel/last-dance.jpg';
 
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
 import youthBtsAGrassLyingDownImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
@@ -85,6 +86,20 @@ const ivDiscography = [
     },
     media: {
       artwork: lastDanceArtworkImg,
+      carousel: {
+        ['4k']: lastDanceCarouselImg,
+        ['qhd']: lastDanceCarouselImg,
+        ['hd']: lastDanceCarouselImg,
+        ['mobile']: lastDanceCarouselImg,
+        ['original']: lastDanceCarouselImg,
+      },
+      intermediate: {
+        ['4k']: lastDanceCarouselImg,
+        ['qhd']: lastDanceCarouselImg,
+        ['hd']: lastDanceCarouselImg,
+        ['mobile']: lastDanceCarouselImg,
+        ['original']: lastDanceCarouselImg,
+      },
     },
     platforms: {
       melon: 'https://www.melon.com/album/detail.htm?albumId=11165846',
@@ -116,158 +131,158 @@ const ivDiscography = [
       },
     },
   },
-  {
-    id: 'collection',
-    title: {
-      EN: 'Collection',
-      KR: 'Collection',
-    },
-    dates: {
-      release: '2020-11-17',
-    },
-    colors: {
-      primary: '#26264B',
-      font: null,
-    },
-    media: {
-      artwork: collectionArtworkImg,
-      carousel: collectionCarouselImg,
-      intermediate: collectionCarouselImg,
-    },
-    platforms: {
-      youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM',
-      soundcloud: 'https://soundcloud.com/indivisualiv/sets/collection',
-    },
-    collaborators: {
-      directors: ['PG-13'],
-      artists: ['PG-13'],
-      producers: ['Vermello'],
-      artwork: ['PG-13'],
-    },
-    feature: {
-      iv: {
-        carousel: true,
-        discography: true,
-      },
-      pg13: {
-        carousel: true,
-        discography: true,
-      },
-    },
-  },
-  {
-    id: 'pdg-project-2019',
-    title: {
-      EN: 'PDG PROJECT [2019]',
-      KR: 'PDG PROJECT [2019]',
-    },
-    dates: {
-      release: '2019-01-31',
-    },
-    colors: {
-      primary: '#D1D1D1',
-      font: 'black',
-    },
-    media: {
-      artwork: pdgProjectArtworkImg,
-      carousel: pdgProjectCarouselImg,
-      intermediate: pdgProjectCarouselImg,
-    },
-    platforms: {
-      soundcloud: 'https://soundcloud.com/official-pg13/sets/pdg-project-2019',
-    },
-    collaborators: {
-      directors: ['PG-13'],
-      artists: ['PG-13'],
-      producers: ['Vermello'],
-      artwork: ['PG-13'],
-    },
-    feature: {
-      iv: {
-        carousel: true,
-        discography: true,
-      },
-      pg13: {
-        carousel: true,
-        discography: true,
-      },
-    },
-  },
-  {
-    id: 'fly',
-    title: {
-      EN: 'Fly!',
-      KR: '종이비행기',
-    },
-    dates: {
-      release: '2021-04-27',
-    },
-    colors: {
-      primary: '#1993B5',
-      font: null,
-    },
-    media: {
-      artwork: flyArtworkImg,
-      carousel: flyCarouselImg,
-      intermediate: flyCarouselImg,
-    },
-    platforms: {
-      youtube: 'https://youtube.com/watch?v=OSg0_Rz2iuU',
-      soundcloud: 'https://soundcloud.com/indivisualiv/pg-13-fly-remastered',
-    },
-    collaborators: {
-      directors: ['PG-13'],
-      artists: ['PG-13'],
-      producers: ['Vermello'],
-      artwork: ['PG-13'],
-    },
-    feature: {
-      iv: {
-        carousel: true,
-        discography: true,
-      },
-      pg13: {
-        carousel: true,
-        discography: true,
-      },
-    },
-  },
-  {
-    id: 'lately',
-    title: {
-      EN: 'Lately',
-      KR: 'Lately',
-    },
-    dates: {
-      release: '2019-08-19',
-    },
-    colors: {
-      primary: '#339FBD',
-      font: null,
-    },
-    media: {
-      artwork: latelyArtworkImg,
-      carousel: latelyCarouselImg,
-      intermediate: latelyCarouselImg,
-    },
-    platforms: {},
-    collaborators: {
-      directors: ['PG-13'],
-      artists: ['PG-13', 'Vermello'],
-      producers: ['Vermello'],
-      artwork: ['PG-13'],
-    },
-    feature: {
-      iv: {
-        carousel: true,
-        discography: true,
-      },
-      pg13: {
-        carousel: true,
-        discography: true,
-      },
-    },
-  },
+  // {
+  //   id: 'collection',
+  //   title: {
+  //     EN: 'Collection',
+  //     KR: 'Collection',
+  //   },
+  //   dates: {
+  //     release: '2020-11-17',
+  //   },
+  //   colors: {
+  //     primary: '#26264B',
+  //     font: null,
+  //   },
+  //   media: {
+  //     artwork: collectionArtworkImg,
+  //     carousel: collectionCarouselImg,
+  //     intermediate: collectionCarouselImg,
+  //   },
+  //   platforms: {
+  //     youtube: 'https://youtube.com/playlist?list=PLfhZYVxDt8Ff0wcQyznbqfDPoOB12qegM',
+  //     soundcloud: 'https://soundcloud.com/indivisualiv/sets/collection',
+  //   },
+  //   collaborators: {
+  //     directors: ['PG-13'],
+  //     artists: ['PG-13'],
+  //     producers: ['Vermello'],
+  //     artwork: ['PG-13'],
+  //   },
+  //   feature: {
+  //     iv: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //     pg13: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //   },
+  // },
+  // {
+  //   id: 'pdg-project-2019',
+  //   title: {
+  //     EN: 'PDG PROJECT [2019]',
+  //     KR: 'PDG PROJECT [2019]',
+  //   },
+  //   dates: {
+  //     release: '2019-01-31',
+  //   },
+  //   colors: {
+  //     primary: '#D1D1D1',
+  //     font: 'black',
+  //   },
+  //   media: {
+  //     artwork: pdgProjectArtworkImg,
+  //     carousel: pdgProjectCarouselImg,
+  //     intermediate: pdgProjectCarouselImg,
+  //   },
+  //   platforms: {
+  //     soundcloud: 'https://soundcloud.com/official-pg13/sets/pdg-project-2019',
+  //   },
+  //   collaborators: {
+  //     directors: ['PG-13'],
+  //     artists: ['PG-13'],
+  //     producers: ['Vermello'],
+  //     artwork: ['PG-13'],
+  //   },
+  //   feature: {
+  //     iv: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //     pg13: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //   },
+  // },
+  // {
+  //   id: 'fly',
+  //   title: {
+  //     EN: 'Fly!',
+  //     KR: '종이비행기',
+  //   },
+  //   dates: {
+  //     release: '2021-04-27',
+  //   },
+  //   colors: {
+  //     primary: '#1993B5',
+  //     font: null,
+  //   },
+  //   media: {
+  //     artwork: flyArtworkImg,
+  //     carousel: flyCarouselImg,
+  //     intermediate: flyCarouselImg,
+  //   },
+  //   platforms: {
+  //     youtube: 'https://youtube.com/watch?v=OSg0_Rz2iuU',
+  //     soundcloud: 'https://soundcloud.com/indivisualiv/pg-13-fly-remastered',
+  //   },
+  //   collaborators: {
+  //     directors: ['PG-13'],
+  //     artists: ['PG-13'],
+  //     producers: ['Vermello'],
+  //     artwork: ['PG-13'],
+  //   },
+  //   feature: {
+  //     iv: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //     pg13: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //   },
+  // },
+  // {
+  //   id: 'lately',
+  //   title: {
+  //     EN: 'Lately',
+  //     KR: 'Lately',
+  //   },
+  //   dates: {
+  //     release: '2019-08-19',
+  //   },
+  //   colors: {
+  //     primary: '#339FBD',
+  //     font: null,
+  //   },
+  //   media: {
+  //     artwork: latelyArtworkImg,
+  //     carousel: latelyCarouselImg,
+  //     intermediate: latelyCarouselImg,
+  //   },
+  //   platforms: {},
+  //   collaborators: {
+  //     directors: ['PG-13'],
+  //     artists: ['PG-13', 'Vermello'],
+  //     producers: ['Vermello'],
+  //     artwork: ['PG-13'],
+  //   },
+  //   feature: {
+  //     iv: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //     pg13: {
+  //       carousel: true,
+  //       discography: true,
+  //     },
+  //   },
+  // },
 ];
 
 export default ivDiscography;

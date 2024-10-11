@@ -24,13 +24,14 @@
         v-touch:tap="handleItemSelected"
         @click="handleItemSelected"
       >
-        <picture>
-          <source :srcset="carouselItem.media.carousel['mobile']" media="(max-width: 1280)" />
-          <source :srcset="carouselItem.media.carousel['hd']" media="(max-width: 1920px)" />
-          <source :srcset="carouselItem.media.carousel['qhd']" media="(max-width: 2560px)" />
-          <source :srcset="carouselItem.media.carousel['4k']" media="(min-width: 3840px)" />
+        <IvPicture
+          :fourkSrc="carouselItem.media.carousel['4k']"
+          :qhdSrc="carouselItem.media.carousel['qhd']"
+          :hdSrc="carouselItem.media.carousel['hd']"
+          :mobileSrc="carouselItem.media.carousel['mobile']"
+        >
           <img :src="carouselItem.media.carousel['original']" draggable="false" />
-        </picture>
+        </IvPicture>
       </div>
     </transition-group>
     <!-- Left/right controls -->
@@ -56,10 +57,12 @@
 </template>
 
 <script>
+import IvPicture from '@/components/widgets/IVPicture.vue';
+
 const CAROUSEL_NEXT_ITEM_TIMER = 6000;
 
 export default {
-  components: {},
+  components: { IvPicture },
   props: {
     width: {
       type: String,
