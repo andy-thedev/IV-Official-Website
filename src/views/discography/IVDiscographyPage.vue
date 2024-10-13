@@ -25,7 +25,14 @@
         @click="selectItem(item.id)"
       >
         <!-- Item Img -->
-        <img :src="item.media.artwork" draggable="false" />
+        <IvPicture
+          :fourkSrc="item.media.artwork['4k']"
+          :qhdSrc="item.media.artwork['qhd']"
+          :hdSrc="item.media.artwork['hd']"
+          :mobileSrc="item.media.artwork['mobile']"
+        >
+          <img :src="item.media.artwork['fallback']" draggable="false" />
+        </IvPicture>
         <!-- Item Overlay -->
         <div class="item-img-overlay-container">
           <div class="overlay-title">{{ item.title[useGlobals.currLang] }}</div>
@@ -45,6 +52,8 @@ import { useRouter } from 'vue-router';
 import ivDiscographyData from '@/assets/data/iv-discography.js';
 
 import { useGlobals } from '@/composables/useGlobals';
+
+import IvPicture from '@/components/widgets/IVPicture.vue';
 
 const enabledDiscographyItems = ivDiscographyData.filter((item) => item.feature.iv.discography === true);
 

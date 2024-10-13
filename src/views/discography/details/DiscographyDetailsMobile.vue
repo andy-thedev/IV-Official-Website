@@ -8,7 +8,14 @@
         <div class="back-nav-wrapper">
           <font-awesome-icon :icon="['fas', 'arrow-left-long']" class="back-nav-icon" @click="selectBackNav()" />
         </div>
-        <img :src="discographyDetails.media.artwork" draggable="false" />
+        <IvPicture
+          :fourkSrc="discographyDetails.media.artwork['4k']"
+          :qhdSrc="discographyDetails.media.artwork['qhd']"
+          :hdSrc="discographyDetails.media.artwork['hd']"
+          :mobileSrc="discographyDetails.media.artwork['mobile']"
+        >
+          <img :src="discographyDetails.media.artwork['fallback']" draggable="false" />
+        </IvPicture>
       </div>
 
       <!-- Album details -->
@@ -141,6 +148,7 @@ import { dateToHuSae, dateToHumanReadable } from '@/lib/helpers/date.js';
 import { useGlobals } from '@/composables/useGlobals';
 
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
+import IvPicture from '@/components/widgets/IVPicture.vue';
 
 // Route
 

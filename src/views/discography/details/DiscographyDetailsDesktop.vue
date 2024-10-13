@@ -9,7 +9,14 @@
         </div>
         <!-- Album artwork -->
         <div class="album-img-wrapper">
-          <img :src="discographyDetails.media.artwork" draggable="false" />
+          <IvPicture
+            :fourkSrc="discographyDetails.media.artwork['4k']"
+            :qhdSrc="discographyDetails.media.artwork['qhd']"
+            :hdSrc="discographyDetails.media.artwork['hd']"
+            :mobileSrc="discographyDetails.media.artwork['mobile']"
+          >
+            <img :src="discographyDetails.media.artwork['fallback']" draggable="false" />
+          </IvPicture>
         </div>
 
         <!-- Album details -->
@@ -150,6 +157,7 @@ import { useGlobals } from '@/composables/useGlobals.js';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader.js';
 
 import IVPlatformList from '@/components/widgets/PlatformList.vue';
+import IvPicture from '@/components/widgets/IVPicture.vue';
 
 const isHoveringAlbum = ref(false);
 
