@@ -35,7 +35,7 @@
         rear-view mirror.
       </p>
       <p v-else-if="useGlobals.currLang == SupportedLanguages.KR">
-        청춘, 사춘기, 미성숙. <br />
+        청춘, 철부지, 미숙함. <br />
         이 단어들을 읽을 때, 많은 사람들이 떠올리는 감정의 범위는 비슷할 거라고 상상한다. 신선하고 활기차며, 아무 걱정
         없던 순수한 나날들이나, 이제 막 피어나기 시작한 영혼이 펼치는 끝없는 가능성의 장난기 가득한 시기. 눈 깜짝할
         사이에 우리의 봄날은 희미해지고, 우리는 어른이 되기 위한 복잡한 길로 급히 달려간다. 그러는 동안 그리움의 계절은
@@ -94,10 +94,11 @@
       <p v-if="useGlobals.currLang == SupportedLanguages.EN">
         In my early twenties, my life was vastly different, and I was a very, very different person. Addicted, broke,
         and most of all, extremely intense. Not only in circumstances, but as a person entirely. Ask anyone who knew me
-        back then, and they would either describe interactions with me as either interesting, or uncomfortable (with
-        more the latter than the former). Chasing "fun" with all other means disregarded, I was partaking in radical,
-        impulsive schemes, ranging from substance to dangerous activities. I could go into more detail, but it would
-        either require an NDA, or be just another byproduct of my cynical interpretation of everything, at that time.
+        back then, and they would either describe interactions with me as either interesting, or just straight up rude
+        and uncomfortable (with more the latter than the former). Chasing "fun" with all other means disregarded, I was
+        partaking in radical, impulsive schemes, ranging from substance to dangerous activities. Going into more detail
+        would either require an NDA, or just be regurgitating another byproduct of my cynical interpretation of
+        everything, at that time.
       </p>
       <p v-else-if="useGlobals.currLang == SupportedLanguages.KR">
         내 20대 초반은 지금과 완전히 달랐고, 나는 아주, 아주 다른 사람이었다. 진취적인 일은 극도로 피하며 중독에
