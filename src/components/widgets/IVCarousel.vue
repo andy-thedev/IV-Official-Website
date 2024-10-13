@@ -30,7 +30,7 @@
           :hdSrc="carouselItem.media.carousel['hd']"
           :mobileSrc="carouselItem.media.carousel['mobile']"
         >
-          <img :src="carouselItem.media.carousel['original']" draggable="false" />
+          <img :src="carouselItem.media.carousel['fallback']" draggable="false" />
         </IvPicture>
       </div>
     </transition-group>

@@ -1,5 +1,5 @@
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
-import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpeg';
+import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpg';
 
 const ivMenu = [
   {
