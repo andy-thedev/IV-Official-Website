@@ -1,68 +1,68 @@
 import latelyArtworkImg from '@/assets/img/artworks/lately.jpg';
-import latelyArtwork4kImg from '@/assets/img/artworks/4k/lately.webp';
-import latelyArtworkQhdImg from '@/assets/img/artworks/qhd/lately.webp';
-import latelyArtworkHdImg from '@/assets/img/artworks/hd/lately.webp';
-import latelyArtworkMobileImg from '@/assets/img/artworks/mobile/lately.webp';
+import latelyArtworkImg4k from '@/assets/img/artworks/4k/lately.webp';
+import latelyArtworkImgQhd from '@/assets/img/artworks/qhd/lately.webp';
+import latelyArtworkImgHd from '@/assets/img/artworks/hd/lately.webp';
+import latelyArtworkImgMobile from '@/assets/img/artworks/mobile/lately.webp';
 
 import latelyCarouselImg from '@/assets/img/carousel/lately.jpg';
-import latelyCarousel4kImg from '@/assets/img/carousel/4k/lately.webp';
-import latelyCarouselQhdImg from '@/assets/img/carousel/qhd/lately.webp';
-import latelyCarouselHdImg from '@/assets/img/carousel/hd/lately.jpg';
-import latelyCarouselMobileImg from '@/assets/img/carousel/mobile/lately.jpg';
+import latelyCarouselImg4k from '@/assets/img/carousel/4k/lately.webp';
+import latelyCarouselImgQhd from '@/assets/img/carousel/qhd/lately.webp';
+import latelyCarouselImgHd from '@/assets/img/carousel/hd/lately.jpg';
+import latelyCarouselImgMobile from '@/assets/img/carousel/mobile/lately.jpg';
 
 import flyArtworkImg from '@/assets/img/artworks/fly.jpg';
-import flyArtwork4kImg from '@/assets/img/artworks/4k/fly.webp';
-import flyArtworkQhdImg from '@/assets/img/artworks/qhd/fly.webp';
-import flyArtworkHdImg from '@/assets/img/artworks/hd/fly.webp';
-import flyArtworkMobileImg from '@/assets/img/artworks/mobile/fly.webp';
+import flyArtworkImg4k from '@/assets/img/artworks/4k/fly.webp';
+import flyArtworkImgQhd from '@/assets/img/artworks/qhd/fly.webp';
+import flyArtworkImgHd from '@/assets/img/artworks/hd/fly.webp';
+import flyArtworkImgMobile from '@/assets/img/artworks/mobile/fly.webp';
 
 import flyCarouselImg from '@/assets/img/carousel/fly.jpg';
-import flyCarousel4kImg from '@/assets/img/carousel/4k/fly.webp';
-import flyCarouselQhdImg from '@/assets/img/carousel/qhd/fly.webp';
-import flyCarouselHdImg from '@/assets/img/carousel/hd/fly.jpg';
-import flyCarouselMobileImg from '@/assets/img/carousel/mobile/fly.jpg';
+import flyCarouselImg4k from '@/assets/img/carousel/4k/fly.webp';
+import flyCarouselImgQhd from '@/assets/img/carousel/qhd/fly.webp';
+import flyCarouselImgHd from '@/assets/img/carousel/hd/fly.jpg';
+import flyCarouselImgMobile from '@/assets/img/carousel/mobile/fly.jpg';
 
 import pdgProject2019ArtworkImg from '@/assets/img/artworks/pdg-project-2019.jpg';
-import pdgProject2019Artwork4kImg from '@/assets/img/artworks/4k/pdg-project-2019.webp';
-import pdgProject2019ArtworkQhdImg from '@/assets/img/artworks/qhd/pdg-project-2019.webp';
-import pdgProject2019ArtworkHdImg from '@/assets/img/artworks/hd/pdg-project-2019.webp';
-import pdgProject2019ArtworkMobileImg from '@/assets/img/artworks/mobile/pdg-project-2019.webp';
+import pdgProject2019ArtworkImg4k from '@/assets/img/artworks/4k/pdg-project-2019.webp';
+import pdgProject2019ArtworkImgQhd from '@/assets/img/artworks/qhd/pdg-project-2019.webp';
+import pdgProject2019ArtworkImgHd from '@/assets/img/artworks/hd/pdg-project-2019.webp';
+import pdgProject2019ArtworkImgMobile from '@/assets/img/artworks/mobile/pdg-project-2019.webp';
 
 import pdgProject2019CarouselImg from '@/assets/img/carousel/pdg-project-2019.jpg';
-import pdgProject2019Carousel4kImg from '@/assets/img/carousel/4k/pdg-project-2019.webp';
-import pdgProject2019CarouselQhdImg from '@/assets/img/carousel/qhd/pdg-project-2019.webp';
-import pdgProject2019CarouselHdImg from '@/assets/img/carousel/hd/pdg-project-2019.jpg';
-import pdgProject2019CarouselMobileImg from '@/assets/img/carousel/mobile/pdg-project-2019.jpg';
+import pdgProject2019CarouselImg4k from '@/assets/img/carousel/4k/pdg-project-2019.webp';
+import pdgProject2019CarouselImgQhd from '@/assets/img/carousel/qhd/pdg-project-2019.webp';
+import pdgProject2019CarouselImgHd from '@/assets/img/carousel/hd/pdg-project-2019.jpg';
+import pdgProject2019CarouselImgMobile from '@/assets/img/carousel/mobile/pdg-project-2019.jpg';
 
 import collectionArtworkImg from '@/assets/img/artworks/collection.jpg';
-import collectionArtwork4kImg from '@/assets/img/artworks/4k/collection.webp';
-import collectionArtworkQhdImg from '@/assets/img/artworks/qhd/collection.webp';
-import collectionArtworkHdImg from '@/assets/img/artworks/hd/collection.webp';
-import collectionArtworkMobileImg from '@/assets/img/artworks/mobile/collection.webp';
+import collectionArtworkImg4k from '@/assets/img/artworks/4k/collection.webp';
+import collectionArtworkImgQhd from '@/assets/img/artworks/qhd/collection.webp';
+import collectionArtworkImgHd from '@/assets/img/artworks/hd/collection.webp';
+import collectionArtworkImgMobile from '@/assets/img/artworks/mobile/collection.webp';
 
 import collectionCarouselImg from '@/assets/img/carousel/collection.jpg';
-import collectionCarousel4kImg from '@/assets/img/carousel/4k/collection.webp';
-import collectionCarouselQhdImg from '@/assets/img/carousel/qhd/collection.webp';
-import collectionCarouselHdImg from '@/assets/img/carousel/hd/collection.jpg';
-import collectionCarouselMobileImg from '@/assets/img/carousel/mobile/collection.jpg';
+import collectionCarouselImg4k from '@/assets/img/carousel/4k/collection.webp';
+import collectionCarouselImgQhd from '@/assets/img/carousel/qhd/collection.webp';
+import collectionCarouselImgHd from '@/assets/img/carousel/hd/collection.jpg';
+import collectionCarouselImgMobile from '@/assets/img/carousel/mobile/collection.jpg';
 
 import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpg';
-import lastDanceArtwork4kImg from '@/assets/img/artworks/4k/last-dance.webp';
-import lastDanceArtworkQhdImg from '@/assets/img/artworks/qhd/last-dance.webp';
-import lastDanceArtworkHdImg from '@/assets/img/artworks/hd/last-dance.webp';
-import lastDanceArtworkMobileImg from '@/assets/img/artworks/mobile/last-dance.webp';
+import lastDanceArtworkImg4k from '@/assets/img/artworks/4k/last-dance.webp';
+import lastDanceArtworkImgQhd from '@/assets/img/artworks/qhd/last-dance.webp';
+import lastDanceArtworkImgHd from '@/assets/img/artworks/hd/last-dance.webp';
+import lastDanceArtworkImgMobile from '@/assets/img/artworks/mobile/last-dance.webp';
 
 import lastDanceCarouselImg from '@/assets/img/carousel/last-dance.jpg';
-import lastDanceCarousel4kImg from '@/assets/img/carousel/4k/last-dance.webp';
-import lastDanceCarouselQhdImg from '@/assets/img/carousel/qhd/last-dance.webp';
-import lastDanceCarouselHdImg from '@/assets/img/carousel/hd/last-dance.jpg';
-import lastDanceCarouselMobileImg from '@/assets/img/carousel/mobile/last-dance.jpg';
+import lastDanceCarouselImg4k from '@/assets/img/carousel/4k/last-dance.webp';
+import lastDanceCarouselImgQhd from '@/assets/img/carousel/qhd/last-dance.webp';
+import lastDanceCarouselImgHd from '@/assets/img/carousel/hd/last-dance.jpg';
+import lastDanceCarouselImgMobile from '@/assets/img/carousel/mobile/last-dance.jpg';
 
 import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
-import youthArtwork4kImg from '@/assets/img/artworks/4k/youth.webp';
-import youthArtworkQhdImg from '@/assets/img/artworks/qhd/youth.webp';
-import youthArtworkHdImg from '@/assets/img/artworks/hd/youth.webp';
-import youthArtworkMobileImg from '@/assets/img/artworks/mobile/youth.webp';
+import youthArtworkImg4k from '@/assets/img/artworks/4k/youth.webp';
+import youthArtworkImgQhd from '@/assets/img/artworks/qhd/youth.webp';
+import youthArtworkImgHd from '@/assets/img/artworks/hd/youth.webp';
+import youthArtworkImgMobile from '@/assets/img/artworks/mobile/youth.webp';
 
 import youthBtsAGrassLyingDownImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
 import youthBtsAGrassLyingDownImg4k from '@/assets/img/bts/youth/4k/a-grass-lying-down.webp';
@@ -70,12 +70,24 @@ import youthBtsAGrassLyingDownImgQhd from '@/assets/img/bts/youth/qhd/a-grass-ly
 import youthBtsAGrassLyingDownImgHd from '@/assets/img/bts/youth/hd/a-grass-lying-down.webp';
 import youthBtsAGrassLyingDownImgMobile from '@/assets/img/bts/youth/mobile/a-grass-lying-down.webp';
 
+import youthBtsKangeonAndPg13Img from '@/assets/img/bts/youth/kangeon-and-pg13.jpg';
+import youthBtsKangeonAndPg13Img4k from '@/assets/img/bts/youth/4k/kangeon-and-pg13.jpg';
+import youthBtsKangeonAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/kangeon-and-pg13.jpg';
+import youthBtsKangeonAndPg13ImgHd from '@/assets/img/bts/youth/hd/kangeon-and-pg13.jpg';
+import youthBtsKangeonAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/kangeon-and-pg13.jpg';
+
+import youthBtsVermelloAndPg13Img from '@/assets/img/bts/youth/vermello-and-pg13.jpg';
+import youthBtsVermelloAndPg13Img4k from '@/assets/img/bts/youth/4k/vermello-and-pg13.jpg';
+import youthBtsVermelloAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/vermello-and-pg13.jpg';
+import youthBtsVermelloAndPg13ImgHd from '@/assets/img/bts/youth/hd/vermello-and-pg13.jpg';
+import youthBtsVermelloAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/vermello-and-pg13.jpg';
+
 export const youthMedia = {
   artwork: {
-    ['4k']: youthArtwork4kImg,
-    ['qhd']: youthArtworkQhdImg,
-    ['hd']: youthArtworkHdImg,
-    ['mobile']: youthArtworkMobileImg,
+    ['4k']: youthArtworkImg4k,
+    ['qhd']: youthArtworkImgQhd,
+    ['hd']: youthArtworkImgHd,
+    ['mobile']: youthArtworkImgMobile,
     ['fallback']: youthArtworkImg,
   },
   carousel: {
@@ -94,90 +106,104 @@ export const youthMedia = {
       ['mobile']: youthBtsAGrassLyingDownImgMobile,
       ['fallback']: youthBtsAGrassLyingDownImg,
     },
+    kangeonAndPg13: {
+      ['4k']: youthBtsKangeonAndPg13Img4k,
+      ['qhd']: youthBtsKangeonAndPg13ImgQhd,
+      ['hd']: youthBtsKangeonAndPg13ImgHd,
+      ['mobile']: youthBtsKangeonAndPg13ImgMobile,
+      ['fallback']: youthBtsKangeonAndPg13Img,
+    },
+    vermelloAndPg13: {
+      ['4k']: youthBtsVermelloAndPg13Img4k,
+      ['qhd']: youthBtsVermelloAndPg13ImgQhd,
+      ['hd']: youthBtsVermelloAndPg13ImgHd,
+      ['mobile']: youthBtsVermelloAndPg13ImgMobile,
+      ['fallback']: youthBtsVermelloAndPg13Img,
+    },
   },
 };
 
 export const lastDanceMedia = {
   artwork: {
-    ['4k']: lastDanceArtwork4kImg,
-    ['qhd']: lastDanceArtworkQhdImg,
-    ['hd']: lastDanceArtworkHdImg,
-    ['mobile']: lastDanceArtworkMobileImg,
+    ['4k']: lastDanceArtworkImg4k,
+    ['qhd']: lastDanceArtworkImgQhd,
+    ['hd']: lastDanceArtworkImgHd,
+    ['mobile']: lastDanceArtworkImgMobile,
     ['fallback']: lastDanceArtworkImg,
   },
   carousel: {
-    ['4k']: lastDanceCarousel4kImg,
-    ['qhd']: lastDanceCarouselQhdImg,
-    ['hd']: lastDanceCarouselHdImg,
-    ['mobile']: lastDanceCarouselMobileImg,
+    ['4k']: lastDanceCarouselImg4k,
+    ['qhd']: lastDanceCarouselImgQhd,
+    ['hd']: lastDanceCarouselImgHd,
+    ['mobile']: lastDanceCarouselImgMobile,
     ['fallback']: lastDanceCarouselImg,
   },
 };
 
 export const collectionMedia = {
   artwork: {
-    ['4k']: collectionArtwork4kImg,
-    ['qhd']: collectionArtworkQhdImg,
-    ['hd']: collectionArtworkHdImg,
-    ['mobile']: collectionArtworkMobileImg,
+    ['4k']: collectionArtworkImg4k,
+    ['qhd']: collectionArtworkImgQhd,
+    ['hd']: collectionArtworkImgHd,
+    ['mobile']: collectionArtworkImgMobile,
     ['fallback']: collectionArtworkImg,
   },
   carousel: {
-    ['4k']: collectionCarousel4kImg,
-    ['qhd']: collectionCarouselQhdImg,
-    ['hd']: collectionCarouselHdImg,
-    ['mobile']: collectionCarouselMobileImg,
+    ['4k']: collectionCarouselImg4k,
+    ['qhd']: collectionCarouselImgQhd,
+    ['hd']: collectionCarouselImgHd,
+    ['mobile']: collectionCarouselImgMobile,
     ['fallback']: collectionCarouselImg,
   },
 };
 
 export const pdgProject2019Media = {
   artwork: {
-    ['4k']: pdgProject2019Artwork4kImg,
-    ['qhd']: pdgProject2019ArtworkQhdImg,
-    ['hd']: pdgProject2019ArtworkHdImg,
-    ['mobile']: pdgProject2019ArtworkMobileImg,
+    ['4k']: pdgProject2019ArtworkImg4k,
+    ['qhd']: pdgProject2019ArtworkImgQhd,
+    ['hd']: pdgProject2019ArtworkImgHd,
+    ['mobile']: pdgProject2019ArtworkImgMobile,
     ['fallback']: pdgProject2019ArtworkImg,
   },
   carousel: {
-    ['4k']: pdgProject2019Carousel4kImg,
-    ['qhd']: pdgProject2019CarouselQhdImg,
-    ['hd']: pdgProject2019CarouselHdImg,
-    ['mobile']: pdgProject2019CarouselMobileImg,
+    ['4k']: pdgProject2019CarouselImg4k,
+    ['qhd']: pdgProject2019CarouselImgQhd,
+    ['hd']: pdgProject2019CarouselImgHd,
+    ['mobile']: pdgProject2019CarouselImgMobile,
     ['fallback']: pdgProject2019CarouselImg,
   },
 };
 
 export const flyMedia = {
   artwork: {
-    ['4k']: flyArtwork4kImg,
-    ['qhd']: flyArtworkQhdImg,
-    ['hd']: flyArtworkHdImg,
-    ['mobile']: flyArtworkMobileImg,
+    ['4k']: flyArtworkImg4k,
+    ['qhd']: flyArtworkImgQhd,
+    ['hd']: flyArtworkImgHd,
+    ['mobile']: flyArtworkImgMobile,
     ['fallback']: flyArtworkImg,
   },
   carousel: {
-    ['4k']: flyCarousel4kImg,
-    ['qhd']: flyCarouselQhdImg,
-    ['hd']: flyCarouselHdImg,
-    ['mobile']: flyCarouselMobileImg,
+    ['4k']: flyCarouselImg4k,
+    ['qhd']: flyCarouselImgQhd,
+    ['hd']: flyCarouselImgHd,
+    ['mobile']: flyCarouselImgMobile,
     ['fallback']: flyCarouselImg,
   },
 };
 
 export const latelyMedia = {
   artwork: {
-    ['4k']: latelyArtwork4kImg,
-    ['qhd']: latelyArtworkQhdImg,
-    ['hd']: latelyArtworkHdImg,
-    ['mobile']: latelyArtworkMobileImg,
+    ['4k']: latelyArtworkImg4k,
+    ['qhd']: latelyArtworkImgQhd,
+    ['hd']: latelyArtworkImgHd,
+    ['mobile']: latelyArtworkImgMobile,
     ['fallback']: latelyArtworkImg,
   },
   carousel: {
-    ['4k']: latelyCarousel4kImg,
-    ['qhd']: latelyCarouselQhdImg,
-    ['hd']: latelyCarouselHdImg,
-    ['mobile']: latelyCarouselMobileImg,
+    ['4k']: latelyCarouselImg4k,
+    ['qhd']: latelyCarouselImgQhd,
+    ['hd']: latelyCarouselImgHd,
+    ['mobile']: latelyCarouselImgMobile,
     ['fallback']: latelyCarouselImg,
   },
 };

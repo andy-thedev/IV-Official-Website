@@ -130,6 +130,11 @@
       </p>
     </div>
 
+    <div class="grid-img-container">
+      <div class="grid-item-wrapper"></div>
+      <div class="grid-item-wrapper"></div>
+    </div>
+
     <!-- <img class="full-width-img" :src="testImg" draggable="false" />
     <div class="img-caption">
       <p class="caption-title">
@@ -180,21 +185,24 @@ import IvPicture from '@/components/widgets/IVPicture.vue';
     }
   }
 
-  .four-grid-img-container {
+  .grid-img-container {
     width: 100%;
 
     display: grid;
     grid-gap: 15px;
-    grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(2, 1fr);
 
     .grid-item-wrapper {
       position: relative;
 
-      img {
+      .grid-img {
         width: 100%;
         height: auto;
       }
+    }
+
+    &.four-grid {
+      grid-template-rows: repeat(2, 1fr);
     }
   }
 
