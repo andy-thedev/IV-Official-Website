@@ -1,10 +1,9 @@
-import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
-import lastDanceArtworkImg from '@/assets/img/artworks/last-dance.jpg';
+import { youthMedia, lastDanceMedia } from '@/assets/data/iv-media.js';
 
 const ivMenu = [
   {
     name: 'Indivisual',
-    previewImgSrc: youthArtworkImg,
+    previewImgSrc: youthMedia.artwork,
     children: [
       {
         name: 'Home',
@@ -18,7 +17,7 @@ const ivMenu = [
   },
   {
     name: 'PG-13',
-    previewImgSrc: lastDanceArtworkImg,
+    previewImgSrc: lastDanceMedia.artwork,
     children: [
       {
         name: 'Home',

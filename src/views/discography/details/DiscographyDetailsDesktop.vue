@@ -51,7 +51,14 @@
 
     <!-- Intermediate Img -->
     <div class="intermediate-img-wrapper" id="intermediate">
-      <img :src="discographyDetails.media.intermediate" draggable="false" />
+      <IvPicture
+        :fourkSrc="discographyDetails.media.intermediate['4k']"
+        :qhdSrc="discographyDetails.media.intermediate['qhd']"
+        :hdSrc="discographyDetails.media.intermediate['hd']"
+        :mobileSrc="discographyDetails.media.intermediate['mobile']"
+      >
+        <img :src="discographyDetails.media.intermediate['fallback']" draggable="false" />
+      </IvPicture>
     </div>
 
     <!-- Benchmarks -->

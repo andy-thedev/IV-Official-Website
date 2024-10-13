@@ -1,6 +1,13 @@
 <template>
   <div class="publication iv-page">
-    <img class="full-width-img first" :src="youthArtworkImg" draggable="false" />
+    <IvPicture
+      :fourkSrc="youthMedia.artwork['4k']"
+      :qhdSrc="youthMedia.artwork['qhd']"
+      :hdSrc="youthMedia.artwork['hd']"
+      :mobileSrc="youthMedia.artwork['mobile']"
+    >
+      <img class="full-width-img first" :src="youthMedia.artwork['fallback']" draggable="false" />
+    </IvPicture>
     <div class="img-caption">
       <p class="caption-title">
         Youth (10.23.2022)<br />
@@ -58,13 +65,14 @@
       </p>
     </div>
 
-    <picture>
-      <source :srcset="youthBtsMobileImg1" media="(max-width: 1280px)" />
-      <source :srcset="youthBtsHdImg1" media="(max-width: 1920px)" />
-      <source :srcset="youthBtsQhdImg1" media="(max-width: 2560px)" />
-      <source :srcset="youthBts4kImg1" media="(min-width: 3840px)" />
-      <img class="full-width-img" :src="youthBtsImg1" draggable="false" />
-    </picture>
+    <IvPicture
+      :fourkSrc="youthMedia.bts.aGrassLyingDown['4k']"
+      :qhdSrc="youthMedia.bts.aGrassLyingDown['qhd']"
+      :hdSrc="youthMedia.bts.aGrassLyingDown['hd']"
+      :mobileSrc="youthMedia.bts.aGrassLyingDown['mobile']"
+    >
+      <img class="full-width-img" :src="youthMedia.bts.aGrassLyingDown['fallback']" draggable="false" />
+    </IvPicture>
     <div class="img-caption">
       <p class="caption-title">
         Youth (10.23.2022)<br />
@@ -138,17 +146,13 @@
 </template>
 
 <script setup>
-import youthArtworkImg from '@/assets/img/artworks/youth.jpg';
-
-import youthBtsImg1 from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
-import youthBts4kImg1 from '@/assets/img/bts/youth/4k/a-grass-lying-down.jpg';
-import youthBtsQhdImg1 from '@/assets/img/bts/youth/qhd/a-grass-lying-down.webp';
-import youthBtsHdImg1 from '@/assets/img/bts/youth/hd/a-grass-lying-down.webp';
-import youthBtsMobileImg1 from '@/assets/img/bts/youth/mobile/a-grass-lying-down.webp';
+import { youthMedia } from '@/assets/data/iv-media.js';
 
 import SupportedLanguages from '@/lib/enums/lang.js';
 
 import { useGlobals } from '@/composables/useGlobals.js';
+
+import IvPicture from '@/components/widgets/IVPicture.vue';
 </script>
 
 <style lang="scss" scoped>

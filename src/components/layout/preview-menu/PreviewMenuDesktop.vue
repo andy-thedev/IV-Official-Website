@@ -16,7 +16,14 @@
       </div>
       <div class="preview-container">
         <div class="preview-img-wrapper">
-          <img :src="menu[selectedItemIndex].previewImgSrc" draggable="false" />
+          <IvPicture
+            :fourkSrc="menu[selectedItemIndex].previewImgSrc['4k']"
+            :qhdSrc="menu[selectedItemIndex].previewImgSrc['qhd']"
+            :hdSrc="menu[selectedItemIndex].previewImgSrc['hd']"
+            :mobileSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
+          >
+            <img :src="menu[selectedItemIndex].previewImgSrc['fallback']" draggable="false" />
+          </IvPicture>
         </div>
         <div class="children-list">
           <div
@@ -38,7 +45,10 @@
 <script setup>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
 import { useOverlay } from '@/composables/overlays/useOverlay';
+
+import IvPicture from '@/components/widgets/IVPicture.vue';
 
 const props = defineProps({
   menu: {
