@@ -1,7 +1,7 @@
 import SupportedLanguages from '@/lib/enums/lang';
 
 export const monthNames = {
-  EN: [
+  en: [
     'January',
     'February',
     'March',
@@ -15,7 +15,7 @@ export const monthNames = {
     'November',
     'December',
   ],
-  KR: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+  ko: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
 };
 
 /*
@@ -52,9 +52,9 @@ export const dateToHumanReadable = (dateStringISO, lang) => {
   const monthName = monthNames[lang][month];
 
   switch (lang) {
-    case SupportedLanguages.EN:
+    case SupportedLanguages.en:
       return `${monthName} ${year}`;
-    case SupportedLanguages.KR:
+    case SupportedLanguages.ko:
       return `${year}년 ${monthName}`;
     default:
       return `${monthName} ${year}`;

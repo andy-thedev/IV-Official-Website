@@ -71,6 +71,6 @@ export const OrderedGlobalPlatforms = [
 ];
 
 export const LangOrderedPlatforms = Object.freeze({
-  [SupportedLanguages.KR]: [...OrderedInnatePlatforms, ...OrderedKoreanPlatforms, ...OrderedGlobalPlatforms],
-  [SupportedLanguages.EN]: [...OrderedInnatePlatforms, ...OrderedGlobalPlatforms, ...OrderedKoreanPlatforms],
+  [SupportedLanguages.ko]: [...OrderedInnatePlatforms, ...OrderedKoreanPlatforms, ...OrderedGlobalPlatforms],
+  [SupportedLanguages.en]: [...OrderedInnatePlatforms, ...OrderedGlobalPlatforms, ...OrderedKoreanPlatforms],
 });

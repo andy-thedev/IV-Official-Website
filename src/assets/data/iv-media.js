@@ -71,16 +71,16 @@ import youthBtsAGrassLyingDownImgHd from '@/assets/img/bts/youth/hd/a-grass-lyin
 import youthBtsAGrassLyingDownImgMobile from '@/assets/img/bts/youth/mobile/a-grass-lying-down.webp';
 
 import youthBtsKangeonAndPg13Img from '@/assets/img/bts/youth/kangeon-and-pg13.jpg';
-import youthBtsKangeonAndPg13Img4k from '@/assets/img/bts/youth/4k/kangeon-and-pg13.jpg';
-import youthBtsKangeonAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/kangeon-and-pg13.jpg';
-import youthBtsKangeonAndPg13ImgHd from '@/assets/img/bts/youth/hd/kangeon-and-pg13.jpg';
-import youthBtsKangeonAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/kangeon-and-pg13.jpg';
+import youthBtsKangeonAndPg13Img4k from '@/assets/img/bts/youth/4k/kangeon-and-pg13.webp';
+import youthBtsKangeonAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/kangeon-and-pg13.webp';
+import youthBtsKangeonAndPg13ImgHd from '@/assets/img/bts/youth/hd/kangeon-and-pg13.webp';
+import youthBtsKangeonAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/kangeon-and-pg13.webp';
 
 import youthBtsVermelloAndPg13Img from '@/assets/img/bts/youth/vermello-and-pg13.jpg';
-import youthBtsVermelloAndPg13Img4k from '@/assets/img/bts/youth/4k/vermello-and-pg13.jpg';
-import youthBtsVermelloAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/vermello-and-pg13.jpg';
-import youthBtsVermelloAndPg13ImgHd from '@/assets/img/bts/youth/hd/vermello-and-pg13.jpg';
-import youthBtsVermelloAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/vermello-and-pg13.jpg';
+import youthBtsVermelloAndPg13Img4k from '@/assets/img/bts/youth/4k/vermello-and-pg13.webp';
+import youthBtsVermelloAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/vermello-and-pg13.webp';
+import youthBtsVermelloAndPg13ImgHd from '@/assets/img/bts/youth/hd/vermello-and-pg13.webp';
+import youthBtsVermelloAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/vermello-and-pg13.webp';
 
 export const youthMedia = {
   artwork: {

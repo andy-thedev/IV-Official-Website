@@ -2,7 +2,7 @@ import { youthMedia, lastDanceMedia } from '@/assets/data/iv-media.js';
 
 const ivMenu = [
   {
-    name: 'Indivisual',
+    name: 'INDIVISUAL',
     previewImgSrc: youthMedia.artwork,
     children: [
       {

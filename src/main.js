@@ -17,6 +17,7 @@ import {
   faEyeSlash,
   faBarcode,
   faArrowLeftLong,
+  faLink,
 } from '@fortawesome/free-solid-svg-icons';
 import { faYoutube, faSpotify, faApple, faSoundcloud, faDeezer, faAmazon } from '@fortawesome/free-brands-svg-icons';
 // import {  } from "@fortawesome/free-regular-svg-icons";
@@ -38,6 +39,7 @@ library.add(faXmark);
 library.add(faEyeSlash);
 library.add(faBarcode);
 library.add(faArrowLeftLong);
+library.add(faLink);
 
 library.add(faYoutube);
 library.add(faSpotify);

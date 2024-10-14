@@ -11,8 +11,8 @@ const ivDiscography = [
   {
     id: 'youth',
     title: {
-      EN: 'Youth',
-      KR: '철부지',
+      en: 'Youth',
+      ko: '철부지',
     },
     dates: {
       release: '2024-10-04',
@@ -49,8 +49,8 @@ const ivDiscography = [
   {
     id: 'last-dance',
     title: {
-      EN: 'LAST DANCE',
-      KR: 'LAST DANCE',
+      en: 'LAST DANCE',
+      ko: 'LAST DANCE',
     },
     dates: {
       release: '2021-06-28',
@@ -97,8 +97,8 @@ const ivDiscography = [
   {
     id: 'collection',
     title: {
-      EN: 'Collection',
-      KR: 'Collection',
+      en: 'Collection',
+      ko: 'Collection',
     },
     dates: {
       release: '2020-11-17',
@@ -136,8 +136,8 @@ const ivDiscography = [
   {
     id: 'pdg-project-2019',
     title: {
-      EN: 'PDG PROJECT [2019]',
-      KR: 'PDG PROJECT [2019]',
+      en: 'PDG PROJECT [2019]',
+      ko: 'PDG PROJECT [2019]',
     },
     dates: {
       release: '2019-01-31',
@@ -174,8 +174,8 @@ const ivDiscography = [
   {
     id: 'fly',
     title: {
-      EN: 'Fly!',
-      KR: '종이비행기',
+      en: 'Fly!',
+      ko: '종이비행기',
     },
     dates: {
       release: '2021-04-27',
@@ -213,8 +213,8 @@ const ivDiscography = [
   {
     id: 'lately',
     title: {
-      EN: 'Lately',
-      KR: 'Lately',
+      en: 'Lately',
+      ko: 'Lately',
     },
     dates: {
       release: '2019-08-19',

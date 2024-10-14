@@ -68,6 +68,15 @@ const router = createRouter({
       ],
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // If a saved position is available (ie: using back/forward navigation), return it
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      // Scroll to the top of the page when navigating to a new route
+      return { left: 0, top: 0 };
+    }
+  },
 });
 
 export default router;

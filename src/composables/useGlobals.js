@@ -1,12 +1,13 @@
 import { reactive } from 'vue';
 
 import SupportedLanguages from '@/lib/enums/lang';
+import { detectLanguage } from '@/lib/helpers/lang.js';
 
 const RESIZE_WIDTH = 1281;
 
 export const useGlobals = reactive({
   isMobile: window.innerWidth < RESIZE_WIDTH,
-  currLang: SupportedLanguages.EN,
+  currLang: detectLanguage(),
 
   onResize() {
     const newIsMobile = window.innerWidth < RESIZE_WIDTH;
@@ -15,6 +16,6 @@ export const useGlobals = reactive({
     }
   },
   changeCurrLang() {
-    useGlobals.currLang = useGlobals.currLang === SupportedLanguages.KR ? SupportedLanguages.EN : SupportedLanguages.KR;
+    useGlobals.currLang = useGlobals.currLang === SupportedLanguages.ko ? SupportedLanguages.en : SupportedLanguages.ko;
   },
 });
