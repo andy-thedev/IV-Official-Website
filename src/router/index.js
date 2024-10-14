@@ -57,7 +57,7 @@ const router = createRouter({
                   name: 'YouthPublication',
                   component: YouthPublication,
                   meta: {
-                    headerColor: '#416492',
+                    headerColor: '#4179b2',
                     headerFontColor: 'white',
                   },
                 },

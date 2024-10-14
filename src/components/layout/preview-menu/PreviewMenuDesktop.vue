@@ -16,10 +16,11 @@
       </div>
       <div class="preview-container">
         <div class="preview-img-wrapper">
+          <!-- Need not use high-res images as this will always be small -->
           <IvPicture
-            :fourkSrc="menu[selectedItemIndex].previewImgSrc['4k']"
-            :qhdSrc="menu[selectedItemIndex].previewImgSrc['qhd']"
-            :hdSrc="menu[selectedItemIndex].previewImgSrc['hd']"
+            :fourkSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
+            :qhdSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
+            :hdSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
             :mobileSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
           >
             <img :src="menu[selectedItemIndex].previewImgSrc['fallback']" draggable="false" />

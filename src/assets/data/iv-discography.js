@@ -18,7 +18,7 @@ const ivDiscography = [
       release: '2024-10-04',
     },
     colors: {
-      primary: '#416492',
+      primary: '#4179b2',
       font: null,
     },
     media: {

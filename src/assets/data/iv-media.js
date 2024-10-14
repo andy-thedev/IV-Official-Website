@@ -1,3 +1,6 @@
+import pg13MagicImg from '@/assets/img/members/pg13/pg13-magic.jpg';
+import pg13MagicImgMobile from '@/assets/img/members/pg13/pg13-magic.webp';
+
 import latelyArtworkImg from '@/assets/img/artworks/lately.jpg';
 import latelyArtworkImg4k from '@/assets/img/artworks/4k/lately.webp';
 import latelyArtworkImgQhd from '@/assets/img/artworks/qhd/lately.webp';
@@ -82,6 +85,28 @@ import youthBtsVermelloAndPg13ImgQhd from '@/assets/img/bts/youth/qhd/vermello-a
 import youthBtsVermelloAndPg13ImgHd from '@/assets/img/bts/youth/hd/vermello-and-pg13.webp';
 import youthBtsVermelloAndPg13ImgMobile from '@/assets/img/bts/youth/mobile/vermello-and-pg13.webp';
 
+import youthBtsBasementGroupGazeImg from '@/assets/img/bts/youth/basement-group-gaze.jpg';
+import youthBtsBasementGroupGazeImg4k from '@/assets/img/bts/youth/4k/basement-group-gaze.webp';
+import youthBtsBasementGroupGazeImgQhd from '@/assets/img/bts/youth/qhd/basement-group-gaze.webp';
+import youthBtsBasementGroupGazeImgHd from '@/assets/img/bts/youth/hd/basement-group-gaze.webp';
+import youthBtsBasementGroupGazeImgMobile from '@/assets/img/bts/youth/mobile/basement-group-gaze.webp';
+
+import youthBtsGroupGazeEditedImg from '@/assets/img/bts/youth/group-gaze-edited.jpg';
+import youthBtsGroupGazeEditedImg4k from '@/assets/img/bts/youth/4k/group-gaze-edited.webp';
+import youthBtsGroupGazeEditedImgQhd from '@/assets/img/bts/youth/qhd/group-gaze-edited.webp';
+import youthBtsGroupGazeEditedImgHd from '@/assets/img/bts/youth/hd/group-gaze-edited.webp';
+import youthBtsGroupGazeEditedImgMobile from '@/assets/img/bts/youth/mobile/group-gaze-edited.webp';
+
+export const pg13Media = {
+  magic: {
+    ['4k']: pg13MagicImgMobile,
+    ['qhd']: pg13MagicImgMobile,
+    ['hd']: pg13MagicImgMobile,
+    ['mobile']: pg13MagicImgMobile,
+    ['fallback']: pg13MagicImg,
+  },
+};
+
 export const youthMedia = {
   artwork: {
     ['4k']: youthArtworkImg4k,
@@ -119,6 +144,20 @@ export const youthMedia = {
       ['hd']: youthBtsVermelloAndPg13ImgHd,
       ['mobile']: youthBtsVermelloAndPg13ImgMobile,
       ['fallback']: youthBtsVermelloAndPg13Img,
+    },
+    basementGroupGaze: {
+      ['4k']: youthBtsBasementGroupGazeImg4k,
+      ['qhd']: youthBtsBasementGroupGazeImgQhd,
+      ['hd']: youthBtsBasementGroupGazeImgHd,
+      ['mobile']: youthBtsBasementGroupGazeImgMobile,
+      ['fallback']: youthBtsBasementGroupGazeImg,
+    },
+    groupGazeEdited: {
+      ['4k']: youthBtsGroupGazeEditedImg4k,
+      ['qhd']: youthBtsGroupGazeEditedImgQhd,
+      ['hd']: youthBtsGroupGazeEditedImgHd,
+      ['mobile']: youthBtsGroupGazeEditedImgMobile,
+      ['fallback']: youthBtsGroupGazeEditedImg,
     },
   },
 };

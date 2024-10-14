@@ -1,12 +1,17 @@
 <template>
-  <div class="publication iv-page">
+  <div class="publication iv-page" id="youth-publication-page">
     <IVPicture
-      :fourkSrc="youthMedia.artwork['4k']"
-      :qhdSrc="youthMedia.artwork['qhd']"
-      :hdSrc="youthMedia.artwork['hd']"
-      :mobileSrc="youthMedia.artwork['mobile']"
+      :fourkSrc="youthMedia.bts.groupGazeEdited['4k']"
+      :qhdSrc="youthMedia.bts.groupGazeEdited['qhd']"
+      :hdSrc="youthMedia.bts.groupGazeEdited['hd']"
+      :mobileSrc="youthMedia.bts.groupGazeEdited['mobile']"
     >
-      <img class="full-width-img first" :src="youthMedia.artwork['fallback']" draggable="false" />
+      <img
+        class="full-width-img first"
+        :src="youthMedia.bts.groupGazeEdited['fallback']"
+        draggable="false"
+        id="first-img"
+      />
     </IVPicture>
     <div class="img-caption">
       <p class="caption-title">
@@ -147,7 +152,7 @@
           위장하고 싶지도 않고, 그냥 나라는 사람 그 자체가 그랬다. 그때 나를 알았던 사람, 누구든 한 명에게 물어본다면,
           나와의 교류, 혹은 관계를 흥미롭거나 불편했다고 말할 것이다 (대부분 후자일 가능성이 더 크지만). 나는 그저
           재미와 자극을 쫒으며, 다른 모든 것을 내팽개친 채 충동적이고 극단적인 일들을 추구하며 뛰어들었다. 물질이든
-          활동이든, 무엇이 됬었든 간에 나는 온갖 무모한 짓을 하고 다녔다. 더 자세히 말할 수도 있겠지만, 아마 NDA가
+          활동이든, 무엇이 되었든 간에 나는 온갖 무모한 짓을 하고 다녔다. 더 자세히 말할 수도 있겠지만, 아마 NDA가
           필요할 것이고, 결국 그 시절 모든 것을 냉소적으로 해석하던 내가 만들어낸 또 다른 산물을 토해낼 뿐일 것이라
           믿는다.
         </span>
@@ -248,7 +253,7 @@
           이 앨범은 2021년 초에 개발을 시작했으며, 처음에는
           <TextLink text='"PDG PROJECT 2019"' toName="DiscographyDetails" toParamId="pdg-project-2019" />의 연장선으로
           계획되었다. "Roca Dianco X PG-13 Project"라는 제목으로, 반항적이고 아방가르드한 힙합 트랙 4개를 담아 Roca
-          Dianco와 PG-13이 모두 참여하는 합작품을 선보이고 싶었으며, 힙하고 젊은 감각의 곡들을 만들면서 재미를 추구하는
+          Dianco와 PG-13이 매 곡 참여하는 합작품을 선보이고 싶었으며, 힙하고 젊은 감각의 곡들을 만들면서 재미를 추구하는
           것이 주된 의도였다. 그러나 Roca Dianco의 개인적인 사정과 그로 인한 작업 정체로 인해 프로젝트는 점차 PG-13의
           단독 작업물이 되어갔고, 결국 두 멤버는 초기의 목적이 충분히 퇴색했다고 판단하게 되었다.
         </span>
@@ -265,8 +270,8 @@
           결국, "Roca Dianco X PG-13 Project"는 흐지부지하게 사라졌지만, 이 프로젝트의 흔적은 몇 년 후, "Youth"의 마지막
           트랙으로 남게 되었다. <br />
           Roca Dianco는 앨범 전체에서 유일한 피처링 아티스트이며, "Youth"의 마지막 트랙은 나에게 특별한 의미를 지닌다.
-          20대 초반을 이야기 하는 앨범 속에서, 그 시절, 또 한명의 철부지와 함께 만든 이 여정의 시작점이 결국 앨범의
-          끝마침을 장식해주었고, 이 절묘한 결말이 그 마지막 곡에서 애틋한 향수를 불러일으킨다.
+          20대 초반을 이야기 하는 앨범 속에서, 그 시절, 또 한명의 철부지와 함께 만든 이 여정의 시작점이 결국 끝마침을
+          장식해주었고, 이 절묘한 결말이 마지막 곡에서 애틋한 향수를 불러일으킨다.
         </span>
       </p>
     </div>
@@ -288,19 +293,64 @@
 </template>
 
 <script setup>
+import { onMounted, onUnmounted } from 'vue';
+
 import { youthMedia } from '@/assets/data/iv-media.js';
 
 import SupportedLanguages from '@/lib/enums/lang.js';
 
 import { useGlobals } from '@/composables/useGlobals.js';
+import { useLandingHeader } from '@/composables/headers/useLandingHeader.js';
 
 import IVPicture from '@/components/widgets/IVPicture.vue';
 import TextLink from '@/components/widgets/TextLink.vue';
+
+/*
+  For header and page background color automation.
+
+  Changes header and page background color when user scrolls
+  to a specific section of the page.
+*/
+onMounted(() => {
+  const targetSection = document.getElementById('first-img');
+
+  if (targetSection) {
+    const observerOptions = {
+      root: null, // Use the viewport as the container
+      threshold: 0.5, // Trigger when 50% of the target is visible
+    };
+
+    const backgroundColorChangeDiv = document.getElementById('youth-publication-page');
+
+    const handleIntersection = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          useLandingHeader.updateHeaderAndFontColors('#4179b2', 'white');
+          backgroundColorChangeDiv.style.backgroundColor = '#4179b2';
+        } else {
+          useLandingHeader.updateHeaderAndFontColors('#416492', 'white');
+          backgroundColorChangeDiv.style.backgroundColor = '#416492';
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
+    observer.observe(targetSection);
+
+    onUnmounted(() => {
+      observer.disconnect();
+    });
+  }
+});
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/css/common-variables';
 @import '@/assets/css/common-styles';
+
+#youth-publication-page {
+  transition: $transition-landing-header-darken;
+}
 
 .publication {
   padding: 100px 100px 150px 100px;

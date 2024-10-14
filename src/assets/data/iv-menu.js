@@ -1,9 +1,9 @@
-import { youthMedia, lastDanceMedia } from '@/assets/data/iv-media.js';
+import { youthMedia, pg13Media } from '@/assets/data/iv-media.js';
 
 const ivMenu = [
   {
     name: 'INDIVISUAL',
-    previewImgSrc: youthMedia.artwork,
+    previewImgSrc: youthMedia.bts.groupGazeEdited,
     children: [
       {
         name: 'Home',
@@ -17,7 +17,7 @@ const ivMenu = [
   },
   {
     name: 'PG-13',
-    previewImgSrc: lastDanceMedia.artwork,
+    previewImgSrc: pg13Media.magic,
     children: [
       {
         name: 'Home',
