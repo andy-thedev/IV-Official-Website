@@ -1,4 +1,4 @@
-import { youthMedia, pg13Media } from '@/assets/data/iv-media.js';
+import { youthMedia, lastDanceMedia } from '@/assets/data/iv-media.js';
 
 const ivMenu = [
   {
@@ -17,7 +17,7 @@ const ivMenu = [
   },
   {
     name: 'PG-13',
-    previewImgSrc: pg13Media.magic,
+    previewImgSrc: lastDanceMedia.artwork,
     children: [
       {
         name: 'Home',

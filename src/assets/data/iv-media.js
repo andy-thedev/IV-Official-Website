@@ -1,6 +1,3 @@
-import pg13MagicImg from '@/assets/img/members/pg13/pg13-magic.jpg';
-import pg13MagicImgMobile from '@/assets/img/members/pg13/pg13-magic.webp';
-
 import latelyArtworkImg from '@/assets/img/artworks/lately.jpg';
 import latelyArtworkImg4k from '@/assets/img/artworks/4k/lately.webp';
 import latelyArtworkImgQhd from '@/assets/img/artworks/qhd/lately.webp';
@@ -96,16 +93,6 @@ import youthBtsGroupGazeEditedImg4k from '@/assets/img/bts/youth/4k/group-gaze-e
 import youthBtsGroupGazeEditedImgQhd from '@/assets/img/bts/youth/qhd/group-gaze-edited.webp';
 import youthBtsGroupGazeEditedImgHd from '@/assets/img/bts/youth/hd/group-gaze-edited.webp';
 import youthBtsGroupGazeEditedImgMobile from '@/assets/img/bts/youth/mobile/group-gaze-edited.webp';
-
-export const pg13Media = {
-  magic: {
-    ['4k']: pg13MagicImgMobile,
-    ['qhd']: pg13MagicImgMobile,
-    ['hd']: pg13MagicImgMobile,
-    ['mobile']: pg13MagicImgMobile,
-    ['fallback']: pg13MagicImg,
-  },
-};
 
 export const youthMedia = {
   artwork: {
