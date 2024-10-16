@@ -1,0 +1,170 @@
+.back-nav-wrapper {
+  margin: 0 0 10px 0;
+
+  cursor: pointer;
+
+  .back-nav-icon {
+    font-size: 20px;
+
+    color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.next-nav-wrapper {
+  width: 100%;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+
+  cursor: pointer;
+
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    color: white;
+  }
+
+  .next-page-title {
+    margin: 0 12px 0 0;
+  }
+}
+
+.publication {
+  font-family: 'Roboto Slab';
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  &.youth {
+    padding: 100px 100px 150px 100px;
+
+    background-color: $iv-youth-blue;
+    color: white;
+  }
+
+  .full-width-img {
+    width: 100%;
+
+    margin: 0 0 20px 0;
+  }
+
+  .grid-img-container {
+    width: 100%;
+
+    margin: 50px 0 20px 0;
+
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(2, 1fr);
+
+    .grid-item-wrapper {
+      position: relative;
+
+      .grid-img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &.four-grid {
+      grid-template-rows: repeat(2, 1fr);
+    }
+  }
+
+  .table-of-contents-wrapper {
+    width: 100%;
+
+    margin: 75px 0 75px 0;
+  }
+
+  .img-caption {
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    font-size: 14px;
+
+    margin: 0 0 75px 0;
+
+    .caption-title {
+      white-space: nowrap;
+      font-style: italic;
+
+      margin: 0 100px 0 0;
+    }
+
+    .caption-text {
+      p {
+        margin: 0 0 3px 0;
+      }
+    }
+  }
+
+  .text-block-container {
+    width: 100%;
+
+    font-size: 16px;
+
+    p {
+      margin: 0 0 15px 0;
+    }
+  }
+}
+
+@media (min-width: 2160px) {
+  .iv-page {
+    .img-caption {
+      .caption-text {
+        p {
+          display: inline;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1499px) {
+  .iv-page {
+    padding: 150px 80px 150px 80px;
+
+    .img-caption {
+      flex-direction: column;
+      justify-content: center;
+
+      .caption-title {
+        margin: 0 0 3px 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .iv-page {
+    .img-caption {
+      margin: 0 0 50px 0;
+    }
+  }
+}
+
+@media (max-width: 599px) {
+  .iv-page {
+    padding: 100px 25px 100px 25px;
+
+    .full-width-img {
+      margin: 15px 0 15px 0;
+    }
+
+    .img-caption {
+      margin: 0 0 40px 0;
+
+      font-size: 8px;
+    }
+  }
+}

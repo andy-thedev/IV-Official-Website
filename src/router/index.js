@@ -11,6 +11,8 @@ import DiscographyWrapper from '@/views/discography/DiscographyWrapper.vue';
 import DiscographyDetails from '@/views/discography/details/DiscographyDetails.vue';
 
 import YouthPublication from '@/views/discography/publications/youth/YouthPublication.vue';
+import YouthHowItAllBegan from '@/views/discography/publications/youth/YouthHowItAllBegan.vue';
+import YouthIntroductionImmersion from '@/views/discography/publications/youth/introduction/YouthIntroductionImmersion.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -54,12 +56,36 @@ const router = createRouter({
               children: [
                 {
                   path: 'youth',
-                  name: 'YouthPublication',
-                  component: YouthPublication,
+                  name: 'YouthPublicationWrapper',
+                  component: RouterView,
                   meta: {
                     headerColor: '#4179b2',
                     headerFontColor: 'white',
                   },
+                  children: [
+                    {
+                      path: '',
+                      name: 'YouthPublication',
+                      component: YouthPublication,
+                    },
+                    {
+                      path: 'introduction',
+                      name: 'YouthIntroduction',
+                      component: RouterView,
+                      children: [
+                        {
+                          path: 'immersion',
+                          name: 'YouthIntroductionImmersion',
+                          component: YouthIntroductionImmersion,
+                        },
+                      ],
+                    },
+                    {
+                      path: 'how-it-all-began',
+                      name: 'YouthHowItAllBegan',
+                      component: YouthHowItAllBegan,
+                    },
+                  ],
                 },
               ],
             },
@@ -69,11 +95,17 @@ const router = createRouter({
     },
   ],
   scrollBehavior(to, from, savedPosition) {
-    // If a saved position is available (ie: using back/forward navigation), return it
     if (savedPosition) {
+      // If a saved position is available (ie: using back/forward navigation), scroll to it
       return savedPosition;
+    } else if (to.hash) {
+      // Scroll to the element with the id matching the hash
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      };
     } else {
-      // Scroll to the top of the page when navigating to a new route
+      // Scroll to the top of the page when navigating to a new route by default
       return { left: 0, top: 0 };
     }
   },
