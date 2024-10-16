@@ -9,10 +9,11 @@
         </div>
         <!-- Album artwork -->
         <div class="album-img-wrapper">
+          <!-- Need not use high-res images as this will always be small -->
           <IvPicture
-            :fourkSrc="discographyDetails.media.artwork['4k']"
-            :qhdSrc="discographyDetails.media.artwork['qhd']"
-            :hdSrc="discographyDetails.media.artwork['hd']"
+            :fourkSrc="discographyDetails.media.artwork['mobile']"
+            :qhdSrc="discographyDetails.media.artwork['mobile']"
+            :hdSrc="discographyDetails.media.artwork['mobile']"
             :mobileSrc="discographyDetails.media.artwork['mobile']"
           >
             <img :src="discographyDetails.media.artwork['fallback']" draggable="false" />
