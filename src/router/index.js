@@ -10,7 +10,7 @@ import DiscographyWrapper from '@/views/discography/DiscographyWrapper.vue';
 
 import DiscographyDetails from '@/views/discography/details/DiscographyDetails.vue';
 
-import YouthPublication from '@/views/discography/publications/YouthPublication.vue';
+import YouthPublication from '@/views/discography/publications/youth/YouthPublication.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

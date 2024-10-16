@@ -483,6 +483,10 @@ onMounted(() => {
 
 @media (min-width: 2560px) {
   .discography-details {
+    .section {
+      width: 60%;
+    }
+
     .album-overview {
       .album-overview-container {
         margin-bottom: 0px;
