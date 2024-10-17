@@ -61,9 +61,9 @@
           청춘, 철부지, 미숙함. <br />
           이 단어들을 읽을 때, 많은 사람들이 떠올리는 감정의 범위는 비슷할 거라고 상상한다. 신선하고 활기차며, 아무 걱정
           없던 순수한 나날들이나, 이제 막 피어나기 시작한 영혼이 펼치는 끝없는 가능성의 장난기 가득한 시기. 눈 깜짝할
-          사이에 우리의 봄날은 희미해지고, 우리는 어른이 되기 위한 복잡한 길로 급히 달려간다. 그러는 동안 그리움의
-          계절은 점점 더 줄어들고, 이제는 뒷유리로 잠깐씩 스쳐 지나가는 모습으로만 보일 뿐이다.</span
-        >
+          사이에 우리의 봄날은 희미해지고, 우리는 어른이 되기 위한 복잡한 길로 급히 달려간다. 그러는 동안 그리운 시절은
+          점점 더 줄어들고, 이제는 뒷유리로 잠깐씩 스쳐 지나가는 모습으로만 보일 뿐이다.
+        </span>
       </p>
     </div>
 
@@ -89,20 +89,16 @@
           In my early twenties, my life was vastly different, and I was a very, very different person. Addicted, broke,
           and most of all, extremely intense. Not only in circumstances, but as a person entirely. Ask anyone who knew
           me back then, and they would either describe interactions with me as either interesting, or just straight up
-          rude and uncomfortable (with more the latter than the former). Chasing "fun" with all other means disregarded,
-          I was partaking in radical, impulsive schemes, ranging from substance to dangerous activities. Going into more
-          detail would either require an NDA, or just be regurgitating another byproduct of my cynical interpretation of
-          everything, at that time.
+          rude and uncomfortable. Chasing "fun" with all other means disregarded, I was partaking in radical, impulsive
+          schemes, ranging from substance to dangerous activities.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           내 20대 초반은 지금과 완전히 달랐고, 나는 아주, 아주 다른 사람이었다. 진취적인 일은 극도로 피하며 중독에
           빠져있었고, 심하게 말하자면 "음침한 그지새끼" - 무엇보다 극도로 강렬하며 극단적인 사람이었다. 내 상황과 환경에
           기대 위장하고 싶지도 않고, 그냥 나라는 사람 그 자체가 그랬다. 그때 나를 알았던 사람, 누구든 한 명에게
-          물어본다면, 나와의 교류, 혹은 관계를 흥미롭거나 불편했다고 말할 것이다 (대부분 후자일 가능성이 더 크지만).
-          나는 그저 재미와 자극을 쫒으며, 다른 모든 것을 내팽개친 채 충동적이고 극단적인 일들을 추구하며 뛰어들었다.
-          물질이든 활동이든, 무엇이 되었든 간에 나는 온갖 무모한 짓을 하고 다녔다. 더 자세히 말할 수도 있겠지만, 아마
-          NDA가 필요할 것이고, 결국 그 시절 모든 것을 냉소적으로 해석하던 내가 만들어낸 또 다른 산물을 토해낼 뿐일
-          것이라 믿는다.
+          물어본다면, 나와의 교류, 혹은 관계를 흥미롭거나 불편했다고 말할 것이다. 나는 그저 재미와 자극을 쫒으며, 다른
+          모든 것을 내팽개친 채 충동적이고 극단적인 일들을 추구하며 뛰어들었다. 물질이든 활동이든, 무엇이 되었든 간에
+          나는 온갖 무모한 짓을 하고 다녔다.
         </span>
       </p>
     </div>
@@ -110,7 +106,6 @@
     <div class="text-block-container">
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          So what's with all of this "TMI"? <br />
           In order to fully understand this album, and why such an album came to be, one must be looking through the
           lense of my "Youth" on a personal level. This album is not intended to be a banger, an opportunity to find
           good songs, or even a great listen. It is simply a desperate attempt to relieve the overwhelming amount of
@@ -118,7 +113,6 @@
           was once so intense, extreme, and vivid.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          그래서 왜 이런 "TMI"를 구구절절 늘어놓고 있을까? <br />
           이 앨범을 제대로 이해하고, 왜 이런 앨범이 나왔는지 알기 위해서는 저자의 20대 초반을 투영해 관찰해야 한다. 이
           앨범은 히트곡을 만들거나, 좋은 노래를 찾을 수 있는 보물상자를 제공하기 위해 제작된 것이 아니다. 그저 한때
           감당하기 힘들 정도로 차오르던 스트레스, 고통, 후회, 답답함을 해소하려던 필사적인 시도들을 고이 모아, 너무나도

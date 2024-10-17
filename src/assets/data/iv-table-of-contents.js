@@ -6,8 +6,8 @@ export const publicationTOC = {
         en: 'INTRODUCTION',
       },
       description: {
-        ko: '청춘이라는 혼란스러운 시기 속에서 어른이 되어가는 날것의 감정을 탐구한 작품을 소개합니다.<br/> 끊임없이 앞으로만 달려가는 세상 속에서, 경쟁과 자극에 묻힌 이 앨범은 듣는 이에게 드문 쉼표를 선사합니다.',
-        en: `An introduction to a collection of tracks that explore the raw emotions of becoming an "adult" in a chaotic age. <br /> In a world that constantly races forward, an album buried amidst an anarchy of pursuit offers a rare pause.`,
+        ko: '청춘이라는 혼란스러운 시기 속, 어른이 되어가는 과정을 담은 작품을 소개합니다.<br/> 끊임없이 앞으로 달려야만 하는 세상 속에서, 이 앨범은 듣는 이에게 "그 시절을 돌아보는", 드문 쉼표를 선사합니다.',
+        en: `An introduction to a collection of tracks that explore the raw emotions of becoming an "adult" in a chaotic age. <br /> In a world that constantly races forward, an album buried amidst an anarchy of pursuit offers a rare pause to reflect and reminisce about our youth.`,
       },
       children: [
         {
