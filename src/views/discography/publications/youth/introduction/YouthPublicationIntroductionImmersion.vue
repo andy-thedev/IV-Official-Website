@@ -143,7 +143,7 @@ const selectBackNav = () => {
 };
 
 const selectNextNav = () => {
-  router.push({ name: 'YouthHowItAllBegan' });
+  router.push({ name: 'YouthPublication4YearsAgo' });
 };
 </script>
 

@@ -11,8 +11,8 @@ import DiscographyWrapper from '@/views/discography/DiscographyWrapper.vue';
 import DiscographyDetails from '@/views/discography/details/DiscographyDetails.vue';
 
 import YouthPublication from '@/views/discography/publications/youth/YouthPublication.vue';
-import YouthHowItAllBegan from '@/views/discography/publications/youth/YouthHowItAllBegan.vue';
-import YouthIntroductionImmersion from '@/views/discography/publications/youth/introduction/YouthIntroductionImmersion.vue';
+import YouthPublication4YearsAgo from '@/views/discography/publications/youth/how-it-all-began/YouthPublication4YearsAgo.vue';
+import YouthPublicationIntroductionImmersion from '@/views/discography/publications/youth/introduction/YouthPublicationIntroductionImmersion.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -79,15 +79,15 @@ const router = createRouter({
                       children: [
                         {
                           path: 'immersion',
-                          name: 'YouthIntroductionImmersion',
-                          component: YouthIntroductionImmersion,
+                          name: 'YouthPublicationIntroductionImmersion',
+                          component: YouthPublicationIntroductionImmersion,
                         },
                       ],
                     },
                     {
                       path: 'how-it-all-began',
-                      name: 'YouthHowItAllBegan',
-                      component: YouthHowItAllBegan,
+                      name: 'YouthPublication4YearsAgo',
+                      component: YouthPublication4YearsAgo,
                       meta: {
                         headerColor: '#416492',
                         headerFontColor: 'white',

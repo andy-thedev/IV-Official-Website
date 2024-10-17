@@ -129,7 +129,7 @@ const router = useRouter();
 // Functions
 
 const selectBackNav = () => {
-  router.push({ name: 'YouthIntroductionImmersion' });
+  router.push({ name: 'YouthPublicationIntroductionImmersion' });
 };
 
 const selectNextNav = () => {

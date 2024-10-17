@@ -142,7 +142,7 @@ const selectBackNav = () => {
 };
 
 const selectNextNav = () => {
-  router.push({ name: 'YouthIntroductionImmersion' });
+  router.push({ name: 'YouthPublicationIntroductionImmersion' });
 };
 
 /*
