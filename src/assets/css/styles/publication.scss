@@ -34,17 +34,22 @@
 }
 
 .publication {
-  font-family: 'Roboto Slab';
+  padding: 100px 100px 150px 100px;
 
   display: flex;
   flex-direction: column;
   align-items: start;
 
-  &.youth {
-    padding: 100px 100px 150px 100px;
+  color: white;
 
+  font-family: 'Roboto Slab';
+
+  &.youth {
     background-color: $iv-youth-blue;
-    color: white;
+  }
+
+  &.youth-depressed {
+    background-color: $iv-youth-blue-depressed;
   }
 
   .full-width-img {

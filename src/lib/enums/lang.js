@@ -1,5 +1,5 @@
 const SupportedLanguages = Object.freeze({
-  ko: 'ko',
+  ko: 'kr',
   en: 'en',
 });
 

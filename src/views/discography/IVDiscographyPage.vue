@@ -5,7 +5,7 @@
       <h1 class="text-xl">Discography</h1>
       <div className="border"></div>
     </div>
-    <div class="page-description-container">
+    <!-- <div class="page-description-container">
       <p>An aesthetic dive into an elaborate collection of our releases.</p>
       <p>
         Learn more about the details, struggles, and history behind each work, through various lenses of artistic
@@ -15,7 +15,7 @@
         Portrayed with images behind the scenes, and explanations from its creators, you will be able to immerse
         yourself into the perspective of your favourite artists.
       </p>
-    </div>
+    </div> -->
     <!-- Items -->
     <div class="items-container">
       <div

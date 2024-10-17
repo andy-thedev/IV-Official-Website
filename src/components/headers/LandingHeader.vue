@@ -19,8 +19,10 @@
 </template>
 
 <script setup>
-import { useOverlay } from '@/composables/overlays/useOverlay';
 import { useRouter } from 'vue-router';
+
+import { useOverlay } from '@/composables/overlays/useOverlay';
+
 import LangIcon from '@/components/widgets/LangIcon.vue';
 
 defineProps({

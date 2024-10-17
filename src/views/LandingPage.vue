@@ -59,9 +59,10 @@ const closeItemDetailsOverlay = () => {
 @import '@/assets/css/presets/transition-presets';
 
 .landing-page {
+  @include fade-transition-preset;
+
   display: flex;
   flex-direction: column;
   width: 100vw;
-  @include fade-transition-preset;
 }
 </style>

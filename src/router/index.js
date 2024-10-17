@@ -77,6 +77,10 @@ const router = createRouter({
                           path: 'immersion',
                           name: 'YouthIntroductionImmersion',
                           component: YouthIntroductionImmersion,
+                          meta: {
+                            headerColor: '#416492',
+                            headerFontColor: 'white',
+                          },
                         },
                       ],
                     },
