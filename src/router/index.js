@@ -72,15 +72,15 @@ const router = createRouter({
                       path: 'introduction',
                       name: 'YouthIntroduction',
                       component: RouterView,
+                      meta: {
+                        headerColor: '#416492',
+                        headerFontColor: 'white',
+                      },
                       children: [
                         {
                           path: 'immersion',
                           name: 'YouthIntroductionImmersion',
                           component: YouthIntroductionImmersion,
-                          meta: {
-                            headerColor: '#416492',
-                            headerFontColor: 'white',
-                          },
                         },
                       ],
                     },
@@ -88,6 +88,10 @@ const router = createRouter({
                       path: 'how-it-all-began',
                       name: 'YouthHowItAllBegan',
                       component: YouthHowItAllBegan,
+                      meta: {
+                        headerColor: '#416492',
+                        headerFontColor: 'white',
+                      },
                     },
                   ],
                 },

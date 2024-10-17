@@ -33,7 +33,7 @@
           v-for="(item, index) in contentList[selectedPrimaryItemIndex].children"
           :key="index"
           class="item-container"
-          :class="{ selected: selectedSecondaryItemIndex === index }"
+          :class="{ selected: selectedPrimaryItemIndex === pagePrimaryIndex && selectedSecondaryItemIndex === index }"
           @click.stop="selectSecondaryItem(index)"
         >
           <div class="item-title-wrapper">
@@ -82,7 +82,7 @@ const selectSecondaryItem = (index) => {
   const selectedChildRouteName = props?.contentList[selectedPrimaryItemIndex.value]?.children[index]?.routeName;
   if (!selectedChildRouteName) {
     console.log('Could not parse route name');
-  } else if (index != props.pageSecondaryIndex) {
+  } else if (selectedPrimaryItemIndex.value != props.pagePrimaryIndex || index != props.pageSecondaryIndex) {
     router.push({ name: selectedChildRouteName });
   } else {
     // SNH - Do nothing

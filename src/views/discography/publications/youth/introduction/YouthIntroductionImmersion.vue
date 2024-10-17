@@ -34,16 +34,6 @@
             사진을 찍고 있어 이 사진에는 나오지 못했다.
           </span>
         </p>
-        <p>
-          <span v-if="useGlobals.currLang == SupportedLanguages.en">
-            On this day, PG-13 had already planned for this publication, gathering content with the expectation of
-            results years down the line.
-          </span>
-          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-            이날 PG-13은 이미 이 페이지를 포함한 "철부지"의 출판 계획과 전시 기법을 마친 상태였고, 몇 년 뒤의 결과를
-            기대하며 준비물을 수집하고 있었다.
-          </span>
-        </p>
       </div>
     </div>
 
@@ -94,11 +84,11 @@
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           내 20대 초반은 지금과 완전히 달랐고, 나는 아주, 아주 다른 사람이었다. 진취적인 일은 극도로 피하며 중독에
-          빠져있었고, 심하게 말하자면 "음침한 그지새끼" - 무엇보다 극도로 강렬하며 극단적인 사람이었다. 내 상황과 환경에
-          기대 위장하고 싶지도 않고, 그냥 나라는 사람 그 자체가 그랬다. 그때 나를 알았던 사람, 누구든 한 명에게
-          물어본다면, 나와의 교류, 혹은 관계를 흥미롭거나 불편했다고 말할 것이다. 나는 그저 재미와 자극을 쫒으며, 다른
-          모든 것을 내팽개친 채 충동적이고 극단적인 일들을 추구하며 뛰어들었다. 물질이든 활동이든, 무엇이 되었든 간에
-          나는 온갖 무모한 짓을 하고 다녔다.
+          빠져있었고, 빈털터리였으며, 무엇보다도 극도로 강렬하며 극단적인 사람이었다. 내 상황과 환경에 기대 위장하고
+          싶지도 않고, 그냥 나라는 사람 그 자체가 그랬다. 그때 나를 알았던 사람, 누구든 한 명에게 물어본다면, 나와의
+          교류, 혹은 관계를 흥미롭거나 불편했다고 말할 것이다. 나는 그저 재미와 자극을 쫒으며, 다른 모든 것을 내팽개친
+          채 충동적이고 극단적인 일들을 추구하며 뛰어들었다. 물질이든 활동이든, 무엇이 되었든 간에 나는 온갖 무모한 짓을
+          하고 다녔다.
         </span>
       </p>
     </div>
@@ -124,6 +114,11 @@
     <div class="table-of-contents-wrapper">
       <PublicationTableOfContents table="youth" :pagePrimaryIndex="0" :pageSecondaryIndex="1" />
     </div>
+
+    <div id="next-nav" class="next-nav-wrapper" @click="selectNextNav()">
+      <div class="next-page-title"><span>4 YEARS AGO</span></div>
+      <font-awesome-icon :icon="['fas', 'arrow-right-long']" class="next-nav-icon" />
+    </div>
   </div>
 </template>
 
@@ -145,6 +140,10 @@ const router = useRouter();
 
 const selectBackNav = () => {
   router.push({ name: 'YouthPublication', hash: '#next-nav' });
+};
+
+const selectNextNav = () => {
+  router.push({ name: 'YouthHowItAllBegan' });
 };
 </script>
 

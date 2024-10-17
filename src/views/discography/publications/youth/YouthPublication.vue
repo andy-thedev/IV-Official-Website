@@ -75,14 +75,14 @@
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           Unlike the way youth is often portrayed in media, this album aims to capture a distinct and particular
-          perspective&mdash;one that is far more intense and chaotic. <br />
+          perspective&mdash;one that is far more intense and painful. <br />
           The reocurring themes of chaos, highs and lows, and conflict reside in the album's sound and texture,
           presenting an inconsiderate collection for the average listener. With tracks that are lengthy, abstract, and
           at times overwhelmingly intense, "Youth" rejects the conventional advantages of modern music exploitation, and
           stays true to its expressive purpose.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          이 앨범은 미디어에서 흔히 그려지는 청춘과는 달리, 훨씬 더 강렬하고 혼란스러운 시각을 담아내려 한다. 혼돈,
+          이 앨범은 미디어에서 흔히 그려지는 청춘과는 달리, 훨씬 더 강렬하고 고통스러운 시각을 담아내려 한다. 혼돈,
           기복, 그리고 갈등이라는 반복적인 주제들은 앨범의 사운드와 질감에 녹아 있어, 일반 청취자에게는 쉽지 않은 모음을
           제공한다. 길고 추상적이며 때로는 부담스러운 트랙들로 구성된 "Youth"는 현대 음악의 상업적 이점을 거부하고, 그
           본연의 표현적 목적에 충실하다.

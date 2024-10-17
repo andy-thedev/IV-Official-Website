@@ -1,11 +1,7 @@
 <template>
-  <div class="publication iv-page" id="youth-publication-page">
+  <div class="publication youth-depressed iv-page" id="youth-publication-page">
     <div class="back-nav-wrapper">
       <font-awesome-icon :icon="['fas', 'arrow-left-long']" class="back-nav-icon" @click="selectBackNav()" />
-    </div>
-
-    <div class="table-of-contents-wrapper">
-      <TableOfContents />
     </div>
 
     <div class="grid-img-container">
@@ -103,11 +99,19 @@
         </span>
       </p>
     </div>
+
+    <div class="table-of-contents-wrapper">
+      <PublicationTableOfContents table="youth" :pagePrimaryIndex="1" :pageSecondaryIndex="0" />
+    </div>
+
+    <div id="next-nav" class="next-nav-wrapper" @click="selectNextNav()">
+      <div class="next-page-title"><span>4 YEARS AGO</span></div>
+      <font-awesome-icon :icon="['fas', 'arrow-right-long']" class="next-nav-icon" />
+    </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, onUnmounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { youthMedia } from '@/assets/data/iv-media.js';
@@ -115,57 +119,22 @@ import { youthMedia } from '@/assets/data/iv-media.js';
 import SupportedLanguages from '@/lib/enums/lang.js';
 
 import { useGlobals } from '@/composables/useGlobals.js';
-import { useLandingHeader } from '@/composables/headers/useLandingHeader.js';
 
 import IVPicture from '@/components/widgets/IVPicture.vue';
 import TextLink from '@/components/widgets/TextLink.vue';
-import TableOfContents from '@/components/layout/table-of-contents/TableOfContents.vue';
+import PublicationTableOfContents from '@/components/layout/table-of-contents/PublicationTableOfContents.vue';
 
 const router = useRouter();
 
 // Functions
 
 const selectBackNav = () => {
-  router.push({ name: 'DiscographyDetails', params: { id: 'youth' } });
+  router.push({ name: 'YouthIntroductionImmersion' });
 };
 
-/*
-  For header and page background color automation.
-
-  Changes header and page background color when user scrolls
-  to a specific section of the page.
-*/
-onMounted(() => {
-  const targetSection = document.getElementById('first-img');
-
-  if (targetSection) {
-    const observerOptions = {
-      root: null, // Use the viewport as the container
-      threshold: 0.5, // Trigger when 50% of the target is visible
-    };
-
-    const backgroundColorChangeDiv = document.getElementById('youth-publication-page');
-
-    const handleIntersection = (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          useLandingHeader.updateHeaderAndFontColors('#4179b2', 'white');
-          backgroundColorChangeDiv.style.backgroundColor = '#4179b2';
-        } else {
-          useLandingHeader.updateHeaderAndFontColors('#416492', 'white');
-          backgroundColorChangeDiv.style.backgroundColor = '#416492';
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, observerOptions);
-    observer.observe(targetSection);
-
-    onUnmounted(() => {
-      observer.disconnect();
-    });
-  }
-});
+const selectNextNav = () => {
+  router.push({ name: 'YouthPublication', hash: '#next-nav' });
+};
 </script>
 
 <style lang="scss" scoped>
@@ -175,24 +144,5 @@ onMounted(() => {
 
 #youth-publication-page {
   transition: $transition-landing-header-darken;
-}
-
-.back-nav-wrapper {
-  margin: 0 0 10px 0;
-
-  cursor: pointer;
-
-  .back-nav-icon {
-    font-size: 20px;
-
-    color: rgba(255, 255, 255, 0.5);
-  }
-}
-
-.publication {
-  padding: 100px 100px 150px 100px;
-
-  background-color: $iv-youth-blue;
-  color: white;
 }
 </style>
