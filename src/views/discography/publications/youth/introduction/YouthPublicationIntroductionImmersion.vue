@@ -73,6 +73,53 @@
       </p>
     </div>
 
+    <div class="grid-img-container intermediate">
+      <div class="grid-item-wrapper">
+        <IVPicture
+          :fourkSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['4k']"
+          :qhdSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['qhd']"
+          :hdSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['hd']"
+          :mobileSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['mobile']"
+        >
+          <img class="grid-img" :src="youthMedia.bts.youthBtsBasementPg13ParisMf['fallback']" draggable="false" />
+        </IVPicture>
+      </div>
+      <div class="grid-item-wrapper">
+        <IVPicture
+          :fourkSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['4k']"
+          :qhdSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['qhd']"
+          :hdSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['hd']"
+          :mobileSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['mobile']"
+        >
+          <img class="grid-img" :src="youthMedia.bts.youthBtsBasementPg13ParisSide['fallback']" draggable="false" />
+        </IVPicture>
+      </div>
+    </div>
+    <div class="img-caption">
+      <p class="caption-title">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Sunday afternoon (10.23.2022)<br />
+          North York, Hendon Park
+        </span>
+        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+          일요일 오후 (10.23.2022)<br />
+          North York, Hendon Park
+        </span>
+      </p>
+      <div class="caption-text">
+        <p>
+          <span v-if="useGlobals.currLang == SupportedLanguages.en">
+            Following the album cover shoot, Gen 1 members of INDIVISUAL and friends lie down in a public park for
+            additional A-shots. Meesung Park is absent from this photo, being the photographer.
+          </span>
+          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+            앨범 커버 촬영 이후, INDIVISUAL 1세대 멤버들과 친구들이 추가 A컷 촬영을 위해 공원에 누워있다. 미성이는
+            사진을 찍고 있어 이 사진에는 나오지 못했다.
+          </span>
+        </p>
+      </div>
+    </div>
+
     <div class="text-block-container">
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
