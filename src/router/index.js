@@ -37,7 +37,7 @@ const router = createRouter({
               name: 'IVDiscographyPage',
               component: IVDiscographyPage,
               meta: {
-                headerColor: 'black',
+                headerColor: '#111111',
                 headerFontColor: 'white',
               },
             },
@@ -46,7 +46,7 @@ const router = createRouter({
               name: 'DiscographyDetails',
               component: DiscographyDetails,
               meta: {
-                headerColor: 'black',
+                headerColor: '#111111',
                 headerFontColor: 'white',
               },
             },

@@ -174,6 +174,8 @@ const isHoveringAlbum = ref(false);
 const route = useRoute();
 const discographyId = route.params.id;
 const router = useRouter();
+const headerColor = route.meta.headerColor;
+const headerFontColor = route.meta.headerFontColor;
 
 // Data
 
@@ -206,7 +208,7 @@ onMounted(() => {
         if (entry.isIntersecting) {
           useLandingHeader.updateHeaderAndFontColors(null, null);
         } else {
-          useLandingHeader.updateHeaderAndFontColors('black', 'white');
+          useLandingHeader.updateHeaderAndFontColors(headerColor, headerFontColor);
         }
       });
     };
@@ -268,14 +270,14 @@ onMounted(() => {
   background-color: $iv-near-black;
   color: white;
 
-  padding-top: 75px;
+  padding-top: 65px;
 
   .section {
     width: 70%;
   }
 
   .album-overview {
-    height: calc(100vh - 75px);
+    height: calc(100vh - 65px);
 
     display: flex;
     justify-content: center;
@@ -295,7 +297,7 @@ onMounted(() => {
         bottom: 100%;
         left: 0;
 
-        margin: 0 0 40px 10px;
+        margin: 0 0 30px 10px;
 
         cursor: pointer;
 

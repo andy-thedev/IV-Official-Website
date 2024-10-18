@@ -41,7 +41,7 @@ function close() {
 .close-icon {
   font-size: 25px;
   position: absolute;
-  top: 75px;
+  top: 65px;
   left: 15px;
   padding: 20px 20px;
   cursor: pointer;

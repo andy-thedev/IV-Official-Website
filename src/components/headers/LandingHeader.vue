@@ -65,30 +65,40 @@ const selectBrand = () => {
 }
 
 .iv-landing-header {
+  width: 100%;
+  height: 65px;
+
   position: fixed;
   top: 0;
   right: 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  width: 100%;
-  height: 75px;
+
   z-index: $z-header;
-  background-color: $background-color-landing-header;
-  transition: $transition-landing-header-darken;
+
   color: white;
+  background-color: $background-color-landing-header;
+
   font-family: josefin sans, sans-serif;
   text-transform: uppercase;
+
+  transition: $transition-landing-header-darken;
 
   .left-items-container {
     flex: 1;
     text-align: left;
-    .left-icon {
-      font-size: 20px;
+
+    .iv-lang-icon {
       margin: 0 0 0 30px;
-      transition: $transition-landing-header-font-color;
+
+      font-size: 18px;
+
       cursor: pointer;
+
+      transition: $transition-landing-header-font-color;
     }
   }
 
@@ -96,18 +106,23 @@ const selectBrand = () => {
     cursor: pointer;
 
     .center-text {
-      font-size: 25px;
+      font-size: 22px;
       text-align: center;
+
       transition: $transition-landing-header-font-color;
     }
   }
 
   .right-items-container {
     flex: 1;
+
     text-align: right;
+
     .right-icon {
-      font-size: 20px;
       margin: 0 30px 0 0;
+
+      font-size: 18px;
+
       transition: $transition-landing-header-font-color;
 
       cursor: pointer;
@@ -117,9 +132,11 @@ const selectBrand = () => {
 
 @media (max-width: 480px) {
   .iv-landing-header {
+    height: 75px;
+
     .center-brand {
       .center-text {
-        font-size: 22px;
+        font-size: 25px;
       }
     }
   }
@@ -132,6 +149,18 @@ const selectBrand = () => {
         font-size: 20px;
       }
     }
+
+    .left-items-container {
+      .iv-lang-icon {
+        font-size: 14px;
+      }
+    }
+
+    .right-items-container {
+      .right-icon {
+        font-size: 14px;
+      }
+    }
   }
 }
 
@@ -140,6 +169,22 @@ const selectBrand = () => {
     .center-brand {
       .center-text {
         font-size: 15px;
+      }
+    }
+
+    .left-items-container {
+      .iv-lang-icon {
+        margin: 0 0 0 25px;
+
+        font-size: 10px;
+      }
+    }
+
+    .right-items-container {
+      .right-icon {
+        margin: 0 25px 0 0;
+
+        font-size: 10px;
       }
     }
   }

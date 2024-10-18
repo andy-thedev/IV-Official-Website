@@ -76,7 +76,7 @@ const selectItem = (id) => {
 .iv-discography-page {
   @include generic-font-preset;
 
-  background-color: $iv-dark-grey;
+  background-color: $iv-near-black;
   color: white;
 
   .page-title-container {

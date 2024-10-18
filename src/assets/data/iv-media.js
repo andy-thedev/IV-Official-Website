@@ -112,6 +112,12 @@ import youthBtsBasementPg13ParisMfImgQhd from '@/assets/img/bts/youth/qhd/baseme
 import youthBtsBasementPg13ParisMfImgHd from '@/assets/img/bts/youth/hd/basement-pg13-paris-mf.webp';
 import youthBtsBasementPg13ParisMfImgMobile from '@/assets/img/bts/youth/mobile/basement-pg13-paris-mf.webp';
 
+import youthBtsAutumnTrioImg from '@/assets/img/bts/youth/autumn-trio.jpg';
+import youthBtsAutumnTrioImg4k from '@/assets/img/bts/youth/4k/autumn-trio.webp';
+import youthBtsAutumnTrioImgQhd from '@/assets/img/bts/youth/qhd/autumn-trio.webp';
+import youthBtsAutumnTrioImgHd from '@/assets/img/bts/youth/hd/autumn-trio.webp';
+import youthBtsAutumnTrioImgMobile from '@/assets/img/bts/youth/mobile/autumn-trio.webp';
+
 export const youthMedia = {
   artwork: {
     ['4k']: youthArtworkImg4k,
@@ -171,19 +177,26 @@ export const youthMedia = {
       ['mobile']: youthBtsAGrassSittingImgMobile,
       ['fallback']: youthBtsAGrassSittingImg,
     },
-    youthBtsBasementPg13ParisSide: {
+    basementPg13ParisSide: {
       ['4k']: youthBtsBasementPg13ParisSideImg4k,
       ['qhd']: youthBtsBasementPg13ParisSideImgQhd,
       ['hd']: youthBtsBasementPg13ParisSideImgHd,
       ['mobile']: youthBtsBasementPg13ParisSideImgMobile,
       ['fallback']: youthBtsBasementPg13ParisSideImg,
     },
-    youthBtsBasementPg13ParisMf: {
+    basementPg13ParisMf: {
       ['4k']: youthBtsBasementPg13ParisMfImg4k,
       ['qhd']: youthBtsBasementPg13ParisMfImgQhd,
       ['hd']: youthBtsBasementPg13ParisMfImgHd,
       ['mobile']: youthBtsBasementPg13ParisMfImgMobile,
       ['fallback']: youthBtsBasementPg13ParisMfImg,
+    },
+    autumnTrio: {
+      ['4k']: youthBtsAutumnTrioImg4k,
+      ['qhd']: youthBtsAutumnTrioImgQhd,
+      ['hd']: youthBtsAutumnTrioImgHd,
+      ['mobile']: youthBtsAutumnTrioImgMobile,
+      ['fallback']: youthBtsAutumnTrioImg,
     },
   },
 };

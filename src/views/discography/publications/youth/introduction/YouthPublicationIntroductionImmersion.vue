@@ -76,22 +76,22 @@
     <div class="grid-img-container intermediate">
       <div class="grid-item-wrapper">
         <IVPicture
-          :fourkSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['4k']"
-          :qhdSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['qhd']"
-          :hdSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['hd']"
-          :mobileSrc="youthMedia.bts.youthBtsBasementPg13ParisMf['mobile']"
+          :fourkSrc="youthMedia.bts.basementPg13ParisMf['4k']"
+          :qhdSrc="youthMedia.bts.basementPg13ParisMf['qhd']"
+          :hdSrc="youthMedia.bts.basementPg13ParisMf['hd']"
+          :mobileSrc="youthMedia.bts.basementPg13ParisMf['mobile']"
         >
-          <img class="grid-img" :src="youthMedia.bts.youthBtsBasementPg13ParisMf['fallback']" draggable="false" />
+          <img class="grid-img" :src="youthMedia.bts.basementPg13ParisMf['fallback']" draggable="false" />
         </IVPicture>
       </div>
       <div class="grid-item-wrapper">
         <IVPicture
-          :fourkSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['4k']"
-          :qhdSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['qhd']"
-          :hdSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['hd']"
-          :mobileSrc="youthMedia.bts.youthBtsBasementPg13ParisSide['mobile']"
+          :fourkSrc="youthMedia.bts.basementPg13ParisSide['4k']"
+          :qhdSrc="youthMedia.bts.basementPg13ParisSide['qhd']"
+          :hdSrc="youthMedia.bts.basementPg13ParisSide['hd']"
+          :mobileSrc="youthMedia.bts.basementPg13ParisSide['mobile']"
         >
-          <img class="grid-img" :src="youthMedia.bts.youthBtsBasementPg13ParisSide['fallback']" draggable="false" />
+          <img class="grid-img" :src="youthMedia.bts.basementPg13ParisSide['fallback']" draggable="false" />
         </IVPicture>
       </div>
     </div>

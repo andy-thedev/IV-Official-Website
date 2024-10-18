@@ -157,7 +157,7 @@ onMounted(() => {
   if (targetSection) {
     const observerOptions = {
       root: null, // Use the viewport as the container
-      threshold: 0.5, // Trigger when 50% of the target is visible
+      threshold: 0.4, // Trigger when 40% of the target is visible
     };
 
     const backgroundColorChangeDiv = document.getElementById('youth-publication-page');
