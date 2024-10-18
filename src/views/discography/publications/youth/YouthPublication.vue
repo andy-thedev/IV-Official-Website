@@ -25,7 +25,7 @@
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           철부지 (10.23.2022)<br />
-          North York, Hendon Park
+          노스욕, 헨던 공원
         </span>
       </p>
       <div class="caption-text">

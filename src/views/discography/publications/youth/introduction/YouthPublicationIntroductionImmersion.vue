@@ -20,7 +20,7 @@
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           일요일 오후 (10.23.2022)<br />
-          North York, Hendon Park
+          노스욕, 헨던 공원
         </span>
       </p>
       <div class="caption-text">
@@ -98,23 +98,26 @@
     <div class="img-caption">
       <p class="caption-title">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          Sunday afternoon (10.23.2022)<br />
-          North York, Hendon Park
+          Unlimited and PG-13 (10.23.2022)<br />
+          North York, a parking lot near Hendon Park
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          일요일 오후 (10.23.2022)<br />
-          North York, Hendon Park
+          Unlimited와 PG-13 (10.23.2022)<br />
+          노스욕, 헨던 공원 근처 어느 주차장에서
         </span>
       </p>
       <div class="caption-text">
         <p>
           <span v-if="useGlobals.currLang == SupportedLanguages.en">
-            Following the album cover shoot, Gen 1 members of INDIVISUAL and friends lie down in a public park for
-            additional A-shots. Meesung Park is absent from this photo, being the photographer.
+            After the photo shoot at Hendon park, Unlimited(Paris Molokwu) and PG-13 sit in a nearby parking lot,
+            waiting for additional B-shots to be taken. <br />
+            At this point, PG-13 was much more financially stable than before, and steadily recovering from substance
+            abuse.
           </span>
           <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-            앨범 커버 촬영 이후, INDIVISUAL 1세대 멤버들과 친구들이 추가 A컷 촬영을 위해 공원에 누워있다. 미성이는
-            사진을 찍고 있어 이 사진에는 나오지 못했다.
+            헨던 공원에서의 사진 촬영 후, Unlimited(Paris Molokwu)와 PG-13이 추가 B컷 촬영을 기다리며 근처 주차장에 앉아
+            있다. <br />
+            이 사진 속에서 PG-13는 예전보다 재정적으로 훨씬 안정된 상태였으며, 물질 남용에서도 꾸준히 회복 중이었다.
           </span>
         </p>
       </div>

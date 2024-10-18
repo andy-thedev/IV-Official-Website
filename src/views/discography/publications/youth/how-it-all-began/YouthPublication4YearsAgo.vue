@@ -36,7 +36,7 @@
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           Vermello와 PG-13 (10.23.2022)<br />
           Roca Dianco와 PG-13 (10.23.2022)<br />
-          North York, Hendon Park
+          노스욕, 헨던 공원
         </span>
       </p>
       <div class="caption-text">
