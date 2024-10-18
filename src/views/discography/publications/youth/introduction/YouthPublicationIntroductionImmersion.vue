@@ -111,13 +111,10 @@
           <span v-if="useGlobals.currLang == SupportedLanguages.en">
             After the photo shoot at Hendon park, Unlimited(Paris Molokwu) and PG-13 sit in a nearby parking lot,
             waiting for additional B-shots to be taken. <br />
-            At this point, PG-13 was much more financially stable than before, and steadily recovering from substance
-            abuse.
           </span>
           <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
             헨던 공원에서의 사진 촬영 후, Unlimited(Paris Molokwu)와 PG-13이 추가 B컷 촬영을 기다리며 근처 주차장에 앉아
             있다. <br />
-            이 사진 속에서 PG-13는 예전보다 재정적으로 훨씬 안정된 상태였으며, 물질 남용에서도 꾸준히 회복 중이었다.
           </span>
         </p>
       </div>
