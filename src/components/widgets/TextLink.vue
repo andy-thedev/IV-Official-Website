@@ -1,11 +1,14 @@
 <template>
-  <router-link :to="{ name: toName, params: { id: toParamId } }" class="text-link">
+  <a :href="resolvedLink" target="_blank" rel="noopener noreferrer" class="text-link">
     {{ text }} <font-awesome-icon :icon="['fas', 'link']" class="link-icon" />
-  </router-link>
+  </a>
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue';
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
   text: {
     type: String,
     required: true,
@@ -21,6 +24,15 @@ defineProps({
     required: false,
     default: '',
   },
+});
+
+const router = useRouter();
+
+const resolvedLink = computed(() => {
+  return router.resolve({
+    name: props.toName,
+    params: { id: props.toParamId },
+  }).href;
 });
 </script>
 
