@@ -118,6 +118,18 @@ import youthBtsAutumnTrioImgQhd from '@/assets/img/bts/youth/qhd/autumn-trio.web
 import youthBtsAutumnTrioImgHd from '@/assets/img/bts/youth/hd/autumn-trio.webp';
 import youthBtsAutumnTrioImgMobile from '@/assets/img/bts/youth/mobile/autumn-trio.webp';
 
+import youthBtsKangeonPg13ClothesImg from '@/assets/img/bts/youth/kangeon-pg13-clothes.jpg';
+import youthBtsKangeonPg13ClothesImg4k from '@/assets/img/bts/youth/4k/kangeon-pg13-clothes.webp';
+import youthBtsKangeonPg13ClothesImgQhd from '@/assets/img/bts/youth/qhd/kangeon-pg13-clothes.webp';
+import youthBtsKangeonPg13ClothesImgHd from '@/assets/img/bts/youth/hd/kangeon-pg13-clothes.webp';
+import youthBtsKangeonPg13ClothesImgMobile from '@/assets/img/bts/youth/mobile/kangeon-pg13-clothes.webp';
+
+import youthBtsMeesungKangeonImg from '@/assets/img/bts/youth/meesung-kangeon.jpg';
+import youthBtsMeesungKangeonImg4k from '@/assets/img/bts/youth/4k/meesung-kangeon.webp';
+import youthBtsMeesungKangeonImgQhd from '@/assets/img/bts/youth/qhd/meesung-kangeon.webp';
+import youthBtsMeesungKangeonImgHd from '@/assets/img/bts/youth/hd/meesung-kangeon.webp';
+import youthBtsMeesungKangeonImgMobile from '@/assets/img/bts/youth/mobile/meesung-kangeon.webp';
+
 export const youthMedia = {
   artwork: {
     ['4k']: youthArtworkImg4k,
@@ -197,6 +209,20 @@ export const youthMedia = {
       ['hd']: youthBtsAutumnTrioImgHd,
       ['mobile']: youthBtsAutumnTrioImgMobile,
       ['fallback']: youthBtsAutumnTrioImg,
+    },
+    kangeonPg13Clothes: {
+      ['4k']: youthBtsKangeonPg13ClothesImg4k,
+      ['qhd']: youthBtsKangeonPg13ClothesImgQhd,
+      ['hd']: youthBtsKangeonPg13ClothesImgHd,
+      ['mobile']: youthBtsKangeonPg13ClothesImgMobile,
+      ['fallback']: youthBtsKangeonPg13ClothesImg,
+    },
+    meesungKangeon: {
+      ['4k']: youthBtsMeesungKangeonImg4k,
+      ['qhd']: youthBtsMeesungKangeonImgQhd,
+      ['hd']: youthBtsMeesungKangeonImgHd,
+      ['mobile']: youthBtsMeesungKangeonImgMobile,
+      ['fallback']: youthBtsMeesungKangeonImg,
     },
   },
 };

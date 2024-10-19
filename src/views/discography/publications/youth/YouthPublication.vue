@@ -41,11 +41,11 @@
         </p>
         <p>
           <span v-if="useGlobals.currLang == SupportedLanguages.en">
-            This photo shoot for the album cover of "Youth" marks the final gathering of the presented members, before
-            PG-13's journey to South Korea to complete the album's production.
+            This photo shoot for the album cover of <i>Youth</i> marks the final gathering of the presented members,
+            before PG-13's journey to South Korea to complete the album's production.
           </span>
           <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-            앨범 "Youth"의 커버 사진 촬영일은 PG-13이 앨범 제작을 완성하기 위해 한국으로 떠나기 전, 함께한 멤버들이
+            앨범 <i>Youth</i>의 커버 사진 촬영일은 PG-13이 앨범 제작을 완성하기 위해 한국으로 떠나기 전, 함께한 멤버들이
             마지막으로 모인 날이었다.
           </span>
         </p>
@@ -55,7 +55,7 @@
     <div class="text-block-container">
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          "Youth", released in late-2024, is PG-13's first official LP release, written during his early twenties.
+          <i>Youth</i>, released in late-2024, is PG-13's first official LP release, written during his early twenties.
           <br />
           Much like its theme, the album endured four years of struggles and unexpected events before its release. From
           the catastrophic loss of months of hard work to moving across continents to overcome technical limitations,
@@ -78,14 +78,14 @@
           perspective&mdash;one that is far more intense and painful. <br />
           The reocurring themes of chaos, highs and lows, and conflict reside in the album's sound and texture,
           presenting an inconsiderate collection for the average listener. With tracks that are lengthy, abstract, and
-          at times overwhelmingly intense, "Youth" rejects the conventional advantages of modern music exploitation, and
-          stays true to its expressive purpose.
+          at times overwhelmingly intense, <i>Youth</i> rejects the conventional advantages of modern music
+          exploitation, and stays true to its expressive purpose.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           이 앨범은 미디어에서 흔히 그려지는 청춘과는 달리, 훨씬 더 강렬하고 고통스러운 시각을 담아내려 한다. 혼돈,
           기복, 그리고 갈등이라는 반복적인 주제들은 앨범의 사운드와 질감에 녹아 있어, 일반 청취자에게는 쉽지 않은 모음을
-          제공한다. 길고 추상적이며 때로는 부담스러운 트랙들로 구성된 "Youth"는 현대 음악의 상업적 이점을 거부하고, 그
-          본연의 표현적 목적에 충실하다.
+          제공한다. 길고 추상적이며 때로는 부담스러운 트랙들로 구성된 <i>Youth</i>는 현대 음악의 상업적 이점을 거부하고,
+          그 본연의 표현적 목적에 충실하다.
         </span>
       </p>
     </div>
@@ -97,13 +97,13 @@
           and nothing else. Recorded in raw environments along the natural journey, such as hotel rooms and closets, the
           final product undeniably carries major flaws and regret, particularly in sound quality. Despite the ability to
           address these issues in the later stages of development, it was decided that these imperfections are an
-          integral part of "Youth" and should remain to preserve the immature steps of the journey.
+          integral part of <i>Youth</i> and should remain to preserve the immature steps of the journey.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           이 앨범은 단 10만원짜리 마이크와 15만원짜리 오디오 인터페이스만으로 완성되었다. 호텔 방이나 옷장과 같은,
           생생하지만 척박한 환경 속에서 녹음된 최종 결과물은 특히 음질에서 뚜렷한 결함과 아쉬움을 남겼다. 개발 후반부에
-          이러한 문제를 해결할 수 있었음에도 불구하고, 이 불완전함이 "Youth"의 중요한 일부라고 판단되어, 미숙했던 그
-          시절을 보존하듯 그대로 남겨두기로 결정되었다.
+          이러한 문제를 해결할 수 있었음에도 불구하고, 이 불완전함이 <i>Youth</i>의 중요한 일부라고 판단되어, 미숙했던
+          그 시절을 보존하듯 그대로 남겨두기로 결정되었다.
         </span>
       </p>
     </div>

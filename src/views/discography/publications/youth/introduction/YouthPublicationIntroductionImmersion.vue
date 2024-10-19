@@ -144,9 +144,9 @@
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           In order to fully understand this album, and why such an album came to be, one must be looking through the
-          lense of my "Youth" on a personal level. This album is not intended to be a banger, an opportunity to find
-          good songs, or even a great listen. It is simply a desperate attempt to relieve the overwhelming amount of
-          stress, pain, drawback, and frustration, collected in hindsight to grasp the now-fading scent of youth that
+          lense of my <i>Youth</i> on a personal level. This album is not intended to be a banger, an opportunity to
+          find good songs, or even a great listen. It is simply a desperate attempt to relieve the overwhelming amount
+          of stress, pain, drawback, and frustration, collected in hindsight to grasp the now-fading scent of youth that
           was once so intense, extreme, and vivid.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
