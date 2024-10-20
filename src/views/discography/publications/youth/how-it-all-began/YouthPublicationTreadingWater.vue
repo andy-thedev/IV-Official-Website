@@ -44,17 +44,50 @@
           track leaves me feeling satisfied with the final outcome and quite frankly, I am more ashamed than proud of
           it. However, despite this negative assessment of its quality, I believe that no other work for the rest of my
           life will ever hold as much personal meaning or attachment. This is because the development of this album was
-          absolutely rigorous, filled with extreme events, and it wouldn't be an exaggeration to say that it
-          single-handedly and drastically changed the entire direction of my life&mdash;and it all began with a constant
-          cycle of significant effort with no progress being made.
+          absolutely rigorous, filled with extreme events over a prolonged period of time, and it wouldn't be an
+          exaggeration to say that it single-handedly and drastically changed the entire direction of my life&mdash;and
+          it all began with a constant cycle of significant effort with no progress being made.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           솔직히 말하자면, 나에게 <i>Youth</i>는 상당히 불만족스럽고 후회스러운 작품이다. 단 한 곡도 마음에 들게 나오지
-          않았으며, 제작자의 입장에서 꽤나 부끄러운 결과물이라고 할 수 있다. 다만, 질적인 평가와 상반되게, 이 앨범만큼
-          내 인생에서 개인적인 의미와 애착을 지닌 작품은 앞으로도 없을 것이라고 믿는다. 그 이유는 이 앨범의 개발 과정이
-          너무나도 치열했고, 극적인 사건들로 가득했기 때문이다. 이 앨범이 내 삶의 방향 그 자체를 급격히 바꿔놓았다고
-          해도 과언이 아닐 만큼, 이 4년간의 제작기는 혹독했고, 끊임없는 노력과 시간을 투자해도 진전이 없다는 좌절감의
-          반복 속에서 시작된 여정이었다.
+          않았으며, 제작자의 입장에서 꽤 부끄러운 결과물이라고 할 수 있다. 그러나 질적인 평가와 달리, 이 앨범만큼 내
+          인생에서 개인적인 의미와 애착을 지닌 작품은 앞으로도 없을 것이라고 믿는다. 그 이유는 이 앨범의 개발 과정이
+          너무나도 치열했고, 오랜 시간 동안 극적인 사건들로 가득했기 때문이다. 이 앨범이 내 삶의 방향을 급격히
+          바꿔놓았다고 해도 과언이 아닐 만큼, 이 4년간의 제작기는 혹독했고, 끊임없는 노력과 시간을 투자해도 진전이
+          없다는 좌절감의 반복 속에서 시작된 여정이었다.
+        </span>
+      </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Throughout all these trials and moments of endurance, there was Vermello&mdash;the producer who helped me
+          create every single track I had released before "Youth", and one of my closest friends I've known since high
+          school. If there is anyone who has gotten me to where I am today, without hesitation, it would be him.
+        </span>
+        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+          이 모든 역경과 인내의 순간들 속에서 언제나 함께했던 사람이 있다. 바로 "Vermello"&mdash;내가 음악을 처음 시작할
+          때부터 이 앨범을 출시하기 전까지, 내 모든 작업물을 함께 만든 친구이자 프로듀서였으며, 고등학교 때부터 알던
+          형이였다. 오늘의 내가 있기까지, 주저 없이 그가 가장 큰 역할을 했다고 말할 수 있다.
+        </span>
+      </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Having just started our full-time, SWE jobs to support our needs, though we were able to make a living, we did
+          not have the luxury of professional music studios or a dedicated space to freely pursue our musical interests.
+          The only option at our disposal was Vermello's 1+1 bedroom apartment, where we confined ourselves in a barely
+          3x3 meter den to avoid disturbing his older brother and risk losing the only place we had. Equipped with just
+          a $70 microphone, $100 audio interface, a pair of cheap headphones, and monitoring speakers, this was all we
+          had to materialize our mental compositions. We had no mentors or fellow artists to turn to, and with the
+          little free time left from our full-time jobs, we researched and made music, guessing every technique,
+          decision, and answer at every step.
+        </span>
+        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+          이제 막 취직하여 풀타임 SWE 직업으로 생계를 유지하던 우리는 먹고 사는 데는 지장이 없었지만, 전문 음악
+          스튜디오나 음악적 관심을 자유롭게 추구할 수 있는 전용 공간 같은 사치를 누릴 수 없었다. 우리의 유일한 선택지는
+          Vermello의 1+1룸 아파트였고, 그곳에서 우리는 그의 형에게 방해가 되지 않기 위해, 단 3x3미터 남짓한 공간에서
+          한정된 시간에만 작업할 수 있었다. 그 외엔 70달러짜리 마이크, 100달러짜리 오디오 인터페이스, 저렴한 헤드폰과
+          모니터링 스피커만이 우리가 가진 전부였고, 이 장비들로 우리의 머릿속에서 구상한 음악을 실현해야 했다.
+          우리에게는 의지할 멘토도, 노하우나 지식을 나눌 수 있는 다른 아티스트도 없었으며, 풀타임 직장에서 남은 얼마 안
+          되는 여가 시간에 기술을 연구하고, 모든 결정과 정답을 하나하나 추측해 가며 음악을 만들어나갔다.
         </span>
       </p>
     </div>
