@@ -85,7 +85,7 @@
           이제 막 취직하여 풀타임 SWE 직업으로 생계를 유지하던 우리는 먹고 사는 데는 지장이 없었지만, 전문 음악
           스튜디오나 음악적 관심을 자유롭게 추구할 수 있는 전용 공간 같은 사치를 누릴 수 없었다. 우리의 유일한 선택지는
           Vermello의 1+1룸 아파트였고, 그곳에서 우리는 그의 형에게 방해가 되지 않기 위해, 단 3x3미터 남짓한 공간에서
-          한정된 시간에만 작업할 수 있었다. 그 외엔 70달러짜리 마이크, 100달러짜리 오디오 인터페이스, 저렴한 헤드폰과
+          한정된 시간에만 작업할 수 있었다. 그 외엔 10만원짜리 마이크, 15만원짜리 오디오 인터페이스, 저렴한 헤드폰과
           모니터링 스피커만이 우리가 가진 전부였고, 이 장비들로 우리의 머릿속에서 구상한 음악을 실현해야 했다.
           우리에게는 의지할 멘토도, 노하우나 지식을 나눌 수 있는 다른 아티스트도 없었으며, 풀타임 직장에서 남은 얼마 안
           되는 여가 시간에 기술을 연구하고, 모든 결정과 정답을 하나하나 추측해 가며 음악을 만들어나갔다.
@@ -159,17 +159,52 @@
           mainly due to our incorrect assumptions about technical choices and our extremely limited experience and
           knowledge in music production. Coupled with the fact that the music featured on
           <i>Youth</i> was ambitious in scale and technically demanding, while the means and equipment we had were far
-          from sufficient, we simply could not achieve the sound we wanted. We tried to rationalize this shortcoming by
-          blaming suspects far from the actual cause, but with the core issue rooted in something so fundamental, we
-          were essentially trying to solve a challenge in a way that was impossible to resolve.
+          from sufficient, we simply could not achieve the sound we wanted.
         </span>
         <span v-if="useGlobals.currLang == SupportedLanguages.ko">
-          우리는 음악적, 기술적 천재가 아니었기에, 짧은 시간 안에 우리의 비전을 이루는 쾌거를 달성하기는 어려웠다. 이제
-          와서 되돌아보면, 이는 음악 제작에 대한 경험과 지식이 극도로 제한적이었고, 그로 인해 잘못된 가정들과 기술적
-          선택들을 했기 때문이었다. 더군다나 <i>Youth</i>에 담긴 음악은 규모 면에서 야심차고 기술적으로도 까다로웠지만,
-          우리가 가진 수단과 장비는 그에 한참 미치지 못했기에 원하는 사운드를 달성할 수 없었다. 우리는 이 한계를 실제
-          원인과 동떨어진 것들을 의심하며 고치려 노력했지만, 핵심 문제는 근본적인 부분에 뿌리를 두고 있었기에 결국
-          해결할 수 없는 난제를 풀려고 했던 셈이었다.
+          우리는 음악적, 기술적 천재가 아니었기에, 짧은 시간 안에 우리의 비전을 이루는 쾌거를 달성하기는 어려웠다.<br />
+          이제 와서 되돌아보면, 이는 음악 제작에 대한 경험과 지식이 극도로 제한적이었고, 그로 인해 잘못된 가정들과
+          기술적 선택들을 했기 때문이었다. 더군다나 <i>Youth</i>에 담긴 음악은 규모 면에서 야심차고 기술적으로도
+          까다로웠지만, 우리가 가진 수단과 장비는 그에 한참 미치지 못했기에 원하는 사운드를 달성할 수 없었다.
+        </span>
+      </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          For example, in the case of track no. 9, "DROP", we wanted a track that started with sweet, melodic vocals
+          enveloped in rich reverb, until the listener was met with powerful, choir-like chant/singing in the chorus.
+          However, the type-beat we purchased had the main guitar overly compressed, making it impossible for the
+          vocal's mid-low frequencies to break through the dense guitar. Additionally, our $70 microphone could not
+          capture the mid-low range adequetly, leaving the vocal sounding light, weak, and "floating" from the rest of
+          the track&mdash;something we thought that we could address in the mix.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          예를 들어, 9번 트랙 "DROP"의 경우, 감미로운 보컬이 풍부한 리버브에 감싸여 코러스에서 합창단이 부르는 듯한
+          웅장한 사운드를 원했으나, 우리가 구매한 타입 비트는 메인 기타에 지나치게 컴프가 걸려 있어 보컬의 중저음이 전혀
+          뜷고 나오지 못하는 구조였다. 거기에 더해, 우리의 10만원짜리 마이크는 중저음을 담아내지 못해 목소리가 가볍고,
+          "뜨는" 듯한 결과물을 초래했으며, 코러스에선 합창단이 없었기에 여러 테이크를 쌓아 합창을 구현하려 했지만,
+          트랙을 여러 개 쌓을수록 다이나믹이 평평해져 이도저도 아닌, 지저분하고 빈약한 사운드가 나올 수밖에 없다는
+          사실을 우리는 그때 몰랐다. 그리고 이것들은 <i>Youth</i>를 작업하는 도중, 우리가 직면한 수많은 문제들 중 하나의
+          예시에 불과하다.
+        </span>
+      </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          For the chorus, since we did not have access to a choir, we attempted to stack multiple takes to simulate one,
+          but we did not realize that layering more tracks flattens the dynamics, resulting in a muddy and weak mix. At
+          the time, we did not understand that this issue could not be resolved without adjusting our fundamental
+          approach, and these were just some of the countless implications we faced, treading water due to insufficient
+          means, time and knowledge.
+        </span>
+      </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Ultimately, it can be said that we tried to rationalize shortcomings by blaming suspects far from the actual
+          cause, but with the core issue rooted in something so fundamental, we were essentially trying to solve a
+          challenges in a way, that was impossible to resolve.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          궁극적으로 말하자면, 우리는 우리의 한계를 실제 원인과 동떨어진 것들을 의심하며 고치려 노력했지만, 핵심 문제는
+          근본적인 부분에 뿌리를 두고 있었기에 결국 해결할 수 없는 난제들을 풀려고 했던 셈이었다.
         </span>
       </p>
     </div>
