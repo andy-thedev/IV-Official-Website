@@ -46,7 +46,7 @@
           life will ever hold as much personal meaning or attachment. This is because the development of this album was
           absolutely rigorous, filled with extreme events over a prolonged period of time, and it wouldn't be an
           exaggeration to say that it single-handedly and drastically changed the entire direction of my life&mdash;and
-          it all began with a constant cycle of significant effort with no progress being made.
+          it all began with a constant cycle of investing significant effort with no progress being made.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           솔직히 말하자면, 나에게 <i>Youth</i>는 상당히 불만족스럽고 후회스러운 작품이다. 단 한 곡도 마음에 들게 나오지
@@ -59,9 +59,10 @@
       </p>
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          Throughout all these trials and moments of endurance, there was Vermello&mdash;the producer who helped me
-          create every single track I had released before "Youth", and one of my closest friends I've known since high
-          school. If there is anyone who has gotten me to where I am today, without hesitation, it would be him.
+          Throughout all the foreshadowed trials and moments of endurance, there was Vermello&mdash;the producer who
+          helped me create every single track I had released before "Youth", and one of my closest friends I've known
+          since high school. If there is anyone who has gotten me to where I am today, without hesitation, it would be
+          him.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           이 모든 역경과 인내의 순간들 속에서 언제나 함께했던 사람이 있다. 바로 "Vermello"&mdash;내가 음악을 처음 시작할
@@ -153,8 +154,23 @@
 
     <div class="text-block-container">
       <p>
-        <span v-if="useGlobals.currLang == SupportedLanguages.en"> </span>
-        <span v-if="useGlobals.currLang == SupportedLanguages.ko"> </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Being no musical or technical geniuses, we made little progress towards our vision. In hindsight, this was
+          mainly due to our incorrect assumptions about technical choices and our extremely limited experience and
+          knowledge in music production. Coupled with the fact that the music featured on
+          <i>Youth</i> was ambitious in scale and technically demanding, while the means and equipment we had were far
+          from sufficient, we simply could not achieve the sound we wanted. We tried to rationalize this shortcoming by
+          blaming suspects far from the actual cause, but with the core issue rooted in something so fundamental, we
+          were essentially trying to solve a challenge in a way that was impossible to resolve.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          우리는 음악적, 기술적 천재가 아니었기에, 짧은 시간 안에 우리의 비전을 이루는 쾌거를 달성하기는 어려웠다. 이제
+          와서 되돌아보면, 이는 음악 제작에 대한 경험과 지식이 극도로 제한적이었고, 그로 인해 잘못된 가정들과 기술적
+          선택들을 했기 때문이었다. 더군다나 <i>Youth</i>에 담긴 음악은 규모 면에서 야심차고 기술적으로도 까다로웠지만,
+          우리가 가진 수단과 장비는 그에 한참 미치지 못했기에 원하는 사운드를 달성할 수 없었다. 우리는 이 한계를 실제
+          원인과 동떨어진 것들을 의심하며 고치려 노력했지만, 핵심 문제는 근본적인 부분에 뿌리를 두고 있었기에 결국
+          해결할 수 없는 난제를 풀려고 했던 셈이었다.
+        </span>
       </p>
     </div>
 
