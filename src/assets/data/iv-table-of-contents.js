@@ -32,7 +32,7 @@ export const publicationTOC = {
         en: 'HOW IT ALL BEGAN',
       },
       description: {
-        ko: '이 모든 것은 어떻게 시작되었는가? 4년 전 그 때로 돌아가 우리의 이야기를 시작해본다.',
+        ko: '4년 전, 그 때로 돌아가 우리의 이야기를 시작해본다.',
         en: 'An engaging story of how everything began, 4 years ago, on that day.',
       },
       children: [

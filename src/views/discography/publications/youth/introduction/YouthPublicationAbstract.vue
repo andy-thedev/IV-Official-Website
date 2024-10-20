@@ -32,11 +32,11 @@
         <p>
           <span v-if="useGlobals.currLang == SupportedLanguages.en">
             Gen 1 members of INDIVISUAL and friends stand from left to right - Vermello, Meesung Park, Yerin Lim, Roca
-            Dianco, Unlimited (Paris Molokwu), PG-13, and JAYAN.
+            Dianco, Unlimited(Paris Molokwu), PG-13, and JAYAN.
           </span>
           <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
             INDIVISUAL 1세대 멤버들과 친구들이 왼쪽에서 오른쪽으로 서 있다 - Vermello, 박미성, 임예린, Roca Dianco,
-            Unlimited (Paris Molokwu), PG-13, JAYAN.
+            Unlimited(Paris Molokwu), PG-13, JAYAN.
           </span>
         </p>
         <p>

@@ -103,16 +103,27 @@
           <img class="grid-img" :src="youthMedia.bts.vermelloAndPg13['fallback']" draggable="false" />
         </IVPicture>
       </div>
-      <div class="grid-item-wrapper"></div>
+      <div class="grid-item-wrapper">
+        <IVPicture
+          :fourkSrc="youthMedia.bts.youthfulTrio['4k']"
+          :qhdSrc="youthMedia.bts.youthfulTrio['qhd']"
+          :hdSrc="youthMedia.bts.youthfulTrio['hd']"
+          :mobileSrc="youthMedia.bts.youthfulTrio['mobile']"
+        >
+          <img class="grid-img" :src="youthMedia.bts.youthfulTrio['fallback']" draggable="false" />
+        </IVPicture>
+      </div>
     </div>
     <div class="img-caption">
       <p class="caption-title">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           Vermello and PG-13 (10.23.2022)<br />
+          Youthful trio (10.23.2022)<br />
           North York, Hendon Park
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
           Vermello와 PG-13 (10.23.2022)<br />
+          철부지 삼총사 (10.23.2022) <br />
           노스욕, 헨던 공원
         </span>
       </p>
@@ -128,8 +139,14 @@
           </span>
         </p>
         <p>
-          <span v-if="useGlobals.currLang == SupportedLanguages.en"> </span>
-          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko"> </span>
+          <span v-if="useGlobals.currLang == SupportedLanguages.en">
+            (Right) Vermello, PG-13, Unlimited(Paris Molokwu) strike playful, humorous poses during the B-shot photo
+            shoot.
+          </span>
+          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+            (우) Vermello, PG-13, 그리고 Unlimited(Paris Molokwu)가 B컷 사진 촬영 중 장난스럽고 유머러스한 포즈를 취하고
+            있다.
+          </span>
         </p>
       </div>
     </div>

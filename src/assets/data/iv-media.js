@@ -130,6 +130,12 @@ import youthBtsMeesungKangeonImgQhd from '@/assets/img/bts/youth/qhd/meesung-kan
 import youthBtsMeesungKangeonImgHd from '@/assets/img/bts/youth/hd/meesung-kangeon.webp';
 import youthBtsMeesungKangeonImgMobile from '@/assets/img/bts/youth/mobile/meesung-kangeon.webp';
 
+import youthBtsYouthfulTrioImg from '@/assets/img/bts/youth/youthful-trio.jpg';
+import youthBtsYouthfulTrioImg4k from '@/assets/img/bts/youth/4k/youthful-trio.webp';
+import youthBtsYouthfulTrioImgQhd from '@/assets/img/bts/youth/qhd/youthful-trio.webp';
+import youthBtsYouthfulTrioImgHd from '@/assets/img/bts/youth/hd/youthful-trio.webp';
+import youthBtsYouthfulTrioImgMobile from '@/assets/img/bts/youth/mobile/youthful-trio.webp';
+
 export const youthMedia = {
   artwork: {
     ['4k']: youthArtworkImg4k,
@@ -223,6 +229,13 @@ export const youthMedia = {
       ['hd']: youthBtsMeesungKangeonImgHd,
       ['mobile']: youthBtsMeesungKangeonImgMobile,
       ['fallback']: youthBtsMeesungKangeonImg,
+    },
+    youthfulTrio: {
+      ['4k']: youthBtsYouthfulTrioImg4k,
+      ['qhd']: youthBtsYouthfulTrioImgQhd,
+      ['hd']: youthBtsYouthfulTrioImgHd,
+      ['mobile']: youthBtsYouthfulTrioImgMobile,
+      ['fallback']: youthBtsYouthfulTrioImg,
     },
   },
 };
