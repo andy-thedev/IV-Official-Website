@@ -27,7 +27,7 @@ const ivDiscography = [
       intermediate: youthMedia.bts.aGrassLyingDown,
     },
     platforms: {
-      publication: 'YouthPublication',
+      publication: 'YouthPublicationAbstract',
     },
     collaborators: {
       directors: ['PG-13'],

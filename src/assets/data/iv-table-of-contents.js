@@ -15,14 +15,14 @@ export const publicationTOC = {
             ko: '초록',
             en: 'ABSTRACT',
           },
-          routeName: 'YouthPublication',
+          routeName: 'YouthPublicationAbstract',
         },
         {
           title: {
             ko: '몰입',
             en: 'IMMERSION',
           },
-          routeName: 'YouthPublicationIntroductionImmersion',
+          routeName: 'YouthPublicationImmersion',
         },
       ],
     },
@@ -42,6 +42,13 @@ export const publicationTOC = {
             en: '4 YEARS AGO',
           },
           routeName: 'YouthPublication4YearsAgo',
+        },
+        {
+          title: {
+            ko: '제자리걸음',
+            en: 'TREADING WATER',
+          },
+          routeName: 'YouthPublicationTreadingWater',
         },
       ],
     },

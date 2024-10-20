@@ -268,7 +268,7 @@
     </div>
 
     <div id="next-nav" class="next-nav-wrapper" @click="selectNextNav()">
-      <div class="next-page-title"><span>4 YEARS AGO</span></div>
+      <div class="next-page-title"><span>TREADING WATER</span></div>
       <font-awesome-icon :icon="['fas', 'arrow-right-long']" class="next-nav-icon" />
     </div>
   </div>
@@ -292,11 +292,11 @@ const router = useRouter();
 // Functions
 
 const selectBackNav = () => {
-  router.push({ name: 'YouthPublicationIntroductionImmersion' });
+  router.push({ name: 'YouthPublicationImmersion', hash: '#next-nav' });
 };
 
 const selectNextNav = () => {
-  router.push({ name: 'YouthPublication', hash: '#next-nav' });
+  router.push({ name: 'YouthPublicationTreadingWater' });
 };
 </script>
 

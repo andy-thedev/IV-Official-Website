@@ -186,7 +186,7 @@ const router = useRouter();
 // Functions
 
 const selectBackNav = () => {
-  router.push({ name: 'YouthPublication', hash: '#next-nav' });
+  router.push({ name: 'YouthPublicationAbstract', hash: '#next-nav' });
 };
 
 const selectNextNav = () => {
