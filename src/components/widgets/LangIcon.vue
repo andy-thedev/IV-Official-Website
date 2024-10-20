@@ -1,11 +1,12 @@
 <template>
   <div class="iv-lang-icon unselectable-text" @click="useGlobals.changeCurrLang()">
-    {{ useGlobals.currLang }}
+    {{ SupportedLanguagesToUserFriendlyFormat[useGlobals.currLang] }}
   </div>
 </template>
 
 <script setup>
 import { useGlobals } from '@/composables/useGlobals';
+import { SupportedLanguagesToUserFriendlyFormat } from '@/lib/enums/lang.js';
 </script>
 
 <style lang="scss" scoped>

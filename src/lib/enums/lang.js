@@ -1,6 +1,11 @@
 const SupportedLanguages = Object.freeze({
-  ko: 'kr',
+  ko: 'ko',
   en: 'en',
+});
+
+export const SupportedLanguagesToUserFriendlyFormat = Object.freeze({
+  ko: 'KR',
+  en: 'EN',
 });
 
 export default SupportedLanguages;
