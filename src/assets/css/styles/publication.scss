@@ -1,3 +1,5 @@
+@import '@/assets/css/common-variables';
+
 .back-nav-wrapper {
   margin: 0 0 10px 0;
 
@@ -31,6 +33,17 @@
   .next-page-title {
     margin: 0 12px 0 0;
   }
+}
+
+.hidden-content-toggler {
+  margin: 0 0 0 5px;
+
+  color: $iv-near-white;
+  cursor: pointer;
+}
+
+.collapsible-text {
+  color: $iv-near-white;
 }
 
 .publication {

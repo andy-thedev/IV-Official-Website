@@ -168,15 +168,16 @@
           기술적 선택들을 했기 때문이었다. 더군다나 <i>Youth</i>에 담긴 음악은 규모 면에서 야심차고 기술적으로도
           까다로웠지만, 우리가 가진 수단과 장비는 그에 한참 미치지 못했기에 더욱 원하는 사운드를 달성할 수 없었다.
         </span>
+        <font-awesome-icon :icon="toggleCollapseIcon" class="hidden-content-toggler" @click="toggleCollapseContent" />
       </p>
-      <p>
+      <p v-if="isContentCollapsed" class="collapsible-text">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           For example, in the case of track no. 9, "DROP", we wanted a track that started with sweet, melodic vocals
           enveloped in rich reverb, until the listener was met with powerful, choir-like chant/singing in the chorus.
           However, the type-beat we purchased had the main guitar overly compressed, making it impossible for the
-          vocals' mid-low frequencies, or reverb to break through the dense guitar. Additionally, our $70 microphone
-          could not capture the mid-low range adequetly, leaving the vocals sounding light, weak, and "floating" from
-          the rest of the track&mdash;something we thought that we could address in the mix.
+          vocals' mid-low frequencies, or reverb to break through the dense guitar. To make matters worse, our $70
+          microphone could not capture the mid-low range adequetly, leaving the vocals sounding light, weak, and
+          "floating" from the rest of the track&mdash;something we thought that we could address in the mix.
         </span>
         <span v-if="useGlobals.currLang == SupportedLanguages.ko">
           예를 들어, 9번 트랙 "DROP"의 경우, 감미로운 보컬이 풍부한 리버브에 감싸여, 코러스에서는 합창단이 부르는 듯한
@@ -186,9 +187,9 @@
           것이라 믿고 있었다.
         </span>
       </p>
-      <p>
+      <p v-if="isContentCollapsed" class="collapsible-text">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          For the chorus, since we did not have access to a choir, we attempted to stack multiple takes to simulate one,
+          In the chorus, since we did not have access to a choir, we attempted to stack multiple takes to simulate one,
           but we did not realize that layering more tracks flattens the dynamics, resulting in a muddy and weak mix. At
           the time, we did not understand that this issue could not be resolved without adjusting our fundamental
           approach, and these were just some of the countless implications we faced, treading water due to insufficient
@@ -226,6 +227,7 @@
 </template>
 
 <script setup>
+import { ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
 import { youthMedia } from '@/assets/data/iv-media.js';
@@ -239,10 +241,21 @@ import PublicationTableOfContents from '@/components/layout/table-of-contents/Pu
 
 const router = useRouter();
 
+// Data
+const isContentCollapsed = ref(false);
+
+const toggleCollapseIcon = computed(() => {
+  return isContentCollapsed.value ? ['fas', 'chevron-up'] : ['fas', 'chevron-down'];
+});
+
 // Functions
 
 const selectBackNav = () => {
   router.push({ name: 'YouthPublication4YearsAgo', hash: '#next-nav' });
+};
+
+const toggleCollapseContent = () => {
+  isContentCollapsed.value = !isContentCollapsed.value;
 };
 
 const selectNextNav = () => {

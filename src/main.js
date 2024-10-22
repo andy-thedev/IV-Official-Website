@@ -12,6 +12,8 @@ import {
   faBars,
   faChevronRight,
   faChevronLeft,
+  faChevronUp,
+  faChevronDown,
   faMinus,
   faXmark,
   faEyeSlash,
@@ -35,6 +37,8 @@ library.add(faHeadphonesAlt);
 library.add(faBars);
 library.add(faChevronLeft);
 library.add(faChevronRight);
+library.add(faChevronUp);
+library.add(faChevronDown);
 library.add(faMinus);
 library.add(faXmark);
 library.add(faEyeSlash);
