@@ -253,12 +253,22 @@
           the four excavated songs, and titled it "철부지", meaning "youthful immaturity" in Korean.
         </span>
         <span v-if="useGlobals.currLang == SupportedLanguages.ko">
-          이 깨달음은 내가 쓴 곡들 중 점차 사라져가고 있는 에너지를 담은 곡들을 집착적으로 찾게 만들었다.
+          이 깨달음은 내가 쓴 곡들 중, 점차 사라져가고 있는 에너지를 담은 곡들을 집착적으로 찾게 만들었다.
           <TextLink text='"우리 행복하자 근심 따윈 갖지 말자고"' toName="DiscographyDetails" toParamId="last-dance" />를
           쓸 무렵, 나는 이미 약 200에서 300곡을 쓴 상태였고, 그 중 내가 찾고 있던 느낌을 담고 있는 네 곡을
           발굴해냈다—"Art is on my mind", "Hopscotch", "Can't stop, won't stop", 그리고 "Youth" (당시 제목은 "Finale").
           나는 곧바로 내가 아는 유일한 프로듀서인 Vermello에게 연락해, 이 네 곡을 중심으로 미니 앨범을 제작하기로 했고,
           앨범 제목을 "철부지"라 붙였다.
+        </span>
+      </p>
+    </div>
+
+    <div class="text-block-container">
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en"></span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          그렇게 "철부지"를 작업한지 1년이 지나, 대략 60%정도 완성되었다고 느낄 무렵, 엎친 데 덮친 격으로 Vermello의
+          컴퓨터 하드 드라이브가 갑자기 망가졌다.
         </span>
       </p>
     </div>
