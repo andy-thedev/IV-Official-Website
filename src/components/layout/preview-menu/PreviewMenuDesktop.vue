@@ -18,12 +18,12 @@
         <div class="preview-img-wrapper">
           <!-- Need not use high-res images as this will always be small -->
           <IvPicture
-            :fourkSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
-            :qhdSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
-            :hdSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
-            :mobileSrc="menu[selectedItemIndex].previewImgSrc['mobile']"
+            :fourkSrc="menu[selectedItemIndex].previewImgSrc"
+            :qhdSrc="menu[selectedItemIndex].previewImgSrc"
+            :hdSrc="menu[selectedItemIndex].previewImgSrc"
+            :mobileSrc="menu[selectedItemIndex].previewImgSrc"
           >
-            <img :src="menu[selectedItemIndex].previewImgSrc['fallback']" draggable="false" />
+            <img :src="menu[selectedItemIndex].previewImgSrc" draggable="false" />
           </IvPicture>
         </div>
         <div class="children-list">

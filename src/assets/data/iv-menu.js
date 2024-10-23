@@ -1,9 +1,11 @@
-import { youthMedia } from '@/assets/data/iv-media.js';
+// import { youthMedia } from '@/assets/data/iv-media.js';
+import youthBtsBasementGroupGazeImgMobile from '@/assets/img/bts/youth/mobile/basement-group-gaze.webp';
+import youthArtworkImgMobile from '@/assets/img/artworks/mobile/youth.webp';
 
 const ivMenu = [
   {
     name: 'INDIVISUAL',
-    previewImgSrc: youthMedia.bts.basementGroupGaze,
+    previewImgSrc: youthBtsBasementGroupGazeImgMobile,
     children: [
       {
         name: 'Home',
@@ -17,7 +19,7 @@ const ivMenu = [
   },
   {
     name: 'PG-13',
-    previewImgSrc: youthMedia.artwork,
+    previewImgSrc: youthArtworkImgMobile,
     children: [
       {
         name: 'Home',
