@@ -263,16 +263,6 @@
       </p>
     </div>
 
-    <div class="text-block-container">
-      <p>
-        <span v-if="useGlobals.currLang == SupportedLanguages.en"></span>
-        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
-          그렇게 "철부지"를 작업한지 1년이 지나, 대략 60%정도 완성되었다고 느낄 무렵, 엎친 데 덮친 격으로 Vermello의
-          컴퓨터 하드 드라이브가 갑자기 망가졌다.
-        </span>
-      </p>
-    </div>
-
     <div class="table-of-contents-wrapper">
       <PublicationTableOfContents table="youth" :pagePrimaryIndex="1" :pageSecondaryIndex="0" />
     </div>
