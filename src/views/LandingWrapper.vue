@@ -16,8 +16,10 @@
 </template>
 
 <script setup>
-import { watch } from 'vue';
+import { watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
+
+import ivMenu from '@/assets/data/iv-menu.js';
 
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
@@ -64,6 +66,17 @@ watch(
   },
   { immediate: true },
 );
+
+const preloadImages = () => {
+  ivMenu.forEach((menu) => {
+    const img = new Image();
+    img.src = menu.previewImgSrc;
+  });
+};
+
+onMounted(() => {
+  preloadImages();
+});
 </script>
 
 <style lang="scss" scoped>
