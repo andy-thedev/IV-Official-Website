@@ -64,6 +64,12 @@ import youthArtworkImgQhd from '@/assets/img/artworks/qhd/youth.webp';
 import youthArtworkImgHd from '@/assets/img/artworks/hd/youth.webp';
 import youthArtworkImgMobile from '@/assets/img/artworks/mobile/youth.webp';
 
+import youthCarouselImg from '@/assets/img/carousel/youth.jpg';
+import youthCarouselImg4k from '@/assets/img/carousel/4k/youth.webp';
+import youthCarouselImgQhd from '@/assets/img/carousel/qhd/youth.webp';
+import youthCarouselImgHd from '@/assets/img/carousel/hd/youth.webp';
+import youthCarouselImgMobile from '@/assets/img/carousel/mobile/youth.webp';
+
 import youthBtsAGrassLyingDownImg from '@/assets/img/bts/youth/a-grass-lying-down.jpg';
 import youthBtsAGrassLyingDownImg4k from '@/assets/img/bts/youth/4k/a-grass-lying-down.webp';
 import youthBtsAGrassLyingDownImgQhd from '@/assets/img/bts/youth/qhd/a-grass-lying-down.webp';
@@ -163,12 +169,16 @@ export const youthMedia = {
     ['fallback']: youthArtworkImg,
   },
   carousel: {
-    // TODO: Update
-    ['4k']: youthBtsAGrassLyingDownImg4k,
-    ['qhd']: youthBtsAGrassLyingDownImgQhd,
-    ['hd']: youthBtsAGrassLyingDownImgHd,
-    ['mobile']: youthBtsAGrassLyingDownImgMobile,
-    ['fallback']: youthBtsAGrassLyingDownImg,
+    ['4k']: youthCarouselImg4k,
+    ['qhd']: youthCarouselImgQhd,
+    ['hd']: youthCarouselImgHd,
+    ['mobile']: youthCarouselImgMobile,
+    ['fallback']: youthCarouselImg,
+    // ['4k']: youthBtsAGrassLyingDownImg4k,
+    // ['qhd']: youthBtsAGrassLyingDownImgQhd,
+    // ['hd']: youthBtsAGrassLyingDownImgHd,
+    // ['mobile']: youthBtsAGrassLyingDownImgMobile,
+    // ['fallback']: youthBtsAGrassLyingDownImg,
   },
   bts: {
     aGrassLyingDown: {
