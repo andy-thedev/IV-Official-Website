@@ -8,7 +8,7 @@
     />
     <transition name="fade">
       <IVOverlay v-if="useOverlay.overlay && useOverlay.overlay.trigger === 'menu'" @close="closeOverlay">
-        <IVPreviewMenu v-if="useOverlay.overlay.trigger === 'menu'" />
+        <IVPreviewMenu v-show="useOverlay.overlay.trigger === 'menu'" />
       </IVOverlay>
     </transition>
     <router-view />
@@ -16,10 +16,11 @@
 </template>
 
 <script setup>
-import { watch, onMounted } from 'vue';
+import { watch } from 'vue';
+// import { watch, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 
-import ivMenu from '@/assets/data/iv-menu.js';
+// import ivMenu from '@/assets/data/iv-menu.js';
 
 import { useLandingCarousel } from '@/composables/carousels/useLandingCarousel';
 import { useLandingHeader } from '@/composables/headers/useLandingHeader';
@@ -67,16 +68,16 @@ watch(
   { immediate: true },
 );
 
-const preloadImages = () => {
-  ivMenu.forEach((menu) => {
-    const img = new Image();
-    img.src = menu.previewImgSrc;
-  });
-};
+// const preloadImages = () => {
+//   ivMenu.forEach((menu) => {
+//     const img = new Image();
+//     img.src = menu.previewImgSrc;
+//   });
+// };
 
-onMounted(() => {
-  preloadImages();
-});
+// onMounted(() => {
+//   preloadImages();
+// });
 </script>
 
 <style lang="scss" scoped>
