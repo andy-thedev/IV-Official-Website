@@ -118,14 +118,12 @@
     <div class="img-caption">
       <p class="caption-title">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          Vermello and PG-13 (10.23.2022)<br />
-          Youthful trio (10.23.2022)<br />
-          North York, Hendon Park
+          Vermello and PG-13 (10.23.2022) - North York, Hendon Park<br />
+          Youthful trio (10.23.2022) - North York, Hendon Park<br />
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          Vermello와 PG-13 (10.23.2022)<br />
-          철부지 삼총사 (10.23.2022) <br />
-          노스욕, 헨던 공원
+          Vermello와 PG-13 (10.23.2022) - 노스욕, 헨던 공원<br />
+          철부지 삼총사 (10.23.2022) - 노스욕, 헨던 공원<br />
         </span>
       </p>
       <div class="caption-text">
@@ -168,9 +166,13 @@
           기술적 선택들을 했기 때문이었다. 더군다나 <i>Youth</i>에 담긴 음악은 규모 면에서 야심차고 기술적으로도
           까다로웠지만, 우리가 가진 수단과 장비는 그에 한참 미치지 못했기에 더욱 원하는 사운드를 달성할 수 없었다.
         </span>
-        <font-awesome-icon :icon="toggleCollapseIcon" class="hidden-content-toggler" @click="toggleCollapseContent" />
+        <font-awesome-icon
+          :icon="toggleExpandContent1Icon"
+          class="toggle-expand-content-icon"
+          @click="toggleExpandContent1"
+        />
       </p>
-      <p v-if="isContentCollapsed" class="collapsible-text">
+      <p v-if="isContent1Expanded" class="expandable-text">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           For example, in the case of track no. 9, "DROP", we wanted a track that started with sweet, melodic vocals
           enveloped in rich reverb, until the listener was met with powerful, choir-like chant/singing in the chorus.
@@ -187,7 +189,7 @@
           것이라 믿고 있었다.
         </span>
       </p>
-      <p v-if="isContentCollapsed" class="collapsible-text">
+      <p v-if="isContent1Expanded" class="expandable-text">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
           In the chorus, since we did not have access to a choir, we attempted to stack multiple takes to simulate one,
           but we did not realize that layering more tracks flattens the dynamics, resulting in a muddy and weak mix. At
@@ -215,16 +217,200 @@
       </p>
     </div>
 
-    <!-- TODO: Image -->
+    <IVPicture
+      :fourkSrc="youthMedia.bts.vermelloHomeStudioDark['4k']"
+      :qhdSrc="youthMedia.bts.vermelloHomeStudioDark['qhd']"
+      :hdSrc="youthMedia.bts.vermelloHomeStudioDark['hd']"
+      :mobileSrc="youthMedia.bts.vermelloHomeStudioDark['mobile']"
+    >
+      <img
+        class="full-width-img intermediate"
+        :src="youthMedia.bts.vermelloHomeStudioDark['fallback']"
+        draggable="false"
+      />
+    </IVPicture>
+    <div class="img-caption">
+      <p class="caption-title">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Home studio (11.24.2022)<br />
+          Toronto, Vermello's house
+        </span>
+        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+          홈 스튜디오 (11.24.2022)<br />
+          토론토, Vermello의 집
+        </span>
+      </p>
+      <div class="caption-text">
+        <p>
+          <span v-if="useGlobals.currLang == SupportedLanguages.en">
+            Vermello's home studio sits empty in darkness, with subtle neon lights and the glow from the monitor
+            illuminating the solitude.<br />
+            At this time, the Apollo audio interface was purchased in Vermello's interest to ease hardware limitations,
+            but was never used for the actual production of <i>Youth</i> due to PG-13's leave in 2023.
+          </span>
+          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+            Vermello의 홈 스튜디오가 어둠 속에 고요히 자리하고 있으며, 은은한 네온 불빛과 모니터에서 나오는 빛이 그
+            고요함을 외롭게 밝혀주고 있다.
+          </span>
+        </p>
+      </div>
+    </div>
 
     <div class="text-block-container">
       <p>
-        <span v-if="useGlobals.currLang == SupportedLanguages.en"></span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          A year had passed, and just when we felt it was about 60% complete, things took a turn for the
+          worse&mdash;Vermello's computer hard drive suddenly died. All of the source files, recordings, ableton
+          projects, mixes&mdash;pretty much everything were no longer recoverable, and we had to face the hard truth
+          that we would have to restart a year's worth of work from scratch, all over again.
+        </span>
         <span v-if="useGlobals.currLang == SupportedLanguages.ko">
           그렇게 "철부지"를 작업한지 1년이 지나, 대략 60%정도 완성되었다고 느낄 무렵, 엎친 데 덮친 격으로 Vermello의
-          컴퓨터 하드 드라이브가 갑자기 망가졌다.
+          컴퓨터 하드 드라이브가 갑자기 망가졌다. 이로 인해 모든 소스 파일, 녹음, 에이플톤 프로젝트, 믹스&mdash;거의
+          모든 것이 복구 불가능해졌고, 우리는 1년치 작업을 처음부터 다시 시작해야 한다는 냉혹한 현실을 받아들여야 했다.
         </span>
       </p>
+      <p>
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Despite the unfortunate situation, I was not frustrated or discougraged. In fact, after working on the project
+          for about a year, our ears had developed, and we were beginning to feel that the tracks no longer met our
+          standards. Having a personal philosophy that everything in life happens for a reason and can be seen as an
+          opportunity at will, we chose to erase all of our efforts and biases from the past year. Instead, we would aim
+          for a higher goal in terms of quality and artistic value.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          불운한 상황에도 불구하고, 나는 좌절하거나 낙담하지 않았다. 사실, 약 1년간 프로젝트에 매달리면서 우리의 귀는
+          발전했고, 기존의 트랙들이 더 이상 우리의 기준에 부합하지 않는다는 느낌을 받기 시작했던 참이었다. 모든 일에는
+          이유가 있고, 태도와 수습에 따라 기회로 삼을 수 있다는 개인적인 철학을 가지고 있기에, 우리는 지난 1년간의
+          노력과 고정관념을 모두 지우기로 했다. 대신, 더 높은 품질과 예술적 가치를 목표로 삼기로 결심했다.
+        </span>
+        <font-awesome-icon
+          :icon="toggleExpandContent2Icon"
+          class="toggle-expand-content-icon"
+          @click="toggleExpandContent2"
+        />
+      </p>
+      <p v-if="isContent2Expanded" class="expandable-text">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          This was when the project turned into an album at scale. Since I had always been writing songs alongside the
+          immediate works in progress, I wanted to elevate the project's quality and ambition by discarding songs I felt
+          were no longer up to standards and add ones that enhanced value and quality while fitting the initial motive.
+          This was when tracks like "24", "Up the hill", "Forgettable", and "DROP" were added to the tracklist, and the
+          project began to expand into something between an EP and LP.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          이때 프로젝트는 본격적으로 앨범 규모로 확장되었다. 작업 중이던 곡들과 함께 항상 새로운 곡들을 써왔던 나는, 더
+          이상 기준에 맞지 않는 곡들을 버리고, 초기 의도에 부합하면서도 가치와 품질을 높여줄 곡들을 추가해 프로젝트의
+          질과 야망을 높이고 싶었다. 이때 "24", "Up the hill", "Forgettable", 그리고 "DROP" 같은 곡들이 트랙리스트에
+          추가되었고, 프로젝트는 EP와 LP 사이의 형태로 확장되기 시작했다.
+        </span>
+      </p>
+      <p v-if="isContent2Expanded" class="expandable-text">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          For quite some time, we debated whether tracks like "Art is on my mind" and "24", which are more immature,
+          hip-hop-based, and aggressive in sound, should coexist in the same release as tracks like "Up the hill",
+          "DROP", and "Forgettable", which sounded more mature, pop-based, and melodic. Dividing the releases into two
+          parts (<i>Youthful Immaturity</i>, and <i>DROP</i>) would not only isolate the distinct messages of each
+          release but also offer practical advantages. Two shorter releases, catering to different listeners and tastes,
+          aligned with the modern music industry's trend, as short-form content was gaining popularity. Large,
+          collective releases quickly became disadvantageous, and high-volume bursts of single releases had become the
+          standard approach to success.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          꽤 오랜 시간 동안 우리는 "Art is on my mind"와 "24"처럼 철부지스럽고, 힙합 기반의 공격적인 사운드를 가진
+          곡들이 "Up the hill", "DROP", "Forgettable"처럼 더 성숙하고, 팝 기반의 멜로디 중심 곡들과 동일한 발매에
+          공존해야 할지에 대해 논의했다. <i>철부지</i>와 <i>DROP</i>이라는 제목으로 발매를 나누는 것은 각각의 곡이
+          전달하는 메시지를 분리할 뿐만 아니라 실리적인 이점도 제공했다. 서로 다른 청취자층과 음악적 취향을 겨냥한 두
+          개의 짧은 발매는, "숏폼 콘텐츠"가 인기를 끌고 있던 현대 음악 산업의 트렌드에 부합했다. 짧고 자주 발매하는 싱글
+          릴리즈 방식이 성공의 표준이 되어가고 있었고, 발매의 규모가 커질수록 점차 불리해지는 추세였기 때문이다.
+        </span>
+      </p>
+      <p v-if="isContent2Expanded" class="expandable-text">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Despite the unfavourable forecast, I decided to release everything as one album, with my discussion with Roca
+          Dianco being the final deciding factor. Music has always been a means of relief, expression, and personal
+          enjoyment for me, with a focus on craftmanship and respect rather than fame or money. I never wanted to be
+          famous, and I've always trusted my abilities as a software engineer to make a good living. As a human being,
+          I'm sometimes distracted by the pull of popular trends and what the majority leans towards, but my true
+          intention has always been to achieve one impractical goal&mdash;doing something cool and stylish&mdash;at a
+          level that demands respect from all contenders in the field.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          불리한 전망에도 불구하고, 나는 모든 곡을 하나의 앨범으로 발매하기로 결정했다. 이 결정의 최종적인 계기는 Roca
+          Dianco와의 논의였다. 음악은 나에게 언제나 해소의 수단이자 표현의 도구, 그리고 개인적인 즐거움이었고, 나에게
+          음악은 명성이나 돈보다는 완성도와 존중에 중점을 둔 작업이었다. 나는 원래부터 유명해지고 싶지 않았고,
+          소프트웨어 엔지니어로서의 내 능력을 믿어 안정된 생활을 할 수 있다고 생각해왔다. 물론 인간으로서 다수의
+          의견이나 큰 무리에 흔들릴 때도 있지만, 내 야망은 언제나 하나의 유치한 목표에 있었다&mdash;바로 멋지고 간지나는
+          무언가를 만들고, 이 분야의 모든 경쟁자들에게 존중받을 만한 수준에 도달하는 것이다.
+        </span>
+      </p>
+      <p v-if="isContent2Expanded" class="expandable-text">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          Thus, rather than chasing the hype and prioritizing practicality like everyone else, Roca Dianco and I
+          concluded that it was far more "cooler" for an artist to possess a full-length LP, especially in this day and
+          age. Afterall, the album, from the beginning, was meant to capture and express a unique aspect of my personal
+          youth&mdash;not to chase materialistic rewards or benefits.
+        </span>
+        <span v-if="useGlobals.currLang == SupportedLanguages.ko">
+          그렇게 Roca Dianco와 나는, 유행을 쫓거나 실리를 우선시하는 대신, 요즘같은 시대일 수록 아티스트가 정규 LP를
+          갖추는 것이 훨씬 더 "멋있다"는 결론을 내렸다. 더군다나 이 앨범은 처음부터 물질적 보상이나 이익을 추구하는 것이
+          아니라, 나의 개인적인 청춘을 담고 표현하기 위한 것이었다.
+        </span>
+      </p>
+    </div>
+
+    <div class="grid-img-container intermediate">
+      <div class="grid-item-wrapper">
+        <IVPicture
+          :fourkSrc="youthMedia.bts.vermelloHomeStudioBirdsEyeView['4k']"
+          :qhdSrc="youthMedia.bts.vermelloHomeStudioBirdsEyeView['qhd']"
+          :hdSrc="youthMedia.bts.vermelloHomeStudioBirdsEyeView['hd']"
+          :mobileSrc="youthMedia.bts.vermelloHomeStudioBirdsEyeView['mobile']"
+        >
+          <img class="grid-img" :src="youthMedia.bts.vermelloHomeStudioBirdsEyeView['fallback']" draggable="false" />
+        </IVPicture>
+      </div>
+      <div class="grid-item-wrapper">
+        <IVPicture
+          :fourkSrc="youthMedia.bts.vermelloHomeStudioWider['4k']"
+          :qhdSrc="youthMedia.bts.vermelloHomeStudioWider['qhd']"
+          :hdSrc="youthMedia.bts.vermelloHomeStudioWider['hd']"
+          :mobileSrc="youthMedia.bts.vermelloHomeStudioWider['mobile']"
+        >
+          <img class="grid-img" :src="youthMedia.bts.vermelloHomeStudioWider['fallback']" draggable="false" />
+        </IVPicture>
+      </div>
+    </div>
+    <div class="img-caption">
+      <p class="caption-title">
+        <span v-if="useGlobals.currLang == SupportedLanguages.en">
+          The den's bird's eye view (11.24.2022) - Toronto, Vermello's house<br />
+          Vermello producing (11.24.2022) - Toronto, Vermello's house<br />
+        </span>
+        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+          위에서 본 음악 소굴 (11.24.2022) - 토론토, Vermello의 집<br />
+          작업하는 Vermello (11.24.2022) - 토론토, Vermello의 집<br />
+        </span>
+      </p>
+      <div class="caption-text">
+        <p>
+          <span v-if="useGlobals.currLang == SupportedLanguages.en">
+            (Left) Vermello pretends to be producing music while shooting a video in bird's eye view for PG-13's
+            documentation.
+          </span>
+          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+            (좌) Vermello는 PG-13의 기록을 위해 마치 음악을 제작하는 듯한 장면을 연출하고 있다.
+          </span>
+        </p>
+        <p>
+          <span v-if="useGlobals.currLang == SupportedLanguages.en">
+            (Right) While shooting for documentation, Vermello actually ends up working on the opened Ableton project.
+          </span>
+          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
+            (우) 장면을 연출하던 도중, 에이블톤 프로젝트를 연 김에 실제로 작업을 시작하게 된 Vermello다.
+          </span>
+        </p>
+      </div>
     </div>
 
     <div class="table-of-contents-wrapper">
@@ -254,10 +440,14 @@ import PublicationTableOfContents from '@/components/layout/table-of-contents/Pu
 const router = useRouter();
 
 // Data
-const isContentCollapsed = ref(false);
+const isContent1Expanded = ref(false);
+const isContent2Expanded = ref(false);
 
-const toggleCollapseIcon = computed(() => {
-  return isContentCollapsed.value ? ['fas', 'chevron-up'] : ['fas', 'chevron-down'];
+const toggleExpandContent1Icon = computed(() => {
+  return isContent1Expanded.value ? ['fas', 'chevron-up'] : ['fas', 'chevron-down'];
+});
+const toggleExpandContent2Icon = computed(() => {
+  return isContent2Expanded.value ? ['fas', 'chevron-up'] : ['fas', 'chevron-down'];
 });
 
 // Functions
@@ -266,8 +456,11 @@ const selectBackNav = () => {
   router.push({ name: 'YouthPublication4YearsAgo', hash: '#next-nav' });
 };
 
-const toggleCollapseContent = () => {
-  isContentCollapsed.value = !isContentCollapsed.value;
+const toggleExpandContent1 = () => {
+  isContent1Expanded.value = !isContent1Expanded.value;
+};
+const toggleExpandContent2 = () => {
+  isContent2Expanded.value = !isContent2Expanded.value;
 };
 
 const selectNextNav = () => {

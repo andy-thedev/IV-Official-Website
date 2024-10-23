@@ -93,14 +93,15 @@
     <div class="text-block-container">
       <p>
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          The project goes so far as to complete the entire album with just a $70 microphone, a $100 audio interface,
-          and nothing else. Recorded in raw environments along the natural journey, such as hotel rooms and closets, the
-          final product undeniably carries major flaws and regret, particularly in sound quality. Despite the ability to
+          The project goes so far as to complete the entire album mostly with just a $70 microphone and a $100 audio
+          interface. Recorded in raw environments along the natural journey, such as hotel rooms and closets, the final
+          product undeniably carries major flaws and regret, particularly in sound quality. Despite the ability to
           address these issues in the later stages of development, it was decided that these imperfections are an
-          integral part of <i>Youth</i> and should remain to preserve the immature steps of the journey.
+          integral part of
+          <i>Youth</i> and should remain to preserve the immature steps of the journey.
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          이 앨범은 단 10만원짜리 마이크와 15만원짜리 오디오 인터페이스만으로 완성되었다. 호텔 방이나 옷장과 같은,
+          이 앨범은 단 10만원짜리 마이크와 15만원짜리 오디오 인터페이스로 대부분 완성되었으며, 호텔 방이나 옷장과 같은,
           생생하지만 척박한 환경 속에서 녹음된 최종 결과물은 특히 음질에서 뚜렷한 결함과 아쉬움을 남겼다. 개발 후반부에
           이러한 문제를 해결할 수 있었음에도 불구하고, 이 불완전함이 <i>Youth</i>의 중요한 일부라고 판단되어, 미숙했던
           그 시절을 보존하듯 그대로 남겨두기로 결정되었다.

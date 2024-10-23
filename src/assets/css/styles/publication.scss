@@ -35,15 +35,19 @@
   }
 }
 
-.hidden-content-toggler {
+.toggle-expand-content-icon {
   margin: 0 0 0 5px;
 
   color: $iv-near-white;
   cursor: pointer;
 }
 
-.collapsible-text {
+.expandable-text {
   color: $iv-near-white;
+}
+
+.album-text-link {
+  font-style: italic;
 }
 
 .publication {

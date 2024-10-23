@@ -136,6 +136,24 @@ import youthBtsYouthfulTrioImgQhd from '@/assets/img/bts/youth/qhd/youthful-trio
 import youthBtsYouthfulTrioImgHd from '@/assets/img/bts/youth/hd/youthful-trio.webp';
 import youthBtsYouthfulTrioImgMobile from '@/assets/img/bts/youth/mobile/youthful-trio.webp';
 
+import youthBtsVermelloHomeStudioDarkImg from '@/assets/img/bts/youth/vermello-home-studio-dark.jpg';
+import youthBtsVermelloHomeStudioDarkImg4k from '@/assets/img/bts/youth/4k/vermello-home-studio-dark.webp';
+import youthBtsVermelloHomeStudioDarkImgQhd from '@/assets/img/bts/youth/qhd/vermello-home-studio-dark.webp';
+import youthBtsVermelloHomeStudioDarkImgHd from '@/assets/img/bts/youth/hd/vermello-home-studio-dark.webp';
+import youthBtsVermelloHomeStudioDarkImgMobile from '@/assets/img/bts/youth/mobile/vermello-home-studio-dark.webp';
+
+import youthBtsVermelloHomeStudioBirdsEyeViewImg from '@/assets/img/bts/youth/vermello-home-studio-birds-eye-view.jpg';
+import youthBtsVermelloHomeStudioBirdsEyeViewImg4k from '@/assets/img/bts/youth/4k/vermello-home-studio-birds-eye-view.webp';
+import youthBtsVermelloHomeStudioBirdsEyeViewImgQhd from '@/assets/img/bts/youth/qhd/vermello-home-studio-birds-eye-view.webp';
+import youthBtsVermelloHomeStudioBirdsEyeViewImgHd from '@/assets/img/bts/youth/hd/vermello-home-studio-birds-eye-view.webp';
+import youthBtsVermelloHomeStudioBirdsEyeViewImgMobile from '@/assets/img/bts/youth/mobile/vermello-home-studio-birds-eye-view.webp';
+
+import youthBtsVermelloHomeStudioWiderImg from '@/assets/img/bts/youth/vermello-home-studio-wider.jpg';
+import youthBtsVermelloHomeStudioWiderImg4k from '@/assets/img/bts/youth/4k/vermello-home-studio-wider.webp';
+import youthBtsVermelloHomeStudioWiderImgQhd from '@/assets/img/bts/youth/qhd/vermello-home-studio-wider.webp';
+import youthBtsVermelloHomeStudioWiderImgHd from '@/assets/img/bts/youth/hd/vermello-home-studio-wider.webp';
+import youthBtsVermelloHomeStudioWiderImgMobile from '@/assets/img/bts/youth/mobile/vermello-home-studio-wider.webp';
+
 export const youthMedia = {
   artwork: {
     ['4k']: youthArtworkImg4k,
@@ -236,6 +254,27 @@ export const youthMedia = {
       ['hd']: youthBtsYouthfulTrioImgHd,
       ['mobile']: youthBtsYouthfulTrioImgMobile,
       ['fallback']: youthBtsYouthfulTrioImg,
+    },
+    vermelloHomeStudioDark: {
+      ['4k']: youthBtsVermelloHomeStudioDarkImg4k,
+      ['qhd']: youthBtsVermelloHomeStudioDarkImgQhd,
+      ['hd']: youthBtsVermelloHomeStudioDarkImgHd,
+      ['mobile']: youthBtsVermelloHomeStudioDarkImgMobile,
+      ['fallback']: youthBtsVermelloHomeStudioDarkImg,
+    },
+    vermelloHomeStudioBirdsEyeView: {
+      ['4k']: youthBtsVermelloHomeStudioBirdsEyeViewImg4k,
+      ['qhd']: youthBtsVermelloHomeStudioBirdsEyeViewImgQhd,
+      ['hd']: youthBtsVermelloHomeStudioBirdsEyeViewImgHd,
+      ['mobile']: youthBtsVermelloHomeStudioBirdsEyeViewImgMobile,
+      ['fallback']: youthBtsVermelloHomeStudioBirdsEyeViewImg,
+    },
+    vermelloHomeStudioWider: {
+      ['4k']: youthBtsVermelloHomeStudioWiderImg4k,
+      ['qhd']: youthBtsVermelloHomeStudioWiderImgQhd,
+      ['hd']: youthBtsVermelloHomeStudioWiderImgHd,
+      ['mobile']: youthBtsVermelloHomeStudioWiderImgMobile,
+      ['fallback']: youthBtsVermelloHomeStudioWiderImg,
     },
   },
 };

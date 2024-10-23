@@ -132,14 +132,12 @@
     <div class="img-caption">
       <p class="caption-title">
         <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          Fabric (10.23.2022)<br />
-          Meesung and Roca Dianco (10.23.2022)<br />
-          North York, Hendon Park
+          Fabric (10.23.2022) - North York, Hendon Park<br />
+          Meesung and Roca Dianco (10.23.2022) - North York, Hendon Park<br />
         </span>
         <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          원단 (10.23.2022)<br />
-          미성이와 Roca Dianco (10.23.2022)<br />
-          노스욕, 헨던 공원
+          원단 (10.23.2022) - 노스욕, 헨던 공원<br />
+          미성이와 Roca Dianco (10.23.2022) - 노스욕, 헨던 공원<br />
         </span>
       </p>
       <div class="caption-text">
@@ -165,65 +163,6 @@
         </p>
       </div>
     </div>
-
-    <!-- 
-    <div class="grid-img-container intermediate">
-      <div class="grid-item-wrapper">
-        <IVPicture
-          :fourkSrc="youthMedia.bts.vermelloAndPg13['4k']"
-          :qhdSrc="youthMedia.bts.vermelloAndPg13['qhd']"
-          :hdSrc="youthMedia.bts.vermelloAndPg13['hd']"
-          :mobileSrc="youthMedia.bts.vermelloAndPg13['mobile']"
-        >
-          <img class="grid-img" :src="youthMedia.bts.vermelloAndPg13['fallback']" draggable="false" />
-        </IVPicture>
-      </div>
-      <div class="grid-item-wrapper">
-        <IVPicture
-          :fourkSrc="youthMedia.bts.kangeonAndPg13['4k']"
-          :qhdSrc="youthMedia.bts.kangeonAndPg13['qhd']"
-          :hdSrc="youthMedia.bts.kangeonAndPg13['hd']"
-          :mobileSrc="youthMedia.bts.kangeonAndPg13['mobile']"
-        >
-          <img class="grid-img" :src="youthMedia.bts.kangeonAndPg13['fallback']" draggable="false" />
-        </IVPicture>
-      </div>
-    </div>
-    <div class="img-caption">
-      <p class="caption-title">
-        <span v-if="useGlobals.currLang == SupportedLanguages.en">
-          Vermello and PG-13 (10.23.2022)<br />
-          Roca Dianco and PG-13 (10.23.2022)<br />
-          North York, Hendon Park
-        </span>
-        <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-          Vermello와 PG-13 (10.23.2022)<br />
-          Roca Dianco와 PG-13 (10.23.2022)<br />
-          노스욕, 헨던 공원
-        </span>
-      </p>
-      <div class="caption-text">
-        <p>
-          <span v-if="useGlobals.currLang == SupportedLanguages.en">
-            (Left) Vermello, a producer that played an existential role in the development of <i>Youth</i>, stares into
-            the camera, with PG-13 and Roca Dianco posing in the background.
-          </span>
-          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-            (좌) 앨범 <i>Youth</i>의 발전에 실존적 역할을 한 프로듀서 Vermello가 카메라를 응시하고 있고, 뒤에는 PG-13과
-            Roca Dianco가 포즈를 취하고 있다.
-          </span>
-        </p>
-        <p>
-          <span v-if="useGlobals.currLang == SupportedLanguages.en">
-            (Right) Roca Dianco, the only featuring artist in the album <i>Youth</i>, stands shoulder to shoulder with
-            PG-13.
-          </span>
-          <span v-else-if="useGlobals.currLang == SupportedLanguages.ko">
-            (우) 앨범 <i>Youth</i>의 유일한 피처링 아티스트인 Roca Dianco가 PG-13과 어깨를 나란히 하며 서 있다.
-          </span>
-        </p>
-      </div>
-    </div> -->
 
     <div class="text-block-container">
       <p>
@@ -256,9 +195,9 @@
           이 깨달음은 내가 쓴 곡들 중, 점차 사라져가고 있는 에너지를 담은 곡들을 집착적으로 찾게 만들었다.
           <TextLink text='"우리 행복하자 근심 따윈 갖지 말자고"' toName="DiscographyDetails" toParamId="last-dance" />를
           쓸 무렵, 나는 이미 약 200에서 300곡을 쓴 상태였고, 그 중 내가 찾고 있던 느낌을 담고 있는 네 곡을
-          발굴해냈다—"Art is on my mind", "Hopscotch", "Can't stop, won't stop", 그리고 "Youth" (당시 제목은 "Finale").
-          나는 곧바로 내가 아는 유일한 프로듀서인 Vermello에게 연락해, 이 네 곡을 중심으로 미니 앨범을 제작하기로 했고,
-          앨범 제목을 "철부지"라 붙였다.
+          발굴해냈다&mdash;"Art is on my mind", "Hopscotch", "Can't stop, won't stop", 그리고 "Youth" (당시 제목은
+          "Finale"). 나는 곧바로 내가 아는 유일한 프로듀서인 Vermello에게 연락해, 이 네 곡을 중심으로 미니 앨범을
+          제작하기로 했고, 앨범 제목을 "철부지"라 붙였다.
         </span>
       </p>
     </div>
